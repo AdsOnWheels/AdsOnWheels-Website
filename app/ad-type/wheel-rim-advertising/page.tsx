@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import WheelRimCover from "../../../public/images/driver/advertising-on-bicycle-wheel-rim-cover-II.png";
+import WheelRimCover from "../../../public/images/rider/advertising-on-bicycle-wheel-rim-cover-II.png";
 
 const WheelRimCoverAdPage = () => {
   return (

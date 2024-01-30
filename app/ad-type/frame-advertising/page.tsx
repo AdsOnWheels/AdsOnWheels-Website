@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import BicycleFrame from "../../../public/images/driver/advertising-on-bicycle-frames.png";
+import BicycleFrame from "../../../public/images/rider/advertising-on-bicycle-frames.png";
 
 const BicycleFrameAdPage = () => {
   return (

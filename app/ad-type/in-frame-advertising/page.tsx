@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import InBetweenFrame from "../../../public/images/driver/advertising-on-bicycle-frames.png";
+import InBetweenFrame from "../../../public/images/rider/advertising-on-bicycle-frames.png";
 
 const InBetweenFrameAdPage = () => {
   return (
