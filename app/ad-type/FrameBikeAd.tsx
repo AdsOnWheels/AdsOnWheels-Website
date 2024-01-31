@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import WheelRimCover from "../../../public/images/rider/advertising-on-bicycle-wheel-rim-cover-II.png";
+import BicycleFrame from "../../public/images/rider/advertising-on-bicycle-frames.png";
 
-const WheelRimCoverAdPage = () => {
+const FrameBikeAd = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       {/* Header */}
       {/* ...Your header component */}
 
@@ -16,7 +16,7 @@ const WheelRimCoverAdPage = () => {
             Maximize your brand visibility with strategic frame placements.
           </p>
           <Image
-            src={WheelRimCover}
+            src={BicycleFrame}
             alt="Bicycle Frame Ad"
             className="mx-auto"
           />
@@ -52,8 +52,8 @@ const WheelRimCoverAdPage = () => {
 
       {/* Footer */}
       {/* ...Your footer component */}
-    </div>
+    </>
   );
 };
 
-export default WheelRimCoverAdPage;
+export default FrameBikeAd;

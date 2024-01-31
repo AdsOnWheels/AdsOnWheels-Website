@@ -1,14 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import BicycleBasket from "../../../public/images/rider/advertising-on-bicycle-baskets.png";
+import BicycleBasket from "../../public/images/rider/advertising-on-bicycle-baskets.png";
 
-const BicycleBasketAdPage = () => {
+const BasketBikeAd = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header */}
-      {/* ...Your header component */}
-
-      {/* Hero Section */}
+    <>
       <section className="bg-blue-600 text-white text-center py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">Bicycle Frame Advertising</h1>
@@ -49,11 +45,8 @@ const BicycleBasketAdPage = () => {
           {/* CTA button */}
         </div>
       </section>
-
-      {/* Footer */}
-      {/* ...Your footer component */}
-    </div>
+    </>
   );
 };
 
-export default BicycleBasketAdPage;
+export default BasketBikeAd;

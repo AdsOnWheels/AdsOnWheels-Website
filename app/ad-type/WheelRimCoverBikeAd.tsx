@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import InBetweenFrame from "../../../public/images/rider/advertising-on-bicycle-frames.png";
+import WheelRimCover from "../../public/images/rider/advertising-on-bicycle-wheel-rim-cover-II.png";
 
-const InBetweenFrameAdPage = () => {
+const WheelRimCoverBikeAd = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       {/* Header */}
       {/* ...Your header component */}
 
@@ -16,7 +16,7 @@ const InBetweenFrameAdPage = () => {
             Maximize your brand visibility with strategic frame placements.
           </p>
           <Image
-            src={InBetweenFrame}
+            src={WheelRimCover}
             alt="Bicycle Frame Ad"
             className="mx-auto"
           />
@@ -52,8 +52,8 @@ const InBetweenFrameAdPage = () => {
 
       {/* Footer */}
       {/* ...Your footer component */}
-    </div>
+    </>
   );
 };
 
-export default InBetweenFrameAdPage;
+export default WheelRimCoverBikeAd;

@@ -1,16 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import CargoBicycleImage from "../../../public/images/rider/advertising-on-cargo-bicycle.png";
-import PlaceholderImage from "../../../public/images/brand/dummy_600x400.png";
-import Header from "@/app/layout/header/Header";
-import Footer2 from "@/app/layout/footer/Footer2";
+
+import CargoBicycleImage from "../../public/images/rider/advertising-on-cargo-bicycle.png";
+import PlaceholderImage from "../../public/images/brand/dummy_600x400.png";
 import Button from "@/app/components/Button";
 
-const CargoBicycleAdPage = () => {
+const CargoBikeAd = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-
+    <>
       {/* Hero Section */}
       <section className="relative bg-blue-600 text-white text-center py-12">
         <div className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 opacity-70 absolute inset-0"></div>
@@ -130,10 +127,8 @@ const CargoBicycleAdPage = () => {
           <Button text="Get in Touch" color="dutch" />
         </div>
       </section>
-
-      <Footer2 />
-    </div>
+    </>
   );
 };
 
-export default CargoBicycleAdPage;
+export default CargoBikeAd;

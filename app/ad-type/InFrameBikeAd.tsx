@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import BicycleFrame from "../../../public/images/rider/advertising-on-bicycle-frames.png";
+import InBetweenFrame from "../../public/images/rider/advertising-on-bicycle-frames.png";
 
-const BicycleFrameAdPage = () => {
+const InFrameBikeAd = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       {/* Header */}
       {/* ...Your header component */}
 
@@ -16,7 +16,7 @@ const BicycleFrameAdPage = () => {
             Maximize your brand visibility with strategic frame placements.
           </p>
           <Image
-            src={BicycleFrame}
+            src={InBetweenFrame}
             alt="Bicycle Frame Ad"
             className="mx-auto"
           />
@@ -52,8 +52,8 @@ const BicycleFrameAdPage = () => {
 
       {/* Footer */}
       {/* ...Your footer component */}
-    </div>
+    </>
   );
 };
 
-export default BicycleFrameAdPage;
+export default InFrameBikeAd;

@@ -29,63 +29,63 @@ const adPortfolio = [
     altText: "Advertising placed in between Bicycle Frame",
     description:
       "Integrates ads into the bicycle's structure for a natural, streamlined look that captures attention on busy streets.",
-    learnMoreLink: "/ad-type/in-frame-advertising",
+    learnMoreLink: "/ad-type/in-frame-ads",
   },
   {
     image: WheelRim,
     altText: "Creative ad on bicycle wheel rim cover",
     description:
       "Utilizes the motion of wheel rims to create dynamic, moving advertisements that stand out as the bicycle moves.",
-    learnMoreLink: "/ad-type/wheel-rim-advertising",
+    learnMoreLink: "/ad-type/wheel-rim-ads",
   },
   {
     image: BicycleBasket2,
     altText: "Promotional ad on bicycle baskets",
     description:
       "Places ads on bicycle baskets for high-level exposure, especially effective in pedestrian areas and marketplaces.",
-    learnMoreLink: "/ad-type/basket-advertising",
+    learnMoreLink: "/ad-type/basket-ads",
   },
   {
     image: BicycleFrame3,
     altText: "Eye-catching ad on bicycle frame",
     description:
       "Employs the broad surface of the bicycle frame for large, eye-catching ads, ideal for branding and promotions.",
-    learnMoreLink: "/ad-type/frame-advertising",
+    learnMoreLink: "/ad-type/frame-ads",
   },
   {
     image: WheelRim2,
     altText: "Advertising on bicycle wheel rim cover",
     description:
       "Offers innovative advertising on wheel rims, creating a captivating visual effect as the wheels spin.",
-    learnMoreLink: "/ad-type/wheel-rim-advertising",
+    learnMoreLink: "/ad-type/wheel-rim-ads",
   },
   {
     image: BicycleBasket,
     altText: "Innovative ad on bicycle baskets",
     description:
       "Transforms the front basket area into an advertising hotspot, perfect for local businesses and targeted campaigns.",
-    learnMoreLink: "/ad-type/basket-advertising",
+    learnMoreLink: "/ad-type/basket-ads",
   },
   {
     image: BicycleFrame2,
     altText: "Striking ad on bicycle frame",
     description:
       "Showcases large-scale ads on the bike frame, providing excellent visibility in urban environments.",
-    learnMoreLink: "/ad-type/frame-advertising",
+    learnMoreLink: "/ad-type/frame-ads",
   },
   {
     image: WheelRim3,
     altText: "Dynamic ad on bicycle wheel rim cover",
     description:
       "Highlights your ad on the move with innovative designs on wheel rim covers, ensuring constant brand exposure.",
-    learnMoreLink: "/ad-type/wheel-rim-advertising",
+    learnMoreLink: "/ad-type/wheel-rim-ads",
   },
   {
     image: CargoBicycle,
     altText: "Effective advertising on cargo bicycles",
     description:
       "Leverages the large cargo space of cargo bicycles for substantial, impactful ads, suitable for wide-ranging promotions.",
-    learnMoreLink: "/ad-type/cargo-bike-advertising",
+    learnMoreLink: "/ad-type/cargo-bike-ads",
   },
 ];
 
