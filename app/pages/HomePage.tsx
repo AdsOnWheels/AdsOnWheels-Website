@@ -43,7 +43,7 @@ const HomePage = () => {
       </div>
 
       {/* Overlay for Text and Buttons */}
-      <div className="relative z-10 flex flex-col justify-between h-full mt-10 lg:mt-20">
+      <div className="relative z-10 flex flex-col justify-between h-full mt-16 lg:mt-20">
         {/* Title and Subtitle */}
         <div className="flex-1 flex flex-col justify-center items-center text-center p-8">
           <Heading1
@@ -56,11 +56,10 @@ const HomePage = () => {
           />
 
           {/* Bottom Buttons */}
-          <div className="flex flex-col lg:flex-row justify-center mt-6 md:mt-8 lg:mt-10 2xl:mt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 gap-6 justify-center items-center mt-6 md:mt-8 lg:mt-10 2xl:mt-16">
             <Button
               text="Brands"
               color="dutch"
-              className="md:mb-0 lg:mr-12"
               onClick={() => goToPage("/brands")}
             />
             <Button

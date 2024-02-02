@@ -74,7 +74,7 @@ const Button = ({
   const bgColorClass = colorClasses[color] || colorClasses.primary;
 
   // Responsive classes for padding, font size, etc.
-  const responsiveClasses = `px-4 md:px-6 lg:px-9 py-2 md:py-3 lg:py-3`;
+  const responsiveClasses = `px-6 lg:px-9 py-3 lg:py-3`;
 
   const buttonClasses = `font-bold ${responsiveClasses} ${bgColorClass} focus:outline-none focus:shadow-outline rounded-full hover:shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out ${
     className || ""
