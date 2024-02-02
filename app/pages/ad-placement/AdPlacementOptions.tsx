@@ -11,6 +11,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "@/app/components/IconButton";
+import Heading2 from "@/app/layout/Heading2";
 
 const adFormats = [
   {
@@ -90,9 +91,12 @@ const AdPlacementOptions = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-purple-600 via-indigo-500 to-[#ff4f00]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-5xl lg:text-6xl font-extrabold text-white mb-16">
-          Ad Placement Options
-        </h2>
+        <Heading2
+          text="Ad Placement Options"
+          color="white"
+          align="center"
+          className="mb-16"
+        />
 
         <div className="relative flex items-center justify-center">
           {showLeftArrow && (

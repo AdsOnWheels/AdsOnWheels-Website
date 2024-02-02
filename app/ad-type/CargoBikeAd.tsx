@@ -33,7 +33,7 @@ const CargoBikeAd = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
-            Advantages of Cargo Bike Ads
+            Why Choose Cargo Bike Ads
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Each feature as a card */}

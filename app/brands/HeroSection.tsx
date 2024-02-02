@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 
-import Title from "../layout/Title";
+import Heading1 from "../layout/Heading1";
 import BackgroundImage from "../../public/Bike-in-front-of-canals.png";
 
 const HeroSection = () => {
@@ -23,8 +23,8 @@ const HeroSection = () => {
 
       <div className="relative z-10 max-w-5xl text-center mx-auto p-8">
         {/* Brief explanation */}
-        <Title
-          title="Bicycle Advertising that pedals your brand forward"
+        <Heading1
+          text="Bicycle Advertising that pedals your brand forward"
           className="text-6xl md:text-7xl text-white font-extrabold mb-8"
         />
         <p className="text-lg text-white leading-7">

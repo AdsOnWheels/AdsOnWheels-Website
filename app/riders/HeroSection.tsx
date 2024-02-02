@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import Title from "../layout/Title";
+import Heading1 from "../layout/Heading1";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faBicycle } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
@@ -23,9 +23,10 @@ const HeroSection = () => {
       </div>
       <div className="relative mt-8">
         <div className="max-w-5xl text-center mx-auto p-8 z-10">
-          <Title
-            title="Ride, Advertise, Earn."
-            className="text-6xl md:text-7xl text-white font-extrabold mb-8 leading-tight custom-font-style"
+          <Heading1
+            text="Ride, Advertise, Earn."
+            color="white"
+            className="mb-8"
           />
           <p className="text-lg md:text-xl text-white leading-7 max-w-3xl mx-auto">
             Join AdsOnWheels and turn your daily rides into earnings with

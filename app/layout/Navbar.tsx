@@ -8,28 +8,29 @@ import Modal from "../components/Modal";
 import ContactPage from "../pages/Contact";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   const menuItems = [
     { href: "/", text: "Home" },
-    { href: "#", text: "About" },
-    { href: "#", text: "Support" },
-    { href: "#", text: "FAQ" },
+    { href: "/about", text: "About" },
+    { href: "/brands", text: "For Brands" },
+    { href: "/riders", text: "For Riders" },
+    { href: "/contact", text: "Contact" },
   ];
 
   return (
     <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label
+            tabIndex={0}
+            className="btn btn-ghost lg:hidden"
+            onClick={toggleMenu}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -47,7 +48,9 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52"
+            className={`menu menu-compact dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52 ${
+              isMenuOpen ? "block" : "hidden"
+            }`}
           >
             {menuItems.map((menuItem, index) => (
               <li key={index}>
@@ -80,11 +83,14 @@ const Navbar = () => {
           text="Get In Touch"
           color="dutch"
           className="md:mr-4"
-          onClick={openModal}
+          onClick={toggleModal}
         />
 
         {isModalOpen && (
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <Modal
+            text="Fill out the form below to reach out to us and we will get back to
+          you as soon as possible."
+          >
             <ContactPage />
           </Modal>
         )}

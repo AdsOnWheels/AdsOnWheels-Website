@@ -1,3 +1,4 @@
+import Heading2 from "@/app/layout/Heading2";
 import React from "react";
 
 interface Props {
@@ -53,9 +54,12 @@ const HowItWorksBrands = () => {
   return (
     <section className="text-center py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-5xl lg:text-6xl font-extrabold mb-16 text-gray-800 text-gradient bg-clip-texttext">
-          How It Works
-        </h2>
+        <Heading2
+          text="How It Works"
+          color="dark"
+          align="center"
+          className="mb-16"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step) => (

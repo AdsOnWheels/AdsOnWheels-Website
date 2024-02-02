@@ -3,6 +3,7 @@
 import React from "react";
 import Form from "../../components/Form";
 import { FormData } from "@/types/types";
+import Heading2 from "@/app/layout/Heading2";
 
 const BrandSignUp = () => {
   const handleFormSubmit = (formData: FormData) => {
@@ -14,9 +15,13 @@ const BrandSignUp = () => {
       <div className="flex flex-wrap justify-center">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-indigo-700">
           <div className="p-6 md:p-10 text-center">
-            <h2 className="text-5xl lg:text-6xl text-center font-extrabold p-2 mb-4 text-gray-800 text-gradient bg-clip-text">
-              Partner With Us
-            </h2>
+            <Heading2
+              text="Partner With Us"
+              color="dark"
+              align="center"
+              className="p-2 mb-4"
+            />
+
             <p className="text-gray-600 mb-8">
               Elevate your brand with our unique bicycle ad platform. Innovative
               and impactful advertising awaits.

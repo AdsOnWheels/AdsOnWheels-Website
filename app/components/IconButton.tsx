@@ -3,8 +3,9 @@
 import React from "react";
 
 interface IconButtonProps {
+  id?: string;
   icon: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   disabled?: boolean;
   color?:
@@ -47,6 +48,7 @@ const colorClasses = {
 };
 
 const IconButton: React.FC<IconButtonProps> = ({
+  id,
   icon,
   onClick,
   className,
@@ -58,7 +60,12 @@ const IconButton: React.FC<IconButtonProps> = ({
   const buttonClasses = `${textColorClass} cursor-pointer ${className || ""}`;
 
   return (
-    <button className={buttonClasses} onClick={onClick} disabled={disabled}>
+    <button
+      id={id}
+      className={buttonClasses}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {icon}
     </button>
   );

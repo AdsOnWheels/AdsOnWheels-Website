@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 
-import Title from "../layout/Title";
-import Subtitle from "../layout/Subtitle";
+import Heading1 from "../layout/Heading1";
+import Heading3 from "../layout/Heading3";
 import Button from "../components/Button";
 import BackgroundImage from "../../public/Bike-in-front-of-canals.png";
 
@@ -43,24 +43,24 @@ const HomePage = () => {
       </div>
 
       {/* Overlay for Text and Buttons */}
-      <div className="relative z-10 flex flex-col justify-between h-full mt-20">
+      <div className="relative z-10 flex flex-col justify-between h-full mt-10 lg:mt-20">
         {/* Title and Subtitle */}
         <div className="flex-1 flex flex-col justify-center items-center text-center p-8">
-          <Title
-            title="Elevate Your Brand, Advertise with Every Turn!"
-            className="text-white font-extrabold text-5xl md:text-6xl lg:text-7xl 2xl:text-[9rem]"
+          <Heading1
+            text="Elevate Your Brand, Advertise with Every Turn!"
+            color="white"
           />
-          <Subtitle
-            subTitle="Transform your company's message into a captivating journey for your audience."
-            className="text-white text-md md:text-lg lg:text-xl 2xl:text-4xl"
+          <Heading3
+            text="Transform your company's message into a captivating journey for your audience."
+            color="white"
           />
 
           {/* Bottom Buttons */}
-          <div className="flex justify-center mt-6 md:mt-8 lg:mt-10 2xl:mt-16">
+          <div className="flex flex-col lg:flex-row justify-center mt-6 md:mt-8 lg:mt-10 2xl:mt-16">
             <Button
               text="Brands"
               color="dutch"
-              className="mr-12"
+              className="md:mb-0 lg:mr-12"
               onClick={() => goToPage("/brands")}
             />
             <Button

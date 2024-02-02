@@ -1,14 +1,19 @@
 import React from "react";
-import Title from "../layout/Title";
+import Heading1 from "../layout/Heading1";
+import Heading2 from "../layout/Heading2";
 
 const About = () => {
   return (
     <section className="text-center">
-      <Title title="About AdsOnWheels" />
+      <Heading1 text="About AdsOnWheels" />
 
       <div className="max-w-3xl mx-auto">
         <div className="mb-10">
-          <Title title="Mission" className="text-2xl font-semibold mb-3" />
+          <Heading2
+            text="Mission"
+            color="dark"
+            className="text-2xl font-semibold mb-3"
+          />
           <p className="text-gray-700">
             At AdsOnWheels, our mission is to revolutionize the advertising
             landscape by championing sustainable transportation and fostering
@@ -22,7 +27,11 @@ const About = () => {
         </div>
 
         <div className="mb-10">
-          <Title title="Vision" className="text-2xl font-semibold mb-3" />
+          <Heading2
+            text="Vision"
+            color="dark"
+            className="text-2xl font-semibold mb-3"
+          />
           <p className="text-gray-700">
             Our vision extends beyond traditional advertising boundaries,
             envisioning a world where every ride becomes an opportunity for
@@ -36,7 +45,11 @@ const About = () => {
         </div>
 
         <div>
-          <Title title="Values" className="text-2xl font-semibold mb-3" />
+          <Heading2
+            text="Values"
+            color="dark"
+            className="text-2xl font-semibold mb-3"
+          />
           <ol className="list-decimal pl-6 text-gray-700">
             <li className="mb-4">
               <strong>Innovation:</strong> Innovation is at the heart of

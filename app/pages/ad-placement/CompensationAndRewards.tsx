@@ -1,3 +1,4 @@
+import Heading2 from "@/app/layout/Heading2";
 import React from "react";
 
 const CompensationAndRewards = () => {
@@ -27,9 +28,12 @@ const CompensationAndRewards = () => {
   return (
     <section className="py-16 bg-gradient-to-r from-indigo-200 to-indigo-100 text-gray-800">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-5xl lg:text-6xl font-extrabold mb-8 text-gray-800">
-          Compensation and Rewards
-        </h2>
+        <Heading2
+          text="Compensation and Rewards"
+          color="dark"
+          className="mb-8"
+        />
+
         <p className="text-xl mb-8">
           Discover the competitive compensation structure and exclusive rewards
           that set AdsOnWheels apart.

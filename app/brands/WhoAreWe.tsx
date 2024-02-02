@@ -1,15 +1,17 @@
 import React from "react";
 
-import Title from "../layout/Title";
+import Heading2 from "../layout/Heading2";
 import Button from "../components/Button";
 
 const WhoAreWe = () => {
   return (
     <section className="bg-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Title
-          title="Who Are We?"
-          className="text-5xl lg:text-6xl font-extrabold mb-12 text-gray-800 text-gradient bg-clip-text"
+        <Heading2
+          text="Who Are We?"
+          color="dark"
+          align="center"
+          className="mb-12"
         />
         <div className="space-y-6">
           <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto animate-fade-in-up">

@@ -6,7 +6,7 @@ import {
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Title from "../layout/Title";
+import Heading2 from "../layout/Heading2";
 
 const BrandBenefits = () => {
   const benefits = [
@@ -33,9 +33,11 @@ const BrandBenefits = () => {
   return (
     <section className="bg-gray-100 py-16">
       <div className="container mx-auto px-8">
-        <Title
-          title="Why Bike Advertising?"
-          className="text-center text-5xl lg:text-6xl font-extrabold text-gray-800 mb-16"
+        <Heading2
+          text="Why Bike Advertising?"
+          color="dark"
+          align="center"
+          className="mb-16"
         />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Title from "../layout/Title";
+import Heading1 from "../layout/Heading1";
 import Button from "./Button";
 
 const CallToAction2 = () => {
@@ -17,8 +17,8 @@ const CallToAction2 = () => {
 
   return (
     <section className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 text-white py-16 text-center">
-      <Title
-        title="Ready to Monetize Your Ride?"
+      <Heading1
+        text="Ready to Monetize Your Ride?"
         className="text-white text-5xl font-extrabold"
       />
       <p className="text-xl mt-4 mb-6">

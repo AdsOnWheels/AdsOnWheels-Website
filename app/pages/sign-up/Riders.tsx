@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Title from "../../layout/Title";
+import Heading2 from "../../layout/Heading2";
 import Form from "../../components/Form";
 import { FormData } from "@/types/types";
 
@@ -12,18 +12,21 @@ const RiderSignUp = () => {
 
   return (
     <section className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 py-16">
-      <Title
+      <Heading2
         id="join-now"
-        title="BECOME A RIDER"
-        className="text-center text-5xl lg:text-6xl font-extrabold text-gray-200 mb-16"
+        text="BECOME A RIDER"
+        color="light"
+        align="center"
+        className="mb-16"
       />
       <div className="container mx-auto flex flex-col md:flex-row">
         {/* Left Section - Encouraging Text/Image */}
         <div className="md:flex-1 flex items-center justify-center p-4">
           <div className="text-center">
-            <Title
-              title="Join Our Riding Force!"
-              className="text-white text-5xl font-extrabold mb-6"
+            <Heading2
+              text="Join Our Riding Force!"
+              color="white"
+              className="mb-6"
             />
             <p className="text-white text-xl mb-4">
               Become a part of the revolution in mobile advertising.

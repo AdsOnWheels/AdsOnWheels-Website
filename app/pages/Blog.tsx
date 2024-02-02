@@ -1,15 +1,15 @@
 import React from "react";
-import Title from "../layout/Title";
-import Subtitle from "../layout/Subtitle";
+import Heading1 from "../layout/Heading1";
+import Heading2 from "../layout/Heading2";
 
 const Blog = () => {
   return (
     <section>
-      <Title title="Explore Our Blog" className="text-4xl font-bold" />
+      <Heading1 text="Explore Our Blog" className="text-4xl font-bold" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="border p-4 rounded-md">
-          <Subtitle
-            subTitle="The Impact of Bicycle Advertising"
+          <Heading2
+            text="The Impact of Bicycle Advertising"
             className="text-xl font-semibold mb-2"
           />
           <p className="text-gray-700">
@@ -18,8 +18,8 @@ const Blog = () => {
           </p>
         </div>
         <div className="border p-4 rounded-md">
-          <Subtitle
-            subTitle="Tips for Effective Ad Placement"
+          <Heading2
+            text="Tips for Effective Ad Placement"
             className="text-xl font-semibold mb-2"
           />
           <p className="text-gray-700">

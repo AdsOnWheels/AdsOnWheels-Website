@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import Heading2 from "../layout/Heading2";
 
 interface Props {
   question: string;
@@ -92,9 +93,13 @@ const FAQsRiders = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-800 mb-8">
-          FAQs for Riders
-        </h2>
+        <Heading2
+          text="FAQs for Riders"
+          color="dark"
+          align="center"
+          className="mb-8"
+        />
+
         <p className="text-lg mb-8">
           Everything you need to know about AdsOnWheels Bicycle Ads Placement.
         </p>

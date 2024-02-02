@@ -5,6 +5,7 @@ import Image from "next/image";
 import DynamicDisplayRoutes from "../../public/images/brand/ad-features/dynamic-display-routes.png";
 import WebTrafficInsights from "../../public/images/brand/ad-features/web-traffic-insights.png";
 import RealTimeAdAnalytics from "../../public/images/brand/ad-features/real-time-ad-analytics.png";
+import Heading2 from "../layout/Heading2";
 
 const FeatureAddOns = () => {
   const features = [
@@ -37,9 +38,12 @@ const FeatureAddOns = () => {
   return (
     <section className="bg-gray-200 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl lg:text-6xl text-center font-extrabold mb-12 text-gray-800 text-gradient bg-clip-text">
-          Bicycle Ad Features
-        </h2>
+        <Heading2
+          text="Bicycle Ad Features"
+          color="dark"
+          align="center"
+          className="mb-12"
+        />
 
         {/* Flex container for the feature cards */}
         <div className="flex justify-center items-center gap-10 flex-wrap md:flex-nowrap">

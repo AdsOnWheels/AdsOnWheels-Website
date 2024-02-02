@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 
 import Image1 from "../../public/images/brand/dummy_600x400.png";
+import Heading2 from "../layout/Heading2";
 
 // type Testimonial = {
 //     name: string;
@@ -104,9 +105,13 @@ const RiderTestimonials = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-gray-800 to-indigo-900 text-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-5xl lg:text-6xl font-extrabold text-white mb-12">
-          Testimonials
-        </h2>
+        <Heading2
+          text="Testimonials"
+          color="white"
+          align="center"
+          className="mb-12"
+        />
+
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div key={index} className="px-4">

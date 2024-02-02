@@ -6,6 +6,7 @@ import {
   faBullhorn,
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
+import Heading2 from "../layout/Heading2";
 
 const bikeAdsData = [
   {
@@ -42,9 +43,12 @@ const BikeAds101 = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-purple-600 via-indigo-500 to-[#ff4f00]">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-5xl lg:text-6xl font-extrabold text-white mb-16">
-          Bike Ads 101: Unlock the Potential
-        </h2>
+        <Heading2
+          text="Bike Ads 101: Unlock the Potential"
+          color="white"
+          align="center"
+          className="mb-16"
+        />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Cards Wrapper */}

@@ -5,7 +5,7 @@ import {
   faHandsHelping,
   faUserFriends,
 } from "@fortawesome/free-solid-svg-icons";
-import Title from "@/app/layout/Title";
+import Heading2 from "@/app/layout/Heading2";
 
 const RiderBenefits = () => {
   const benefits = [
@@ -36,10 +36,13 @@ const RiderBenefits = () => {
     <section className="bg-white py-16 text-gray-800">
       <div className="container mx-auto px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Title
-            title="Why Ride with Us?"
-            className="text-center text-5xl lg:text-6xl font-extrabold text-gray-800 mb-8"
+          <Heading2
+            text="Why Ride with Us?"
+            color="dark"
+            align="center"
+            className="mb-8"
           />
+
           <p className="text-xl mb-8">
             Discover the unique benefits of our innovative ad placement program,
             designed for driver flexibility and success.

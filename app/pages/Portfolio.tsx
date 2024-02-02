@@ -11,6 +11,7 @@ import BicycleFrame2 from "../../public/images/rider/advertising-on bicycle-fram
 import BicycleFrame3 from "../../public/images/rider/advertising-on bicycle-frame.png";
 import WheelRim3 from "../../public/images/rider/advertising-on-bicycle-wheel-rim-cover-III.png";
 import CargoBicycle from "../../public/images/rider/advertising-on-cargo-bicycle.png";
+import Heading2 from "../layout/Heading2";
 
 interface Props {
   image: StaticImageData;
@@ -93,9 +94,13 @@ const Portfolio = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-gray-100 to-gray-200">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-5xl lg:text-6xl font-extrabold text-gray-800 mb-16">
-          Our Ad Portfolio
-        </h2>
+        <Heading2
+          text="Our Ad Portfolio"
+          color="dark"
+          align="center"
+          className="mb-16"
+        />
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {adPortfolio.map((item, index) => (
             <Link key={index} href={item.learnMoreLink}>

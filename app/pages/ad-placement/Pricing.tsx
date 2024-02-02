@@ -1,3 +1,4 @@
+import Heading2 from "@/app/layout/Heading2";
 import Button from "../../components/Button";
 import React from "react";
 
@@ -11,9 +12,13 @@ const Pricing = () => {
   return (
     <section className="bg-gradient-to-br from-gray-800 to-gray-700 py-12">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl lg:text-6xl text-center font-extrabold mb-8 text-white text-gradient bg-clip-text">
-          Our Pricing
-        </h2>
+        <Heading2
+          text="Our Pricing"
+          color="white"
+          align="center"
+          className="mb-8"
+        />
+
         <p className="text-lg text-center text-gray-200 mb-8">
           Discover the perfect pricing plan for your needs. Click the button
           below to get detailed pricing information.

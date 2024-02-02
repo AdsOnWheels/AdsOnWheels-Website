@@ -8,6 +8,7 @@ import {
   faMoneyBillWave,
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
+import Heading2 from "@/app/layout/Heading2";
 
 interface StepType {
   id: number;
@@ -63,9 +64,8 @@ const Step = ({ icon, color, title, description, id }: StepType) => (
 const HowItWorksRiders = () => (
   <section className="py-16 bg-gradient-to-br from-purple-200 via-indigo-100 to-indigo-400">
     <div className="container mx-auto px-6 text-center">
-      <h2 className="text-5xl lg:text-6xl font-extrabold mb-16 text-gray-800">
-        How It Works
-      </h2>
+      <Heading2 text="How It Works" color="dark" className="mb-16" />
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
         {stepsData.map((step) => (
           <Step key={step.id} {...step} />

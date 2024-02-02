@@ -1,6 +1,6 @@
 import React from "react";
 
-const AdPlacementGuidelines = () => {
+const AdCareGuidelines = () => {
   return (
     <section className="text-center">
       <h2 className="text-3xl font-semibold mb-4">Ad Placement Guidelines</h2>
@@ -13,4 +13,4 @@ const AdPlacementGuidelines = () => {
   );
 };
 
-export default AdPlacementGuidelines;
+export default AdCareGuidelines;

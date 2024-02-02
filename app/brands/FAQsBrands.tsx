@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import Heading2 from "../layout/Heading2";
 
 interface Props {
   question: string;
@@ -97,9 +98,12 @@ const FAQsBrands = () => {
   return (
     <section className="py-12 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-5xl lg:text-6xl text-center font-extrabold mb-8 text-gray-800 text-gradient bg-clip-text">
-          FAQs for Brands
-        </h2>
+        <Heading2
+          text="FAQs for Brands"
+          color="dark"
+          align="center"
+          className="mb-8"
+        />
         <p className="text-lg mb-8">
           {`Explore how to boost your brand's presence with AdsOnWheels Bicycle Ads.`}
         </p>

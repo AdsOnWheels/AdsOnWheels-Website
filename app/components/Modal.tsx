@@ -1,40 +1,39 @@
+import React, { useEffect, useRef } from "react";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useRef, useState } from "react";
+
 import IconButton from "./IconButton";
 
 /**
  * ModalProps defines the props for the Modal component.
  */
 interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  title?: string;
+  text?: string;
   children?: React.ReactNode;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 /**
  * Modal is a component that displays content in a modal dialog.
- *
- * @param isOpen - Indicates whether the modal is open.
- * @param onClose - Callback to close the modal.
- * @param children - Content to be displayed in the modal.
  */
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({
+  title,
+  text,
+  children,
+  isOpen,
+  onClose,
+}) => {
   const modalRef = useRef<HTMLDivElement>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
     const updateModalSize = () => {
       if (modalRef.current) {
         const contentElement = modalRef.current.querySelector(".modal-content");
-
         if (contentElement) {
           const contentWidth = contentElement.clientWidth;
           const contentHeight = contentElement.clientHeight;
-
           modalRef.current.style.width = `${contentWidth}px`;
           modalRef.current.style.height = `${contentHeight}px`;
         }
@@ -56,19 +55,54 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-60 md:overflow-y-auto scrollbar-hide">
-      <div
-        ref={modalRef}
-        className="modal-container rounded-lg mx-auto my-10 transform transition-all duration-300 ease-in-out"
-      >
-        <div className="modal-content">
-          {children}
-          <IconButton
-            icon={<FontAwesomeIcon icon={faCircleXmark} size="2x" />}
-            color="dark"
-            className="modal-close w-7 h-7 absolute top-4 right-4"
-            onClick={onClose}
-          />
+    <div className="fixed inset-0 z-50 overflow-y-auto">
+      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div
+          className="fixed inset-0 transition-opacity"
+          aria-hidden="true"
+          onClick={onClose}
+        >
+          <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+
+        {/* This element is to trick the browser into centering the modal contents. */}
+        <span
+          className="hidden sm:inline-block sm:align-middle sm:h-screen"
+          aria-hidden="true"
+        >
+          &#8203;
+        </span>
+
+        <div
+          ref={modalRef}
+          className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-headline"
+        >
+          <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div className="sm:flex sm:items-start">
+              <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3
+                  className="text-lg leading-6 font-medium text-gray-900"
+                  id="modal-headline"
+                >
+                  {title}
+                </h3>
+                <div className="mt-2">
+                  <p className="text-sm text-gray-500">{text}</p>
+                </div>
+              </div>
+            </div>
+            <div className="modal-content">{children}</div>
+          </div>
+          <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+            <IconButton
+              icon={<FontAwesomeIcon icon={faCircleXmark} size="2x" />}
+              onClick={onClose}
+              className="modal-close mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+            />
+          </div>
         </div>
       </div>
     </div>
