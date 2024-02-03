@@ -42,7 +42,7 @@ const bikeAdsData = [
 const BikeAds101 = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-purple-600 via-indigo-500 to-[#ff4f00]">
-      <div className="container mx-auto px-4">
+      <div id="bike-ads" className="container mx-auto px-4">
         <Heading2
           text="Bike Ads 101: Unlock the Potential"
           color="white"

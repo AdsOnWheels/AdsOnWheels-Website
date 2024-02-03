@@ -89,7 +89,10 @@ const AdPlacementOptions = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-600 via-indigo-500 to-[#ff4f00]">
+    <section
+      id="ad-options"
+      className="py-16 bg-gradient-to-br from-purple-600 via-indigo-500 to-[#ff4f00]"
+    >
       <div className="max-w-6xl mx-auto">
         <Heading2
           text="Ad Placement Options"

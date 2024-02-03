@@ -26,7 +26,10 @@ const CompensationAndRewards = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-indigo-200 to-indigo-100 text-gray-800">
+    <section
+      id="compensation-rewards"
+      className="py-16 bg-gradient-to-r from-indigo-200 to-indigo-100 text-gray-800"
+    >
       <div className="text-center max-w-3xl mx-auto mb-16">
         <Heading2
           text="Compensation and Rewards"

@@ -13,6 +13,7 @@ import FAQsRiders from "./FAQsRiders";
 import RiderTestimonials from "./RiderTestimonials";
 import CallToAction2 from "../components/CallToAction2";
 import ScrollToTop from "../layout/ScrollToTop";
+import ScrollHint from "../components/ScrollHint";
 
 const Rider = () => {
   return (
@@ -26,6 +27,18 @@ const Rider = () => {
       <RiderTestimonials />
       <WaitingList />
       <FAQsRiders />
+      <ScrollHint
+        sections={[
+          "hero-section",
+          "rider-benefits",
+          "how-it-works",
+          "call-to-action",
+          "compensation-rewards",
+          "testimonials",
+          "waiting-list",
+          "faqs-riders",
+        ]}
+      />
       <ScrollToTop />
       <Footer2 />
     </section>

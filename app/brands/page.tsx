@@ -14,6 +14,7 @@ import FeatureAddOns from "./FeatureAddOns";
 import BrandSignUp from "../pages/sign-up/Brands";
 import FAQsBrands from "./FAQsBrands";
 import ScrollToTop from "../layout/ScrollToTop";
+import ScrollHint from "../components/ScrollHint";
 
 const Brand = () => {
   return (
@@ -28,6 +29,19 @@ const Brand = () => {
       <USP />
       <BrandSignUp />
       <FAQsBrands />
+      <ScrollHint
+        sections={[
+          "hero-section",
+          "about",
+          "ad-options",
+          "how-it-works",
+          "pricing",
+          "add-ons",
+          "usp",
+          "brand-signUp",
+          "faqs-brands",
+        ]}
+      />
       <ScrollToTop />
       <Footer2 />
     </section>

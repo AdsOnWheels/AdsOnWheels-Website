@@ -62,7 +62,10 @@ const Step = ({ icon, color, title, description, id }: StepType) => (
 );
 
 const HowItWorksRiders = () => (
-  <section className="py-16 bg-gradient-to-br from-purple-200 via-indigo-100 to-indigo-400">
+  <section
+    id="how-it-works"
+    className="py-16 bg-gradient-to-br from-purple-200 via-indigo-100 to-indigo-400"
+  >
     <div className="container mx-auto px-6 text-center">
       <Heading2 text="How It Works" color="dark" className="mb-16" />
 

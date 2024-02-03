@@ -5,7 +5,7 @@ import Button from "../components/Button";
 
 const WhoAreWe = () => {
   return (
-    <section className="bg-gray-100 py-16">
+    <section id="about" className="bg-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Heading2
           text="Who Are We?"

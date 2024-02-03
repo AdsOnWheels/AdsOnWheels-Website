@@ -16,7 +16,10 @@ const CallToAction2 = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 text-white py-16 text-center">
+    <section
+      id="call-to-action"
+      className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 text-white py-16 text-center"
+    >
       <Heading1
         text="Ready to Monetize Your Ride?"
         className="text-white text-5xl font-extrabold"

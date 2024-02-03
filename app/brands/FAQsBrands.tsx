@@ -96,7 +96,10 @@ const FAQsBrands = () => {
   ];
 
   return (
-    <section className="py-12 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
+    <section
+      id="faqs-brands"
+      className="py-12 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800"
+    >
       <div className="text-center max-w-2xl mx-auto">
         <Heading2
           text="FAQs for Brands"

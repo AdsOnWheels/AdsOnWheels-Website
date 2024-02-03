@@ -11,7 +11,10 @@ const BrandSignUp = () => {
   };
 
   return (
-    <section className="container mx-auto py-16 px-4 md:px-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100">
+    <section
+      id="brand-signUp"
+      className="container mx-auto py-16 px-4 md:px-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100"
+    >
       <div className="flex flex-wrap justify-center">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-indigo-700">
           <div className="p-6 md:p-10 text-center">

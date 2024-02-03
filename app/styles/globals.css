@@ -32,3 +32,55 @@ body {
     display: none; /* Safari and Chrome */
   }
 }
+
+.scroll-hint-button {
+  position: fixed; /* Fixed position relative to the viewport */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center align the button */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+@keyframes flow {
+  0%,
+  100% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(10%);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(90%);
+    opacity: 1;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  animation: flow 3s linear infinite;
+}
+
+.arrow-2 {
+  animation-delay: 1.5s; /* Half the duration of the animation */
+}
+
+/* Adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .scroll-hint-button {
+    bottom: 15px;
+    right: 15px;
+    width: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-hint-button {
+    bottom: 10px;
+    right: 10px;
+    width: 15%;
+  }
+}

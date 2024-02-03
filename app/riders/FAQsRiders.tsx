@@ -91,7 +91,10 @@ const FAQsRiders = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
+    <section
+      id="faqs-riders"
+      className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800"
+    >
       <div className="text-center max-w-2xl mx-auto">
         <Heading2
           text="FAQs for Riders"

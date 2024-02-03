@@ -92,7 +92,10 @@ const adPortfolio = [
 
 const Portfolio = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-100 to-gray-200">
+    <section
+      id="portfolio"
+      className="py-16 bg-gradient-to-br from-gray-100 to-gray-200"
+    >
       <div className="container mx-auto px-4">
         <Heading2
           text="Our Ad Portfolio"

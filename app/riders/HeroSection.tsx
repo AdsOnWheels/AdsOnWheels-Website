@@ -9,7 +9,10 @@ import BackgroundImage from "../../public/images/rider/bike-ad-placement.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-16 min-h-screen-90 m-0 overflow-hidden">
+    <section
+      id="hero-section"
+      className="relative pt-16 min-h-screen-90 m-0 overflow-hidden"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -34,16 +37,6 @@ const HeroSection = () => {
           </p>
 
           <Button text="Become a Rider" color="dutch" className=" my-10" />
-        </div>
-
-        {/* Triple arrow down animation */}
-        <div className="absolute w-12 h-12 left-[38rem] transform -translate-x-1/2 animate-bounce">
-          <FontAwesomeIcon
-            size="4x"
-            icon={faAnglesDown}
-            className="text-white"
-            style={{ width: "100%", height: "100%" }}
-          />
         </div>
       </div>
     </section>

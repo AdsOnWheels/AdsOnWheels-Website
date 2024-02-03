@@ -18,7 +18,7 @@ const CallToAction = () => {
   return (
     <section className="bg-white py-20">
       <div
-        id="go-down-target"
+        id="call-to-action"
         className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 md:px-12"
       >
         {/* For Companies */}

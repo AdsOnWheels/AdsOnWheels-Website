@@ -36,7 +36,7 @@ const FeatureAddOns = () => {
   ];
 
   return (
-    <section className="bg-gray-200 py-16">
+    <section id="add-ons" className="bg-gray-200 py-16">
       <div className="container mx-auto px-4">
         <Heading2
           text="Bicycle Ad Features"

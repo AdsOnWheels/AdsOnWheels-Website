@@ -41,7 +41,7 @@ const USP = () => {
   };
 
   return (
-    <section className="relative py-16">
+    <section id="usp" className="relative py-16">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-blue-300 mb-12">

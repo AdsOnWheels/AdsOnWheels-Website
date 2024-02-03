@@ -31,7 +31,7 @@ const BrandBenefits = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section id="brand-benefits" className="bg-gray-100 py-16">
       <div className="container mx-auto px-8">
         <Heading2
           text="Why Bike Advertising?"

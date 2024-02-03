@@ -11,7 +11,10 @@ const RiderSignUp = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 py-16">
+    <section
+      id="rider-signUp"
+      className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 py-16"
+    >
       <Heading2
         id="join-now"
         text="BECOME A RIDER"

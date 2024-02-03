@@ -3,13 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 
 import Heading1 from "../layout/Heading1";
 import Heading3 from "../layout/Heading3";
 import Button from "../components/Button";
 import BackgroundImage from "../../public/Bike-in-front-of-canals.png";
+import ScrollHint from "../components/ScrollHint";
 
 const HomePage = () => {
   const router = useRouter();
@@ -18,18 +17,8 @@ const HomePage = () => {
     router.push(path);
   };
 
-  const scrollToTarget = (targetId: string) => {
-    const target = document.getElementById(targetId);
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
-    <section className="relative min-h-screen-90 overflow-hidden">
+    <section id="homepage" className="relative min-h-screen-90 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -70,19 +59,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {/* Triple arrow down animation */}
-      <a
-        onClick={() => scrollToTarget("go-down-target")}
-        className="cursor-pointer"
-      >
-        <div className="w-8 h-6 md:w-12 md:h-10 lg:w-10 lg:h-8 2xl:w-20 2xl:h-18 text-white relative top-2 sm:top-3 mx-auto">
-          <FontAwesomeIcon
-            size="3x"
-            icon={faAnglesDown}
-            className="animate-bounce"
-          />
-        </div>
-      </a>
+      {/* Next section scroll hint */}
+      {/* <ScrollHint nextSectionId="call-to-action" /> */}
     </section>
   );
 };

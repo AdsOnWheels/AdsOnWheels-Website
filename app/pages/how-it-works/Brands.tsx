@@ -52,7 +52,7 @@ const HowItWorksBrands = () => {
   ];
 
   return (
-    <section className="text-center py-20 bg-white">
+    <section id="how-it-works" className="text-center py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <Heading2
           text="How It Works"

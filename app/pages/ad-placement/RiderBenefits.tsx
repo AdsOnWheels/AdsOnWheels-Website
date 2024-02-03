@@ -33,7 +33,7 @@ const RiderBenefits = () => {
   ];
 
   return (
-    <section className="bg-white py-16 text-gray-800">
+    <section id="rider-benefits" className="bg-white py-16 text-gray-800">
       <div className="container mx-auto px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Heading2

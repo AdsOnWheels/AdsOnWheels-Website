@@ -103,7 +103,10 @@ const RiderTestimonials = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-800 to-indigo-900 text-white">
+    <section
+      id="testimonials"
+      className="py-16 bg-gradient-to-br from-gray-800 to-indigo-900 text-white"
+    >
       <div className="container mx-auto px-4">
         <Heading2
           text="Testimonials"
