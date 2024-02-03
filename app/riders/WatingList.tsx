@@ -20,11 +20,11 @@ const WaitingList = () => {
       >
         <div className="text-center md:text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-800 mb-4">
-            Get Early Access to AdsOnWheels
+            Get Early Access to OutFront
           </h1>
           <p className="text-lg text-gray-600">
             Join our waiting list and be the first to experience the future of
-            mobile advertising with AdsOnWheels.
+            mobile advertising with OutFront.
           </p>
           <p className="text-sm mt-4 text-gray-700">
             Be among the first to revolutionize your ride!

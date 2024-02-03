@@ -9,7 +9,7 @@ const Footer2 = () => {
         <div className="w-full md:w-1/4 mb-6 md:mb-0">
           <h4 className="text-xl font-bold mb-4">About Us</h4>
           <p className="text-sm">
-            Discover how AdsOnWheels is redefining advertising with purpose and
+            Discover how OutFront is redefining advertising with purpose and
             innovation.
           </p>
         </div>
@@ -50,7 +50,7 @@ const Footer2 = () => {
           <h4 className="text-xl font-bold mb-4">Contact Us</h4>
           <p className="text-sm mb-2">1234 Ad Avenue</p>
           <p className="text-sm mb-2">Cityville, State 12345</p>
-          <p className="text-sm">info@adsonwheels.com</p>
+          <p className="text-sm">info@outfront.com</p>
         </div>
 
         {/* Social Media */}
@@ -85,7 +85,7 @@ const Footer2 = () => {
       {/* Copyright */}
       <div className="max-w-6xl mx-auto text-center">
         <p className="text-sm text-gray-500">
-          &copy; 2024 AdsOnWheels. All rights reserved.
+          &copy; 2024 OutFront. All rights reserved.
         </p>
       </div>
     </footer>

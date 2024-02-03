@@ -23,31 +23,31 @@ const RiderTestimonials = () => {
       name: "Alex Smith",
       image: Image1,
       quote:
-        "Joining AdsOnWheels transformed my daily rides into a profitable journey. Best decision ever!",
+        "Joining OutFront transformed my daily rides into a profitable journey. Best decision ever!",
     },
     {
       name: "Mia Johnson",
       image: Image1,
       quote:
-        "I love the flexibility AdsOnWheels offers. It's a fun way to earn extra cash!",
+        "I love the flexibility OutFront offers. It's a fun way to earn extra cash!",
     },
     {
       name: "Carlos Rodriguez",
       image: Image1,
       quote:
-        "AdsOnWheels helped me connect with my community while advertising. It's a win-win!",
+        "OutFront helped me connect with my community while advertising. It's a win-win!",
     },
     {
       name: "Emily Chen",
       image: Image1,
       quote:
-        "The extra income from AdsOnWheels has been fantastic for supplementing my full-time job!",
+        "The extra income from OutFront has been fantastic for supplementing my full-time job!",
     },
     {
       name: "David Kim",
       image: Image1,
       quote:
-        "As a student, AdsOnWheels has been a great way to earn while exploring the city.",
+        "As a student, OutFront has been a great way to earn while exploring the city.",
     },
   ];
 

@@ -104,7 +104,7 @@ const FAQsRiders = () => {
         />
 
         <p className="text-lg mb-8">
-          Everything you need to know about AdsOnWheels Bicycle Ads Placement.
+          Everything you need to know about OutFront Bicycle Ads Placement.
         </p>
       </div>
 

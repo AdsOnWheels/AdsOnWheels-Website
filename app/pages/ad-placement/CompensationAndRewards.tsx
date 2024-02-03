@@ -39,7 +39,7 @@ const CompensationAndRewards = () => {
 
         <p className="text-xl mb-8">
           Discover the competitive compensation structure and exclusive rewards
-          that set AdsOnWheels apart.
+          that set OutFront apart.
         </p>
       </div>
 

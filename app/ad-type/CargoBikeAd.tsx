@@ -92,7 +92,7 @@ const CargoBikeAd = () => {
                 <p className="text-gray-600 italic">
                   `
                   {
-                    "Cargo bicycle ads have significantly boosted our local visibility. Highly recommend AdsOnWheels!"
+                    "Cargo bicycle ads have significantly boosted our local visibility. Highly recommend OutFront!"
                   }
                   `
                 </p>

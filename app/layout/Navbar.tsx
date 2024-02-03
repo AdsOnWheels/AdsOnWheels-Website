@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
         <AWLink
           href="/"
-          text="AdsOnWheels"
+          text="OutFront"
           className="text-xl md:text-2xl lg:text-3xl font-bold"
         />
       </div>

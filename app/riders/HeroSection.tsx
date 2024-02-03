@@ -32,8 +32,8 @@ const HeroSection = () => {
             className="mb-8"
           />
           <p className="text-lg md:text-xl text-white leading-7 max-w-3xl mx-auto">
-            Join AdsOnWheels and turn your daily rides into earnings with
-            bicycle ads. Be part of our innovative outdoor advertising solution.
+            Join OutFront and turn your daily rides into earnings with bicycle
+            ads. Be part of our innovative outdoor advertising solution.
           </p>
 
           <Button text="Become a Rider" color="dutch" className=" my-10" />

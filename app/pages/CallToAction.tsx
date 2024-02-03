@@ -25,11 +25,11 @@ const CallToAction = () => {
         <div className="p-8">
           <div className="text-center text-black">
             <p className="text-lg mb-8">
-              Discover the future of advertising with AdsOnWheels, the
-              pioneering platform that transforms everyday bicycle rides into
-              powerful channels for brands to effectively communicate their
-              messages. We specialize in strategic ad placements on a variety of
-              bicycles, catering to businesses across industries.
+              Discover the future of advertising with OutFront, the pioneering
+              platform that transforms everyday bicycle rides into powerful
+              channels for brands to effectively communicate their messages. We
+              specialize in strategic ad placements on a variety of bicycles,
+              catering to businesses across industries.
             </p>
             <Button
               text="Learn More"
@@ -59,8 +59,8 @@ const CallToAction = () => {
           <div className="text-center text-black">
             <p className="text-lg mb-8">
               Turn your daily bicycle rides into a source of passive income by
-              becoming a bicycle advertiser with AdsOnWheels. Join our community
-              of drivers and start earning while you ride.
+              becoming a bicycle advertiser with OutFront. Join our community of
+              drivers and start earning while you ride.
             </p>
             <Button
               text="Get Started"

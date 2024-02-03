@@ -108,7 +108,7 @@ const FAQsBrands = () => {
           className="mb-8"
         />
         <p className="text-lg mb-8">
-          {`Explore how to boost your brand's presence with AdsOnWheels Bicycle Ads.`}
+          {`Explore how to boost your brand's presence with OutFront Bicycle Ads.`}
         </p>
       </div>
 

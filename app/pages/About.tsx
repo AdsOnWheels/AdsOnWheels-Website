@@ -5,7 +5,7 @@ import Heading2 from "../layout/Heading2";
 const About = () => {
   return (
     <section className="text-center">
-      <Heading1 text="About AdsOnWheels" />
+      <Heading1 text="About OutFront" />
 
       <div className="max-w-3xl mx-auto">
         <div className="mb-10">
@@ -15,7 +15,7 @@ const About = () => {
             className="text-2xl font-semibold mb-3"
           />
           <p className="text-gray-700">
-            At AdsOnWheels, our mission is to revolutionize the advertising
+            At OutFront, our mission is to revolutionize the advertising
             landscape by championing sustainable transportation and fostering
             healthy lifestyles. We aspire to create an ecosystem where
             businesses connect with individuals who share a passion for
@@ -35,10 +35,10 @@ const About = () => {
           <p className="text-gray-700">
             Our vision extends beyond traditional advertising boundaries,
             envisioning a world where every ride becomes an opportunity for
-            meaningful connections. AdsOnWheels strives to build a global
-            community of conscious consumers and responsible businesses, united
-            in the pursuit of innovative and memorable brand experiences. By
-            embracing innovative ad placements, we aim to create a platform that
+            meaningful connections. OutFront strives to build a global community
+            of conscious consumers and responsible businesses, united in the
+            pursuit of innovative and memorable brand experiences. By embracing
+            innovative ad placements, we aim to create a platform that
             transcends modes of transportation, fostering connections that go
             beyond the ordinary confines of advertising.
           </p>
@@ -53,8 +53,8 @@ const About = () => {
           <ol className="list-decimal pl-6 text-gray-700">
             <li className="mb-4">
               <strong>Innovation:</strong> Innovation is at the heart of
-              AdsOnWheels. We continuously seek inventive ways to make
-              advertising impactful and align with contemporary values.
+              OutFront. We continuously seek inventive ways to make advertising
+              impactful and align with contemporary values.
             </li>
             <li className="mb-4">
               <strong>Community Empowerment:</strong> We believe in empowering
@@ -63,9 +63,9 @@ const About = () => {
               building.
             </li>
             <li className="mb-4">
-              <strong>Conscious Collaboration:</strong> AdsOnWheels is built on
-              the principle of conscious collaboration. We selectively partner
-              with businesses that share our commitment to delivering unique,
+              <strong>Conscious Collaboration:</strong> OutFront is built on the
+              principle of conscious collaboration. We selectively partner with
+              businesses that share our commitment to delivering unique,
               memorable brand experiences.
             </li>
             <li>
