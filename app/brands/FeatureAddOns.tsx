@@ -46,10 +46,10 @@ const FeatureAddOns = () => {
         />
 
         {/* Flex container for the feature cards */}
-        <div className="flex justify-center items-center gap-10 flex-wrap md:flex-nowrap">
+        <div className="flex justify-center items-center gap-10 flex-wrap lg:flex-nowrap">
           {features.map((feature) => (
             <div key={feature.id} className="flex-1 min-w-[280px] max-w-xs">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-xl">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
                 <div className="relative h-52">
                   <Image
                     src={feature.imageUrl}

@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-12 pb-24 px-4 md:px-8 lg:px-16">
+    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 min-h-screen pt-12 pb-24 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
         <div className="p-8 md:p-12 lg:p-16">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-8">

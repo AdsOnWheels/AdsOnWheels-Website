@@ -108,7 +108,7 @@ const AdPlacementOptions = () => {
                 <FontAwesomeIcon icon={faChevronLeft} className="text-3xl" />
               }
               color="indigo"
-              className="absolute -left-16 z-10 ml-4 lg:ml-8"
+              className="absolute -left-16 z-10 ml-4 lg:ml-8 hidden lg:block"
               onClick={() => scrollCarousel("left")}
             />
           )}
@@ -129,7 +129,7 @@ const AdPlacementOptions = () => {
                 <FontAwesomeIcon icon={faChevronRight} className="text-3xl" />
               }
               color="indigo"
-              className="absolute -right-16 z-10 mr-4 lg:mr-8"
+              className="absolute -right-16 z-10 mr-4 lg:mr-8 hidden lg:block"
               onClick={() => scrollCarousel("right")}
             />
           )}

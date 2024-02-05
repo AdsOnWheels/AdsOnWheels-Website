@@ -1,12 +1,13 @@
 import React from "react";
-import Heading1 from "../layout/Heading1";
-import Heading2 from "../layout/Heading2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBicycle,
   faHandshake,
   faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
+
+import Heading1 from "../layout/Heading1";
+import Heading2 from "../layout/Heading2";
 
 const About = () => {
   return (

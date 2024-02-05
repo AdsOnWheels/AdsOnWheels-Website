@@ -11,7 +11,7 @@ const Step = ({ number, title, description }: Props) => {
   return (
     <div className="flex flex-col items-center justify-center min-w-md group">
       <div className="p-6 lg:p-8 relative h-full flex flex-col">
-        <div className="absolute top-44 left-1/2 flex items-center justify-center text-8xl md:text-5xl lg:text-[25rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 transform -translate-x-1/2 -translate-y-1/2 opacity-20 z-10 mb-6">
+        <div className="absolute top-44 left-1/2 flex items-center justify-center text-[14rem] md:text-[18rem] lg:text-[25rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 transform -translate-x-1/2 -translate-y-1/2 opacity-20 z-10 mb-6">
           {number}
         </div>
         <div className="relative top-6 transform transition duration-300 hover:scale-105 z-20 my-8">
