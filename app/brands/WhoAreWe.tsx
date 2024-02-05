@@ -2,6 +2,7 @@ import React from "react";
 
 import Heading2 from "../layout/Heading2";
 import Button from "../components/Button";
+import Link from "next/link";
 
 const WhoAreWe = () => {
   return (
@@ -25,7 +26,9 @@ const WhoAreWe = () => {
             }
           </p>
           <div className="pt-6">
-            <Button text="Learn More About Us" color="dutch" />
+            <Link href="/about">
+              <Button text="Learn More About Us" color="dutch" />
+            </Link>
           </div>
         </div>
       </div>

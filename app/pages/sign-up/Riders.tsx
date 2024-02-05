@@ -16,7 +16,6 @@ const RiderSignUp = () => {
       className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 py-16"
     >
       <Heading2
-        id="join-now"
         text="BECOME A RIDER"
         color="light"
         align="center"
@@ -43,7 +42,9 @@ const RiderSignUp = () => {
         <div className="md:flex-1 bg-white p-8 mr-8 rounded-3xl">
           <Form
             formType="waitingList"
-            formClass="mx-auto"
+            maxWidth="max-w-lg"
+            margin="mx-auto"
+            padding="p-6"
             onSubmit={handleFormSubmit}
           />
         </div>

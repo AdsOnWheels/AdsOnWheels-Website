@@ -49,7 +49,7 @@ const BrandBenefits = () => {
                 icon={benefit.icon}
                 className="text-gray-600 text-6xl mb-5"
               />
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 text-center mb-4">
                 {benefit.title}
               </h3>
               <p className="text-lg text-gray-700 text-center">

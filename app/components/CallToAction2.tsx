@@ -31,7 +31,7 @@ const CallToAction2 = () => {
         text="Join Waiting List"
         color="dutch"
         className="font-bold"
-        onClick={() => scrollToTarget("join-now")}
+        onClick={() => scrollToTarget("rider-signUp")}
       />
     </section>
   );

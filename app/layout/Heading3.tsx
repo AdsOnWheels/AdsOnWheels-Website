@@ -1,7 +1,8 @@
 import React from "react";
 
 interface Props {
-  text: string;
+  id?: string;
+  text: string | undefined;
   size?:
     | "sm"
     | "md"
@@ -68,6 +69,7 @@ const textAlignClasses = {
 const responsiveClasses = "md:text-lg lg:text-xl 2xl:text-3xl";
 
 const Heading3 = ({
+  id,
   text,
   size = "md",
   fontWeight = "semibold",
@@ -84,7 +86,11 @@ const Heading3 = ({
     className || ""
   }`;
 
-  return <h3 className={combinedClasses}>{text}</h3>;
+  return (
+    <h3 id={id} className={combinedClasses}>
+      {text}
+    </h3>
+  );
 };
 
 export default Heading3;

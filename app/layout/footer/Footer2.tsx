@@ -34,13 +34,13 @@ const Footer2 = () => {
               <Link href="/legal">Legal</Link>
             </li>
             <li className="mb-2">
-              <Link href="/terms">Terms of use</Link>
+              <Link href="/legal/terms-of-use">Terms of use</Link>
             </li>
             <li className="mb-2">
-              <Link href="/privacy">Privacy policy</Link>
+              <Link href="/legal/privacy-policy">Privacy policy</Link>
             </li>
             <li className="mb-2">
-              <Link href="/cookie">Cookie policy</Link>
+              <Link href="/legal/cookie-policy">Cookie policy</Link>
             </li>
           </ul>
         </div>
@@ -50,7 +50,7 @@ const Footer2 = () => {
           <h4 className="text-xl font-bold mb-4">Contact Us</h4>
           <p className="text-sm mb-2">1234 Ad Avenue</p>
           <p className="text-sm mb-2">Cityville, State 12345</p>
-          <p className="text-sm">info@outfront.com</p>
+          <p className="text-sm">info@outfront.nl</p>
         </div>
 
         {/* Social Media */}

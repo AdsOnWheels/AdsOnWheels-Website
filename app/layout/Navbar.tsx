@@ -12,14 +12,20 @@ const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const menuItems = [
     { href: "/", text: "Home" },
     { href: "/about", text: "About" },
     { href: "/brands", text: "For Brands" },
     { href: "/riders", text: "For Riders" },
-    { href: "/contact", text: "Contact" },
   ];
 
   return (
@@ -83,17 +89,18 @@ const Navbar = () => {
           text="Get In Touch"
           color="dutch"
           className="md:mr-4"
-          onClick={toggleModal}
+          onClick={openModal}
         />
 
-        {isModalOpen && (
-          <Modal
-            text="Fill out the form below to reach out to us and we will get back to
+        <Modal
+          title="Get In Touch"
+          text="Fill out the form below to reach out to us and we will get back to
           you as soon as possible."
-          >
-            <ContactPage />
-          </Modal>
-        )}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        >
+          <ContactPage maxWidth="max-w-7xl" />
+        </Modal>
       </div>
     </div>
   );

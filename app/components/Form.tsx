@@ -23,10 +23,12 @@ interface Step {
 interface Props {
   onSubmit: (formData: FormData) => void;
   formType: "rider" | "contact" | "brand" | "waitingList";
-  formClass?: string;
+  maxWidth?: string;
+  margin?: string;
+  padding?: string;
 }
 
-const Form = ({ onSubmit, formType, formClass }: Props) => {
+const Form = ({ onSubmit, formType, maxWidth, margin, padding }: Props) => {
   const [isConsentGiven, setIsConsentGiven] = useState(false);
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [formData, setFormData] = useState<FormData>({
@@ -621,7 +623,9 @@ const Form = ({ onSubmit, formType, formClass }: Props) => {
   //  rounded-3xl shadow-md
 
   return (
-    <div className={`flex flex-col justify-center max-w-lg ${formClass} p-6`}>
+    <div
+      className={`flex flex-col justify-center ${maxWidth} ${margin} ${padding}`}
+    >
       {/* Display steps only if form type is not 'contact' */}
       {formType !== "contact" && (
         <ul className="steps steps-vertical lg:steps-horizontal mb-6">

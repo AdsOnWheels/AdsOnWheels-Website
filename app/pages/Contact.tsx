@@ -3,16 +3,29 @@ import React from "react";
 import Form from "../components/Form";
 import { FormData } from "@/types/types";
 
-const ContactPage = () => {
+interface Props {
+  maxWidth?: string;
+  margin?: string;
+  padding?: string;
+}
+
+const ContactPage = ({ maxWidth, margin, padding }: Props) => {
   const handleFormSubmit = (formData: FormData) => {
     // Handle the form data submission logic here
     console.log("Form submitted:", formData);
   };
 
   return (
-    <div className="bg-white container max-w-3xl mt-16 mx-auto p-8 rounded-3xl">
+    <div
+      className={`bg-white container ${maxWidth} ${margin} ${padding} mx-auto rounded-3xl`}
+    >
       {/* Contact Form */}
-      <Form formType="contact" onSubmit={handleFormSubmit} />
+      <Form
+        formType="contact"
+        maxWidth="min-w-4xl"
+        padding="p-6"
+        onSubmit={handleFormSubmit}
+      />
     </div>
   );
 };

@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 
 import Heading1 from "../layout/Heading1";
 import BackgroundImage from "../../public/Bike-in-front-of-canals.png";

@@ -31,7 +31,9 @@ const BrandSignUp = () => {
             </p>
             <Form
               formType="brand"
-              formClass="mx-auto"
+              maxWidth="max-w-lg"
+              margin="mx-auto"
+              padding="p-6"
               onSubmit={handleFormSubmit}
             />
           </div>
