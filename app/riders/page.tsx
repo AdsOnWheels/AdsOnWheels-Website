@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../layout/header/Header";
-import Footer2 from "../layout/footer/Footer2";
 import HeroSection from "./HeroSection";
 import RiderBenefits from "../pages/ad-placement/RiderBenefits";
 import HowItWorksRiders from "../pages/how-it-works/Riders";
@@ -15,8 +13,7 @@ import ScrollHint from "../components/ScrollHint";
 
 const Rider = () => {
   return (
-    <section className="bg-gray-100 min-h-screen font-sans">
-      <Header />
+    <>
       <HeroSection />
       <RiderBenefits />
       <HowItWorksRiders />
@@ -38,8 +35,7 @@ const Rider = () => {
         ]}
       />
       <ScrollToTop />
-      <Footer2 />
-    </section>
+    </>
   );
 };
 

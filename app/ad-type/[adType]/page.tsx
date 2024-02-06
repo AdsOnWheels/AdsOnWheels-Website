@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Header from "@/app/layout/header/Header";
-import Footer2 from "@/app/layout/footer/Footer2";
 import CargoBikeAd from "../CargoBikeAd";
 import BasketBikeAd from "../BasketBikeAd";
 import FrameBikeAd from "../FrameBikeAd";
@@ -55,13 +53,7 @@ const Page = ({ params }: any) => {
     }
   };
 
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      {renderContent()}
-      <Footer2 />
-    </div>
-  );
+  return <>{renderContent()}</>;
 };
 
 export default Page;

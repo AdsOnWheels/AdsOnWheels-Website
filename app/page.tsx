@@ -1,5 +1,3 @@
-import Header from "./layout/header/Header";
-import Footer2 from "./layout/footer/Footer2";
 import HomePage from "./pages/HomePage";
 import CallToAction from "./pages/CallToAction";
 import BrandBenefits from "./brands/BrandBenefits";
@@ -12,8 +10,7 @@ import ScrollHint from "./components/ScrollHint";
 
 export default function Home() {
   return (
-    <main className="bg-gray-100 min-h-screen font-sans">
-      <Header />
+    <>
       <HomePage />
       <CallToAction />
       <BikeAds101 />
@@ -33,7 +30,6 @@ export default function Home() {
       />
 
       <ScrollToTop />
-      <Footer2 />
-    </main>
+    </>
   );
 }

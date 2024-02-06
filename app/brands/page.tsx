@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../layout/header/Header";
-import Footer2 from "../layout/footer/Footer2";
 import HeroSection from "./HeroSection";
 import WhoAreWe from "./WhoAreWe";
 import AdPlacementOptions from "../pages/ad-placement/AdPlacementOptions";
@@ -16,8 +14,7 @@ import ScrollHint from "../components/ScrollHint";
 
 const Brand = () => {
   return (
-    <section className="bg-gray-100 min-h-screen font-sans">
-      <Header />
+    <>
       <HeroSection />
       <WhoAreWe />
       <AdPlacementOptions />
@@ -41,8 +38,7 @@ const Brand = () => {
         ]}
       />
       <ScrollToTop />
-      <Footer2 />
-    </section>
+    </>
   );
 };
 
