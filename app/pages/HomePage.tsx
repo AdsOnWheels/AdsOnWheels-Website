@@ -8,7 +8,6 @@ import Heading1 from "../layout/Heading1";
 import Heading3 from "../layout/Heading3";
 import Button from "../components/Button";
 import BackgroundImage from "../../public/Bike-in-front-of-canals.png";
-import ScrollHint from "../components/ScrollHint";
 
 const HomePage = () => {
   const router = useRouter();

@@ -1,6 +1,7 @@
+"use client";
+
 import React from "react";
 
-import WaitingListForm from "../components/WaitingListForm";
 import Form from "../components/Form";
 import { FormData } from "@/types/types";
 

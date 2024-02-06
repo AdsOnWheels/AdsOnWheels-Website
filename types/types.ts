@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 /**
  * Represents form data from input elements.
  */
@@ -19,4 +21,11 @@ export interface FormData {
   averageMilesPerWeekend: string;
   rideShareDriver: boolean;
   [key: string]: string | number | boolean;
+}
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  image: StaticImageData;
+  quote: string;
 }
