@@ -43,8 +43,5 @@
     "@types/react-slick": "^0.23.13",
     "@types/react-table": "^7.7.19",
     "daisyui": "^4.7.2"
-  },
-  "engines": {
-    "node": ">=18.17.0"
   }
 }

@@ -16,7 +16,6 @@ import {
   Legend,
 } from "chart.js";
 
-import { AdCampaignManagementProps } from "@/types/types";
 import ActionPanel from "../../layout/ActionPanel";
 import DataTable from "../../layout/tables/data-table/DataTable";
 import generateData from "../components/data/campaignData/dummyData";
@@ -123,7 +122,7 @@ const charts = [
   },
 ];
 
-const AdCampaignManagement: React.FC<AdCampaignManagementProps> = ({}) => {
+const AdCampaignManagement = () => {
   const [filter, setFilter] = useState("");
 
   // Dummy data for barcode scans (replace with real data)
