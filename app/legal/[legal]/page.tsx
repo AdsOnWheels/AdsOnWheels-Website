@@ -5,7 +5,7 @@ import Image from "next/image";
 import TermsOfUse from "../TermsOfUse";
 import PrivacyPolicy from "../PrivacyPolicy";
 import CookiePolicy from "../CookiePolicy";
-import NotFoundIllustration from "../../../public/Illustration-404-not-found.png";
+import NotFoundIllustration from "../../../assets/Illustration-404-not-found.png";
 import Legal from "../page";
 
 const Page = ({ params }: any) => {

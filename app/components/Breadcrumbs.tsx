@@ -1,39 +1,54 @@
-"use client";
-
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
-interface BreadcrumbItem {
-  text: string;
-  href?: string;
-}
+function Breadcrumb() {
+  const path = usePathname();
+  const paths = path.split("/").filter((segment) => segment !== "admin"); // Exclude "admin" segment
 
-interface Props {
-  items: BreadcrumbItem[];
-}
-
-const Breadcrumbs = ({ items }: Props) => {
   return (
-    <nav aria-label="breadcrumb">
-      <ol className="flex leading-none text-indigo-600 divide-x divide-indigo-400">
-        {items.map((item, index) => (
+    <nav className="flex flex-wrap text-sm font-medium text-gray-600 pt-2 ml-6 bg-transparent">
+      <ol className="list-none flex">
+        {paths.map((segment, index) => (
           <li
-            key={index}
-            className={`px-2 ${index === 0 ? "pl-0" : ""} ${
-              index === items.length - 1 ? "pr-0" : ""
-            }`}
+            key={segment}
+            className="flex items-center text-sm leading-normal"
           >
-            {item.href ? (
-              <a href={item.href} className="text-blue-600 hover:text-blue-800">
-                {item.text}
-              </a>
+            {index === 1 ? ( // Check for the second segment and render the home icon
+              <Link
+                href="/admin/dashboard"
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <FontAwesomeIcon icon={faHome} />
+              </Link>
             ) : (
-              <span className="text-gray-500">{item.text}</span>
+              <Link
+                href={`/admin${paths.slice(0, index + 1).join("/")}`}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                {formatPageName(segment)}
+              </Link>
+            )}
+            {index !== paths.length - 1 && index > 0 && (
+              <span className="text-md leading-normal mx-1">/</span>
             )}
           </li>
         ))}
       </ol>
     </nav>
   );
-};
+}
 
-export default Breadcrumbs;
+function formatPageName(path: string) {
+  // Remove hyphens and capitalize each word
+  const formattedPage = path
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return formattedPage;
+}
+
+export default Breadcrumb;

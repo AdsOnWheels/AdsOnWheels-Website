@@ -1,7 +1,7 @@
 import React from "react";
 
 import Heading2 from "../layout/Heading2";
-import Image1 from "../../public/images/brand/dummy_600x400.png";
+import Image1 from "../../assets/images/brand/dummy_600x400.png";
 import TestimonialSlider from "../components/TestimonialSlider";
 
 const RiderTestimonials = () => {

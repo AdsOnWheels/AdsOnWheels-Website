@@ -7,7 +7,7 @@ import BasketBikeAd from "../BasketBikeAd";
 import FrameBikeAd from "../FrameBikeAd";
 import InFrameBikeAd from "../InFrameBikeAd";
 import WheelRimCoverBikeAd from "../WheelRimCoverBikeAd";
-import NotFoundIllustration from "../../../public/Illustration-404-not-found.png";
+import NotFoundIllustration from "../../../assets/Illustration-404-not-found.png";
 
 const Page = ({ params }: any) => {
   const adType = params.adType;

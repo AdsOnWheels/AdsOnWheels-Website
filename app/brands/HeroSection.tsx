@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import Heading1 from "../layout/Heading1";
-import BackgroundImage from "../../public/Bike-in-front-of-canals.png";
+import BackgroundImage from "../../assets/Bike-in-front-of-canals.png";
 
 const HeroSection = () => {
   return (

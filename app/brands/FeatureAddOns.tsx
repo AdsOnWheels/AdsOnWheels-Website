@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import DynamicDisplayRoutes from "../../public/images/brand/ad-features/dynamic-display-routes.png";
-import WebTrafficInsights from "../../public/images/brand/ad-features/web-traffic-insights.png";
-import RealTimeAdAnalytics from "../../public/images/brand/ad-features/real-time-ad-analytics.png";
+import DynamicDisplayRoutes from "../../assets/images/brand/ad-features/dynamic-display-routes.png";
+import WebTrafficInsights from "../../assets/images/brand/ad-features/web-traffic-insights.png";
+import RealTimeAdAnalytics from "../../assets/images/brand/ad-features/real-time-ad-analytics.png";
 import Heading2 from "../layout/Heading2";
 
 const FeatureAddOns = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import CargoBicycleImage from "../../public/images/rider/advertising-on-cargo-bicycle.png";
-import PlaceholderImage from "../../public/images/brand/dummy_600x400.png";
+import CargoBicycleImage from "../../assets/images/rider/advertising-on-cargo-bicycle.png";
+import PlaceholderImage from "../../assets/images/brand/dummy_600x400.png";
 import Button from "@/app/components/Button";
 
 const CargoBikeAd = () => {

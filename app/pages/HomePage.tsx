@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Heading1 from "../layout/Heading1";
 import Heading3 from "../layout/Heading3";
 import Button from "../components/Button";
-import BackgroundImage from "../../public/Bike-in-front-of-canals.png";
+import BackgroundImage from "../../assets/Bike-in-front-of-canals.png";
 
 const HomePage = () => {
   const router = useRouter();

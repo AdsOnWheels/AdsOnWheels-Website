@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import Image1 from "../../public/images/company/dummy_600x400.png";
+import Image1 from "../../assets/images/company/dummy_600x400.png";
 
 const IndustriesWeServe = () => {
   const industries = [

@@ -4,8 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import BicycleAdsAmsterdam from "../../public/images/brand/Linearly-parked-bicycles-of-five.png";
-import BobCycling from "../../public/images/rider/Bob-cycling-euros.png";
+import BicycleAdsAmsterdam from "../../assets/images/brand/Linearly-parked-bicycles-of-five.png";
+import BobCycling from "../../assets/images/rider/Bob-cycling-euros.png";
 import Button from "../components/Button";
 
 const CallToAction = () => {

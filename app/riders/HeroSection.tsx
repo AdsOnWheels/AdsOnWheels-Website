@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import Heading1 from "../layout/Heading1";
 import Button from "../components/Button";
-import BackgroundImage from "../../public/images/rider/bike-ad-placement.png";
+import BackgroundImage from "../../assets/images/rider/bike-ad-placement.png";
 
 const HeroSection = () => {
   return (

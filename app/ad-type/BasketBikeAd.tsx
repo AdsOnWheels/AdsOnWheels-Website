@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import BicycleBasket from "../../public/images/rider/advertising-on-bicycle-baskets-II.png";
-import PlaceholderImage from "../../public/images/brand/dummy_600x400.png";
+import BicycleBasket from "../../assets/images/rider/advertising-on-bicycle-baskets-II.png";
+import PlaceholderImage from "../../assets/images/brand/dummy_600x400.png";
 import Button from "../components/Button";
 
 const BasketBikeAd = () => {

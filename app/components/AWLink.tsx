@@ -2,10 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
   href: string;
-  text: string;
+  text?: string;
+  icon?: IconProp | undefined;
+  tooltip?: string;
   className?: string;
   color?:
     | "primary"
@@ -41,7 +45,14 @@ const colorClasses = {
   emerald: "text-emerald-500",
 };
 
-const AWLink = ({ href, text, color = "light", className }: Props) => {
+const AWLink = ({
+  href,
+  text,
+  icon,
+  tooltip,
+  color = "light",
+  className,
+}: Props) => {
   const textColorClass = colorClasses[color] || colorClasses.primary;
 
   const linkClasses = `${textColorClass} text-md text-center ${
@@ -49,7 +60,8 @@ const AWLink = ({ href, text, color = "light", className }: Props) => {
   }`;
 
   return (
-    <Link href={href} className={linkClasses}>
+    <Link href={href} title={tooltip} className={linkClasses}>
+      {icon && <FontAwesomeIcon icon={icon} className="inline-block mr-2" />}
       {text}
     </Link>
   );

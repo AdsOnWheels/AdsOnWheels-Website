@@ -16,6 +16,37 @@ body {
   color: #000;
 }
 
+.ql-toolbar.ql-snow {
+  border: 1px solid #ccc;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  box-sizing: border-box;
+  font-family: helvetica neue, helvetica, arial, sans-serif;
+  padding: 8px;
+}
+
+.ql-container {
+  height: 125px !important;
+  border-top: 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  margin-bottom: 2rem !important;
+}
+
+/* .ql-editor {
+  box-sizing: border-box;
+  line-height: 1.42;
+  height: 100%;
+  outline: none;
+  overflow-y: auto;
+  padding: 12px 15px;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+} */
+
 .min-h-screen-90 {
   min-height: calc(100vh - 70px);
 }

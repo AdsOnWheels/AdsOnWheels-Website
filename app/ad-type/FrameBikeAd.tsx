@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import BicycleFrame from "../../public/images/rider/advertising-on-bicycle-frames.png";
-import PlaceholderImage from "../../public/images/brand/dummy_600x400.png";
+import BicycleFrame from "../../assets/images/rider/advertising-on-bicycle-frames.png";
+import PlaceholderImage from "../../assets/images/brand/dummy_600x400.png";
 import Button from "../components/Button";
 
 const FrameBikeAd = () => {
