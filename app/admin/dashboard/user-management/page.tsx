@@ -128,7 +128,7 @@ const UserManagement = () => {
     "A lightweight, extendable, dependency-free javascript HTML table plugin.";
 
   return (
-    <div className="w-full mx-auto sm:px-6 lg:px-6 lg:py-6 bg-gray-100 min-h-screen">
+    <>
       <div className="flex flex-wrap -mx-3">
         {/* User Management Metrics */}
         <div className="w-full max-w-full px-3 lg:flex-0 shrink-0 lg:w-7/12 xl:w-8/12">
@@ -236,7 +236,7 @@ const UserManagement = () => {
           enableActionButtons={enableActionButtons}
         />
       </div>
-    </div>
+    </>
   );
 };
 

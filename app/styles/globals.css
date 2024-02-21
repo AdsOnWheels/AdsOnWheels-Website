@@ -47,6 +47,14 @@ body {
   word-wrap: break-word;
 } */
 
+.min-h-unset {
+  min-height: unset;
+}
+
+.min-h-screen-100 {
+  min-height: calc(100vh - 100px);
+}
+
 .min-h-screen-90 {
   min-height: calc(100vh - 70px);
 }

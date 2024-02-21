@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 import BasicTable from "../../layout/tables/basic-table/BasicTable";
 import ActionPanel from "../../layout/ActionPanel";
@@ -66,10 +66,10 @@ const Forms = () => {
   const [inquiries, setInquiries] = useState<string[][]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [inquiriesPerPage] = useState(5);
-  const [filter, setFilter] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFilter(e.target.value);
+  const handleQueryChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
   };
 
   // Pagination logic
@@ -116,25 +116,23 @@ const Forms = () => {
     window.open("https://accounts.zoho.eu/signin", "_blank");
   };
 
-  const button = true;
-
   return (
-    <div className="w-full mx-auto sm:px-6 lg:px-6 lg:py-6 bg-gray-100 min-h-screen">
+    <>
       {/* Section for setting up new campaigns and searching campaigns */}
       <ActionPanel
         searchBar={
           <form className="lg:pr-3" action="#" method="GET">
-            <label htmlFor="users-search" className="sr-only">
+            <label htmlFor="inquiries-search" className="sr-only">
               Search
             </label>
             <div className="relative mt-1 lg:w-64 xl:w-96">
               <input
-                id="search-campaigns"
+                id="search-inquiries"
                 type="text"
-                name="campaigns"
-                value={filter}
-                onChange={handleFilterChange}
-                placeholder="Search campaigns..."
+                name="inquiries"
+                value={searchQuery}
+                onChange={handleQueryChange}
+                placeholder="Search inquiries..."
                 className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
               />
             </div>
@@ -182,7 +180,8 @@ const Forms = () => {
           <BasicTable
             headers={tableHeaders}
             rows={contactFormInquiries}
-            button={button}
+            searchQuery={searchQuery}
+            button={true}
           />
           {/* Pagination */}
           <div className="flex justify-center mt-4">
@@ -200,7 +199,7 @@ const Forms = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

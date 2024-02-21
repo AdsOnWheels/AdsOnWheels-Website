@@ -4,9 +4,16 @@ interface Props {
   headers: string[];
   rows: any[];
   button?: boolean;
+  searchQuery?: string;
 }
 
-const BasicTable = ({ headers, rows, button }: Props) => {
+const BasicTable = ({ headers, rows, button, searchQuery }: Props) => {
+  const filteredRows = rows.filter((row) =>
+    row.some((cell: any) =>
+      cell.toString().toLowerCase().includes(searchQuery?.toLowerCase())
+    )
+  );
+
   return (
     <table className="w-full whitespace-nowrap">
       <thead>
@@ -22,7 +29,7 @@ const BasicTable = ({ headers, rows, button }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {rows.map((row, rowIndex) => (
+        {filteredRows.map((row, rowIndex) => (
           <tr key={rowIndex} className="border-t border-gray-200">
             {row.map((cell: any, cellIndex: number) => (
               <td key={cellIndex} className="px-4 py-3 text-sm text-gray-800">

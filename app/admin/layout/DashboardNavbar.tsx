@@ -59,8 +59,8 @@ const DashboardNavbar = ({
   );
 
   return (
-    <>
-      <div className="navbar">
+    <div className="px-0 py-1.5 mx-6 mt-4 transition-all shadow-none duration-200 ease-in rounded-2xl">
+      <div className="navbar px-4">
         <div className="navbar-start">
           <div className="flex-1 px-2 lg:px-0">
             <div className="flex-shrink-0 flex items-center">
@@ -178,7 +178,7 @@ const DashboardNavbar = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

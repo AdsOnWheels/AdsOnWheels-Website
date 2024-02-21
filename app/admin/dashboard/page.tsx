@@ -143,7 +143,7 @@ const Dashboard = () => {
   const { sales } = reportsLineChartData;
 
   return (
-    <div className="w-full mx-auto sm:px-6 lg:px-6 lg:py-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <>
       {/* Metrics Cards */}
       <div className="flex flex-wrap -mx-3">
         {Object.entries(metrics).map(([key, { value, percentageIncrease }]) => (
@@ -288,7 +288,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

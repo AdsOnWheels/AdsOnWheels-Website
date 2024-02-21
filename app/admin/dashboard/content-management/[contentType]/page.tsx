@@ -48,10 +48,8 @@ const Page = ({ params }: any) => {
   };
 
   return (
-    <div className="w-full p-6 mx-auto">
-      <div className="flex flex-wrap -mx-3">
-        <div className="w-full max-w-full px-3 flex-0">{renderContent()}</div>
-      </div>
+    <div className="flex flex-wrap -mx-3">
+      <div className="w-full max-w-full px-3 flex-0">{renderContent()}</div>
     </div>
   );
 };

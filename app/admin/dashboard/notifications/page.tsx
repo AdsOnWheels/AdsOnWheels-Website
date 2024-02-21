@@ -46,26 +46,24 @@ const Notification = () => {
   ];
 
   return (
-    <div className="w-full p-6 mx-auto">
-      <div className="flex flex-wrap -mx-3">
-        <div className="w-full max-w-full px-3 mx-auto md:flex-0 shrink-0 md:w-8/12">
-          <div className="relative flex flex-col min-w-0 mt-6 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-            <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4">
-              <h5 className="mb-0 dark:text-white">Alerts</h5>
-            </div>
-            <div className="flex-auto p-4 pb-0">
-              {/* Render each notification card */}
-              {notifications.map((notification) => (
-                <NotificationCard
-                  key={notification.id}
-                  message={notification.message}
-                  backgroundColor={`bg-gradient-to-tl ${
-                    colors[notification.id % colors.length]
-                  }`} // Choose a color based on the index
-                  headingType={notification.type} // Pass the type of heading
-                />
-              ))}
-            </div>
+    <div className="flex flex-wrap -mx-3">
+      <div className="w-full max-w-full px-3 mx-auto md:flex-0 shrink-0 md:w-8/12">
+        <div className="relative flex flex-col min-w-0 mt-6 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4">
+            <h5 className="mb-0 dark:text-white">Alerts</h5>
+          </div>
+          <div className="flex-auto p-4 pb-0">
+            {/* Render each notification card */}
+            {notifications.map((notification) => (
+              <NotificationCard
+                key={notification.id}
+                message={notification.message}
+                backgroundColor={`bg-gradient-to-tl ${
+                  colors[notification.id % colors.length]
+                }`} // Choose a color based on the index
+                headingType={notification.type} // Pass the type of heading
+              />
+            ))}
           </div>
         </div>
       </div>

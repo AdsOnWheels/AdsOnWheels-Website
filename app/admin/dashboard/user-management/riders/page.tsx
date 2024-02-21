@@ -2,7 +2,7 @@ import React from "react";
 
 const Riders = () => {
   return (
-    <div className="w-full p-6 mx-auto">
+    <>
       <div className="flex flex-wrap -mx-3">
         <div className="w-full max-w-full px-3 flex-0 lg:w-6/12">
           <div className="flex flex-wrap -mx-3">
@@ -88,7 +88,7 @@ const Riders = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

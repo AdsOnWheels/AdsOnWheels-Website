@@ -19,11 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth dark">
       <Provider>
         <body className={inter.className}>
           <Navbar />
-          <main className="bg-gray-100 min-h-screen font-sans">{children}</main>
+          <main className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans">
+            {children}
+          </main>
           <Footer2 />
           <CookieConsent />
         </body>

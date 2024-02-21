@@ -9,7 +9,7 @@ function Breadcrumb() {
   const paths = path.split("/").filter((segment) => segment !== "admin"); // Exclude "admin" segment
 
   return (
-    <nav className="flex flex-wrap text-sm font-medium text-gray-600 pt-2 ml-6 bg-transparent">
+    <nav className="flex flex-wrap text-sm font-medium text-gray-600 pt-2 ml-11 bg-transparent">
       <ol className="list-none flex">
         {paths.map((segment, index) => (
           <li

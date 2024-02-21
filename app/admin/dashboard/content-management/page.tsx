@@ -16,7 +16,7 @@ const ContentManagement = () => {
   const tabs = ["Blogs", "FAQs", "Help Articles"];
 
   return (
-    <div className="w-full mx-auto sm:px-6 lg:px-6 lg:py-6 bg-gray-100 min-h-screen">
+    <>
       {/* Section for setting up new campaigns and searching campaigns */}
       <ActionPanel
         tabs={tabs}
@@ -68,7 +68,7 @@ const ContentManagement = () => {
           <HelpArticles />
         )}
       </div>
-    </div>
+    </>
   );
 };
 

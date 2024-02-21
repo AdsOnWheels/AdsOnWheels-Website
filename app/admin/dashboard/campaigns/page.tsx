@@ -303,12 +303,12 @@ const AdCampaignManagement = () => {
     "Track ongoing campaigns: name, dates, budget, and status updates instantly.";
 
   return (
-    <div className="w-full mx-auto sm:px-6 lg:px-6 lg:py-6 bg-gray-100 min-h-screen">
+    <>
       {/* Section for setting up new campaigns and searching campaigns */}
       <ActionPanel
         searchBar={
           <form className="lg:pr-3" action="#" method="GET">
-            <label htmlFor="users-search" className="sr-only">
+            <label htmlFor="campaigns-search" className="sr-only">
               Search
             </label>
             <div className="relative mt-1 lg:w-64 xl:w-96">
@@ -606,7 +606,7 @@ const AdCampaignManagement = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

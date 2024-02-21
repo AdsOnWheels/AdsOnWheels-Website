@@ -22,22 +22,28 @@ const AdminLayout = ({ children }: Props) => {
 
   return (
     <Provider>
-      <div className={`flex h-screen bg-gray-100 dark:bg-gray-900`}>
+      <div
+        className={`fixed inset-0 flex dark:bg-gray-900 bg-gray-100 text-slate-500 dark:text-white`}
+      >
         <Sidebar isOpen={isSidebarOpen} />
         <div
-          className={`relative flex-1 ${
-            isSidebarOpen ? "ml-64" : "ml-0"
-          } transition-all ease-in-out duration-300`}
+          className={`relative flex-1 h-full max-h-screen transition-all duration-200 ease-in-out rounded-xl ps-0 ${
+            isSidebarOpen
+              ? "xl:ml-[17rem]"
+              : path !== "/admin"
+              ? "xl:ml-[7.5rem]"
+              : "xl:ml-0"
+          } overflow-y-auto`}
         >
           <DashboardNavbar />
+          {/* Breadcrumbs */}
+          <Breadcrumb />
           {/* Main content goes here */}
           <div
-            className={`bg-gray-100 ${
-              path === "admin" ? "min-h-screen" : ""
-            }  font-sans`}
+            className={`w-full mx-auto sm:px-6 lg:px-6 lg:py-6 bg-gray-100 dark:bg-gray-900 font-sans ${
+              path !== "/admin" ? "min-h-screen" : ""
+            }`}
           >
-            {/* Breadcrumbs */}
-            <Breadcrumb />
             {children}
           </div>
           <div
