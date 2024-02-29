@@ -47,7 +47,6 @@ const Select: React.FC<Props> = ({
         name={name}
         value={value}
         onChange={onChange}
-        placeholder={placeHolder}
         className={selectClasses}
         title={placeHolder}
         defaultValue=""
