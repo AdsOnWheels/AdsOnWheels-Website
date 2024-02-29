@@ -5,7 +5,7 @@ import Image from "next/image";
 import CreateFAQ from "../faqs/CreateFAQ";
 import CreatePost from "../blogs/CreatePost";
 import CreateHelpArticle from "../articles/CreateHelpArticle";
-import NotFoundIllustration from "../../../assets/images/Illustration-404-not-found.png";
+import NotFoundIllustration from "../../assets/images/Illustration-404-not-found.png";
 
 const Page = ({ params }: any) => {
   const contentType = params.contentType;
