@@ -5,7 +5,7 @@ import prisma from "@/prisma/client";
 import { userUpdateSchema } from "../userSchema";
 
 // GET /api/users/:id - Get a specific user by ID
-export async function GET_User(
+export async function GET(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
