@@ -5,6 +5,7 @@ import Provider from "@/redux/provider";
 import CookieConsent from "./legal/CookieConsent";
 import Footer2 from "./layout/footer/Footer2";
 import Navbar from "./layout/Navbar";
+import AuthProvider from "./auth/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,14 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth dark">
       <Provider>
-        <body className={inter.className}>
-          <Navbar />
-          <main className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans">
-            {children}
-          </main>
-          <Footer2 />
-          <CookieConsent />
-        </body>
+        <AuthProvider>
+          <body className={inter.className}>
+            <Navbar />
+            <main className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans">
+              {children}
+            </main>
+            <Footer2 />
+            <CookieConsent />
+          </body>
+        </AuthProvider>
       </Provider>
     </html>
   );

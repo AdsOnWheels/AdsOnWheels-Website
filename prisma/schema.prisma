@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Model representing a Post
+model Post {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Model representing a FAQ (Frequently Asked Question)
+model FAQ {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  question  String
+  answer    String
+  tag       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Model representing a Contact form submission
+model Contact {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  firstName String
+  lastName  String
+  email     String   @unique
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Model representing a User
+model User {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  username       String    @unique
+  email          String    @unique
+  emailVerified  DateTime?
+  hashedPassword String
+  mfaSecret      String?
+  mfaQrCodeUrl   String?
+  role           String?
+  active         Boolean?  @default(true)
+  lastLogin      DateTime?
+  profilePicture String?
+  phoneNumber    String?
+  address        String?
+  department     String?
+  manager        String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+// Model representing a Rider
+model Rider {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  fullName           String
+  email              String   @unique
+  phoneNumber        String
+  cityRegion         String
+  postcode           String
+  bicycleType        String[]
+  cyclingDistance    String[]
+  bicycleCondition   String[]
+  regularRoutes      String
+  availability       String[]
+  interestReason     String
+  additionalComments String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+// Model representing a Brand
+model Brand {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  company        String
+  industry       String[]
+  website        String   @unique
+  postCode       String
+  title          String
+  firstName      String
+  lastName       String
+  businessEmail  String   @unique
+  phone          String
+  adType         String[]
+  budget         String[]
+  targetAudience String
+  consent        Boolean
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+// Model representing verification token for email verification
+model Verification {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  token   String   @unique
+  expires DateTime
+}

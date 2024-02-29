@@ -1,13 +1,23 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import useIsAdminPanel from "@/app/hooks/admin/useIsAdminPanel";
+
+import useCurrentPathname from "@/app/hooks/useCurrentPathname";
+import excludedPaths from "@/app/dashboard/assets/theme/base/pathConstant";
+import useIsMFAPage from "@/app/hooks/dashboard/useIsMFAPage";
 
 const Footer2 = () => {
-  const isAdminPanel = useIsAdminPanel;
+  const path = useCurrentPathname();
+
+  // Check if the current path exists in the excludedPaths array
+  const shouldRenderFooter = !excludedPaths.includes(path);
+
+  const isMFA = useIsMFAPage();
 
   return (
     <>
-      {!isAdminPanel && (
+      {shouldRenderFooter && !isMFA && (
         <footer className="bg-gray-900 text-white py-12">
           <div className="max-w-6xl mx-auto px-4 lg:px-8">
             <div className="flex flex-wrap -mx-4 justify-between items-start">

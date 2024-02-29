@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import initialCampaigns from "@/app/admin/dashboard/components/data/campaignData/initialCampaigns";
+import initialCampaigns from "@/app/dashboard/components/data/campaignData/initialCampaigns";
 import { Campaign } from "@/types/types";
 
 interface CampaignState {

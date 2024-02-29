@@ -6,13 +6,20 @@ import Button from "../components/Button";
 import AWLink from "../components/AWLink";
 import Modal from "../components/Modal";
 import ContactPage from "../pages/Contact";
-import useIsAdminPanel from "../hooks/admin/useIsAdminPanel";
+import useCurrentPathname from "../hooks/useCurrentPathname";
+import excludedPaths from "@/app/dashboard/assets/theme/base/pathConstant";
+import useIsMFAPage from "../hooks/dashboard/useIsMFAPage";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const isAdminPanel = useIsAdminPanel();
+  const path = useCurrentPathname();
+
+  // Check if the current path exists in the excludedPaths array
+  const shouldRenderFooter = !excludedPaths.includes(path);
+
+  const isMFA = useIsMFAPage();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -33,7 +40,7 @@ const Navbar = () => {
 
   return (
     <>
-      {!isAdminPanel && (
+      {shouldRenderFooter && !isMFA && (
         <header className="bg-gray-900 text-white py-1 sticky top-0 z-50 shadow-xl">
           <div className="container mx-auto max-w-6xl flex justify-between items-center">
             <div className="navbar">

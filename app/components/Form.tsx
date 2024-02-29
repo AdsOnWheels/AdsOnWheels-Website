@@ -211,7 +211,7 @@ const Form = ({ onSubmit, formType, maxWidth, margin, padding }: Props) => {
             //     { value: "other_placement", text: "Other" },
             //   ],
             // },
-            // Ad Placement Preferences: This might be better as a discussion after sign-up, as riders may need more information to make this choice.
+            // Ad Placement Preferences: This might be better as a discussion after signup, as riders may need more information to make this choice.
             {
               name: "cyclingDistance",
               placeHolder: "Average Daily/Weekly Cycling Distance*",
@@ -441,6 +441,12 @@ const Form = ({ onSubmit, formType, maxWidth, margin, padding }: Props) => {
               type: "text",
               required: true,
             },
+            {
+              name: "postCode",
+              placeHolder: "Post Code*",
+              type: "text",
+              required: true,
+            },
           ],
         },
         {
@@ -479,6 +485,18 @@ const Form = ({ onSubmit, formType, maxWidth, margin, padding }: Props) => {
               ],
             },
             {
+              name: "bicycleCondition",
+              placeHolder: "Bicycle Condition*",
+              type: "select",
+              required: true,
+              options: [
+                { value: "excellent", text: "Excellent" },
+                { value: "good", text: "Good" },
+                { value: "average", text: "Average" },
+                { value: "Damaged", text: "Damaged" },
+              ],
+            },
+            {
               name: "regularRoutes",
               placeHolder: "Regular Cycling Routes or Areas*",
               type: "textarea",
@@ -488,7 +506,7 @@ const Form = ({ onSubmit, formType, maxWidth, margin, padding }: Props) => {
               name: "availability",
               placeHolder: "Availability for Ads",
               type: "select",
-              required: false,
+              required: true,
               options: [
                 { value: "weekdays_mornings", text: "Weekday Mornings" },
                 { value: "weekdays_afternoons", text: "Weekday Afternoons" },
