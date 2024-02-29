@@ -9,11 +9,7 @@ import BackgroundImage from "../../../assets/Amsterdam-city-scene.png";
 import Link from "next/link";
 import { signInSchema } from "./signInSchema";
 
-interface Props {
-  onForgotPassword: () => void;
-}
-
-const SignIn = ({ onForgotPassword }: Props) => {
+const SignIn = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -38,7 +34,7 @@ const SignIn = ({ onForgotPassword }: Props) => {
 
   const handleForgotPasswordClick = () => {
     // Call the onForgotPassword callback passed from the parent component
-    onForgotPassword();
+    console.log("User clicked on forgot password");
   };
 
   async function handleSubmit(e: FormEvent) {
