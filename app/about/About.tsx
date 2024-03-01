@@ -27,7 +27,8 @@ const About = () => {
             />
             <FontAwesomeIcon
               icon={faSeedling}
-              className="text-green-500 text-3xl mb-4"
+              size="2xl"
+              className="w-16 h-16 text-green-500 mb-4"
             />
             <p className="text-gray-700 leading-relaxed">
               At OutFront, our mission is to revolutionize the advertising
@@ -50,7 +51,7 @@ const About = () => {
             />
             <FontAwesomeIcon
               icon={faBicycle}
-              className="text-blue-500 text-3xl mb-4"
+              className="w-16 h-16 text-blue-500 mb-4"
             />
             <p className="text-gray-700 leading-relaxed">
               Our vision extends beyond traditional advertising boundaries,
@@ -73,7 +74,7 @@ const About = () => {
             />
             <FontAwesomeIcon
               icon={faHandshake}
-              className="text-yellow-500 text-3xl mb-4"
+              className="w-16 h-16 text-yellow-500 mb-4"
             />
             <ol className="space-y-2 text-gray-700">
               <li>
