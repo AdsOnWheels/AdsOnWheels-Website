@@ -22,7 +22,7 @@ export type BrandData = z.infer<typeof brandSchema>;
 // Define Zod schema for updating brand data
 export const brandUpdateSchema = z.object({
   company: z.string().min(1).optional(),
-  industry: z.array(z.string()).optional(),
+  industry: z.string().optional(),
   website: z.string().url().optional(),
   postCode: z.string().optional(),
   title: z.string().optional(),
@@ -30,8 +30,8 @@ export const brandUpdateSchema = z.object({
   lastName: z.string().optional(),
   businessEmail: z.string().email().optional(),
   phone: z.string().optional(),
-  adType: z.array(z.string()).optional(),
-  budget: z.array(z.string()).optional(),
+  adType: z.string().optional(),
+  budget: z.string().optional(),
   targetAudience: z.string().optional(),
   consent: z.boolean().optional(),
 });
