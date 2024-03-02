@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import BgImageContainer from "@/app/components/BgImageContainer";
 import BackgroundImage from "../../../assets/Amsterdam-city-scene.png";
-import { signUpSchema } from "./signUpSchema";
+import { signUpSchema } from "../../schemas/signUpSchema";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({

@@ -13,8 +13,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// Model representing a Post
-model Post {
+// Model representing a Article post
+model Article {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Model representing a Blog post
+model Blog {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   title     String
   content   String
@@ -71,14 +80,16 @@ model Rider {
   email              String   @unique
   phoneNumber        String
   cityRegion         String
-  postcode           String
-  bicycleType        String[]
-  cyclingDistance    String[]
-  bicycleCondition   String[]
+  postCode           String
+  bicycleType        String
+  cyclingDistance    String
+  bicycleCondition   String
+  imageUrl           String?
   regularRoutes      String
-  availability       String[]
+  availability       String
   interestReason     String
   additionalComments String?
+  consent            Boolean?
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }
@@ -87,7 +98,7 @@ model Rider {
 model Brand {
   id             String   @id @default(auto()) @map("_id") @db.ObjectId
   company        String
-  industry       String[]
+  industry       String
   website        String   @unique
   postCode       String
   title          String
@@ -95,8 +106,8 @@ model Brand {
   lastName       String
   businessEmail  String   @unique
   phone          String
-  adType         String[]
-  budget         String[]
+  adType         String
+  budget         String
   targetAudience String
   consent        Boolean
   createdAt      DateTime @default(now())

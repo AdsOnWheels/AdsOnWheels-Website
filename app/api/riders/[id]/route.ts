@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
-import { riderUpdateSchema } from "../riderSchema";
+import { riderUpdateSchema } from "../../../schemas/riderSchema";
 
 // GET /api/riders/:id - Get a specific rider by ID
 export async function GET(
@@ -48,13 +48,44 @@ export async function PUT(
     }
 
     const { id } = params;
-    const updatedRiderData = validation.data;
 
+    // Deconstructing validation.data
+    const {
+      fullName,
+      email,
+      phoneNumber,
+      cityRegion,
+      postCode,
+      bicycleType,
+      cyclingDistance,
+      bicycleCondition,
+      regularRoutes,
+      availability,
+      interestReason,
+      additionalComments,
+      consent,
+    } = validation.data;
+
+    // Update the rider user in the database
     const updatedRider = await prisma.rider.update({
       where: {
         id,
       },
-      data: updatedRiderData,
+      data: {
+        fullName,
+        email,
+        phoneNumber,
+        cityRegion,
+        postCode,
+        bicycleType,
+        cyclingDistance,
+        bicycleCondition,
+        regularRoutes,
+        availability,
+        interestReason,
+        additionalComments,
+        consent,
+      },
     });
 
     if (!updatedRider) {

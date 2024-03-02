@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
-import { brandUpdateSchema } from "../brandSchema";
+import { brandUpdateSchema } from "../../../schemas/brandSchema";
 
 // GET /api/brands/:id - Get a specific brand by ID
 export async function GET(
@@ -46,11 +46,42 @@ export async function PUT(
     }
 
     const { id } = params;
-    const updatedBrandData = validation.data;
 
+    // Deconstructing validation.data
+    const {
+      company,
+      industry,
+      website,
+      postCode,
+      title,
+      firstName,
+      lastName,
+      businessEmail,
+      phone,
+      adType,
+      budget,
+      targetAudience,
+      consent,
+    } = validation.data;
+
+    // Update the brand user in the database
     const updatedBrand = await prisma.brand.update({
       where: { id },
-      data: updatedBrandData,
+      data: {
+        company,
+        industry,
+        website,
+        postCode,
+        title,
+        firstName,
+        lastName,
+        businessEmail,
+        phone,
+        adType,
+        budget,
+        targetAudience,
+        consent,
+      },
     });
 
     if (!updatedBrand) {

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
-import { riderSchema } from "./riderSchema";
+import { riderSchema } from "../../schemas/riderSchema";
+import isValidEmail from "@/utils/emailValidator";
 
 // GET /api/riders - Get all riders
 export async function GET(req: NextRequest) {
@@ -32,9 +33,48 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const riderData = validation.data;
+    // Deconstructing validation.data
+    const {
+      fullName,
+      email,
+      phoneNumber,
+      cityRegion,
+      postCode,
+      bicycleType,
+      cyclingDistance,
+      bicycleCondition,
+      regularRoutes,
+      availability,
+      interestReason,
+      additionalComments,
+      consent,
+    } = validation.data;
+
+    // Check if the provided email is a work email
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Invalid data", details: "Email must be a valid email" },
+        { status: 400 }
+      );
+    }
+
+    // Create the rider user in the database
     const newRider = await prisma.rider.create({
-      data: riderData,
+      data: {
+        fullName,
+        email,
+        phoneNumber,
+        cityRegion,
+        postCode,
+        bicycleType,
+        cyclingDistance,
+        bicycleCondition,
+        regularRoutes,
+        availability,
+        interestReason,
+        additionalComments,
+        consent,
+      },
     });
     return NextResponse.json(newRider, { status: 201 });
   } catch (error) {

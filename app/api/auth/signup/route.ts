@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 
 import prisma from "@/prisma/client";
-import { signUpSchema } from "@/app/auth/signup/signUpSchema";
+import { signUpSchema } from "@/app/schemas/signUpSchema";
 
 export async function POST(req: NextRequest) {
   try {

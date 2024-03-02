@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
 import { blogUpdateSchema } from "../../../schemas/blogSchema";
 
-// GET /api/blogs/:id - Get a specific blog by ID
+// GET /api/articles/:id - Get a specific article by ID
 export async function GET(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
     const { id } = params;
-    const blog = await prisma.blog.findUnique({ where: { id } });
+    const blog = await prisma.article.findUnique({ where: { id } });
 
     if (!blog) {
       return NextResponse.json(
@@ -27,7 +27,7 @@ export async function GET(
   }
 }
 
-// PUT /api/blogs/:id - Update a blog by ID
+// PUT /api/articles/:id - Update a article by ID
 export async function PUT(
   req: NextRequest,
   { params }: { params: { id: string } }
@@ -46,7 +46,7 @@ export async function PUT(
 
     const updatedBlogData = validation.data;
 
-    const updatedBlog = await prisma.blog.update({
+    const updatedBlog = await prisma.article.update({
       where: { id },
       data: updatedBlogData,
     });
@@ -68,14 +68,14 @@ export async function PUT(
   }
 }
 
-// DELETE /api/blogs/:id - Delete a blog by ID
+// DELETE /api/articles/:id - Delete a article by ID
 export async function DELETE(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
     const { id } = params;
-    const blog = await prisma.blog.findUnique({ where: { id } });
+    const blog = await prisma.article.findUnique({ where: { id } });
 
     if (!blog) {
       return NextResponse.json(
@@ -84,7 +84,7 @@ export async function DELETE(
       );
     }
 
-    await prisma.blog.delete({ where: { id } });
+    await prisma.article.delete({ where: { id } });
 
     return NextResponse.json({ status: 204 });
   } catch (error) {

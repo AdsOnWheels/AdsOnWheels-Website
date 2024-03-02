@@ -4,7 +4,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/prisma/client";
 import bcrypt from "bcryptjs";
 
-import { signInSchema } from "@/app/auth/signin/signInSchema";
+import { signInSchema } from "@/app/schemas/signInSchema";
 
 const credentialsConfig = CredentialsProvider({
   name: "credentials",

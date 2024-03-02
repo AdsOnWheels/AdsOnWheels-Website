@@ -1,21 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 
 type Props = {
   name?: string;
-  label?: string;
+  label?: string | ReactNode;
   checked: boolean;
   required?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
-  color?: "primary" | "dutch";
+  color?: "primary" | "dark" | "dutch";
 };
 
 const colorClasses = {
   primary: "checked:bg-blue-500 checked:focus:ring-indigo-blue-700",
-  dutch:
-    "checked:bg-[#ff4f00] focus:ring-indigo-[#ff621a] required:border-red-500",
+  dark: "checkbox",
+  dutch: "checked:bg-gray-900 required:border-red-500 appearance-none",
 };
 
 const Checkbox = ({

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
-import { faqUpdateSchema } from "../faqSchema";
+import { faqUpdateSchema } from "../../../schemas/faqSchema";
 
 // GET /api/faqs/:id - Get a specific FAQ by ID
 export async function GET(

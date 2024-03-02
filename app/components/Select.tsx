@@ -30,7 +30,7 @@ const Select: React.FC<Props> = ({
   onChange,
   required,
 }) => {
-  const selectClasses = `w-full text-gray-500 px-5 py-3 mt-6 bg-opacity-80 bg-white border border-gray-400 rounded-full focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 appearance-none ${
+  const selectClasses = `w-full text-gray-400 px-5 py-3 mt-6 bg-opacity-80 bg-white border border-gray-400 rounded-full focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 appearance-none ${
     className || ""
   }`;
 
@@ -49,7 +49,7 @@ const Select: React.FC<Props> = ({
         onChange={onChange}
         className={selectClasses}
         title={placeHolder}
-        defaultValue=""
+        defaultValue="Select an option"
         required={required}
       >
         {placeHolder && (

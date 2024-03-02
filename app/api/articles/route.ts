@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
 import { blogSchema } from "../../schemas/blogSchema";
 
-// GET /api/blogs - Get all blogs
+// GET /api/articles - Get all articles
 export async function GET(req: NextRequest) {
   try {
-    const blogs = await prisma.blog.findMany();
-    // Check if any blogs are found
+    const blogs = await prisma.article.findMany();
+    // Check if any articles are found
     if (!blogs || blogs.length === 0) {
       return NextResponse.json({ error: "No blogs found" }, { status: 404 });
     }
@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
   }
 }
 
-// POST /api/blogs - Create a new blog
+// POST /api/articles - Create a new article
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
 
     const { title, content } = validation.data;
 
-    const newBlog = await prisma.blog.create({
+    const newBlog = await prisma.article.create({
       data: { title, content },
     });
 

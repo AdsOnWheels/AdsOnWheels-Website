@@ -2,28 +2,74 @@ import { StaticImageData } from "next/image";
 import { ChangeEvent } from "react";
 import { TableInstance, TableState } from "react-table";
 
+export interface Field {
+  name: string;
+  placeHolder: string;
+  type: string;
+  options?: { value: string; text: string }[];
+  required?: boolean;
+}
+
 /**
  * Represents form data from input elements.
  */
-export interface FormData {
+
+export interface RiderFormData {
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  cityRegion: string;
+  postCode: string;
+  bicycleType: string;
+  cyclingDistance: string;
+  bicycleCondition: string;
+  imageUrl: string;
+  regularRoutes: string;
+  availability: string;
+  interestReason: string;
+  additionalComments: string;
+}
+
+export interface BrandFormData {
+  company: string;
+  industry: string;
+  website: string;
+  postCode: string;
+  title: string;
+  firstName: string;
+  lastName: string;
+  businessEmail: string;
+  phone: string;
+  adType: string;
+  budget: string;
+  targetAudience: string;
+  consent: boolean;
+}
+
+export interface ContactFormData {
   firstName: string;
   lastName: string;
   email: string;
-  countryCode: string;
-  phoneNumber: string;
-  make: string;
-  model: string;
-  year: number;
-  color: string;
-  condition: string;
-  foundUs: string;
-  drivingRoutine: string;
-  address: string;
-  averageMilesPerWeek: string;
-  averageMilesPerWeekend: string;
-  rideShareDriver: boolean;
-  [key: string]: string | number | boolean;
+  message: string;
 }
+
+export interface ContentFormData {
+  title: string;
+  body: string;
+}
+
+export interface FAQFormData {
+  question: string;
+  answer: string;
+  tag: "rider" | "brand";
+}
+
+export type FormData =
+  | RiderFormData
+  | BrandFormData
+  | ContactFormData
+  | ContentFormData
+  | FAQFormData;
 
 export interface Testimonial {
   id: number;
@@ -41,26 +87,6 @@ export interface ChartData {
   labels: string[];
   datasets: Dataset[];
 }
-
-// export interface ChartConfig {
-//   data: {
-//     labels: string[];
-//     datasets: ChartDataset[];
-//   };
-//   options: any;
-// }
-
-// export interface ChartDataset {
-//   label: string;
-//   weight: number;
-//   cutout: string;
-//   tension: number;
-//   pointRadius: number;
-//   borderWidth: number;
-//   backgroundColor: string[];
-//   fill: boolean;
-//   data: number[];
-// }
 
 // Tailwind color map (simplified example)
 export interface TailwindColorMap {

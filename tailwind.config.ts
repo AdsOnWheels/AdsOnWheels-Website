@@ -40,9 +40,6 @@ const config: Config = {
         winter: {
           ...require("daisyui/src/theming/themes")["winter"],
           primary: "#ff4f00",
-          ".step-primary:before": {
-            color: "fff",
-          },
         },
       },
     ],

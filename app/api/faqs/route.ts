@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
-import { faqSchema } from "./faqSchema";
+import { faqSchema } from "../../schemas/faqSchema";
 
 // GET /api/faqs - Get all FAQs
 export async function GET(req: NextRequest) {

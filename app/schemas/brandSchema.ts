@@ -3,7 +3,7 @@ import { z } from "zod";
 // Define Zod schema for brand data
 export const brandSchema = z.object({
   company: z.string().min(1),
-  industry: z.array(z.string()),
+  industry: z.string(),
   website: z.string().url(),
   postCode: z.string(),
   title: z.string(),
@@ -11,8 +11,8 @@ export const brandSchema = z.object({
   lastName: z.string(),
   businessEmail: z.string().email(),
   phone: z.string(),
-  adType: z.array(z.string()),
-  budget: z.array(z.string()),
+  adType: z.string(),
+  budget: z.string(),
   targetAudience: z.string(),
   consent: z.boolean(),
 });

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 
 import prisma from "@/prisma/client";
-import { userSchema } from "./userSchema";
+import { userSchema } from "../../schemas/userSchema";
 
 // GET /api/users - Get all users
 export async function GET(req: NextRequest) {

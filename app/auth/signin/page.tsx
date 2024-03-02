@@ -7,7 +7,7 @@ import { signIn, useSession } from "next-auth/react";
 import BgImageContainer from "@/app/components/BgImageContainer";
 import BackgroundImage from "../../../assets/Amsterdam-city-scene.png";
 import Link from "next/link";
-import { signInSchema } from "./signInSchema";
+import { signInSchema } from "../../schemas/signInSchema";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({

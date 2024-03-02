@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
-import { brandSchema } from "./brandSchema";
+
+import isValidEmail from "@/utils/emailValidator";
+import { brandSchema } from "../../schemas/brandSchema";
 
 // GET /api/brands - Get all brands
 export async function GET(req: NextRequest) {
@@ -32,9 +34,48 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const brandData = validation.data;
+    // Deconstructing validation.data
+    const {
+      company,
+      industry,
+      website,
+      postCode,
+      title,
+      firstName,
+      lastName,
+      businessEmail,
+      phone,
+      adType,
+      budget,
+      targetAudience,
+      consent,
+    } = validation.data;
+
+    // Check if the provided email is a work email
+    if (!isValidEmail(businessEmail)) {
+      return NextResponse.json(
+        { error: "Invalid data", details: "Email must be a work email" },
+        { status: 400 }
+      );
+    }
+
+    // Create the brand user in the database
     const newBrand = await prisma.brand.create({
-      data: brandData,
+      data: {
+        company,
+        industry,
+        website,
+        postCode,
+        title,
+        firstName,
+        lastName,
+        businessEmail,
+        phone,
+        adType,
+        budget,
+        targetAudience,
+        consent,
+      },
     });
     return NextResponse.json(newBrand, { status: 201 });
   } catch (error) {
