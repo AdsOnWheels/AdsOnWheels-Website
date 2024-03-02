@@ -1,14 +1,14 @@
 "use client";
 
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 import Form from "../components/Form";
 import { riderSchema } from "../schemas/riderSchema";
 
 const WaitingList = () => {
-  const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
+  const [isConsentGiven, setIsConsentGiven] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -36,6 +36,17 @@ const WaitingList = () => {
     }));
   };
 
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = e.target.checked;
+    setIsConsentGiven(isChecked);
+
+    // Update the consent field in the form data
+    setFormData((prev) => ({
+      ...prev,
+      consent: isChecked,
+    }));
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -54,7 +65,7 @@ const WaitingList = () => {
       formData.availability ||
       !formData.interestReason
     ) {
-      setError("Please provide all the required information.");
+      toast.error("Please provide all the required information.");
       return;
     }
 
@@ -64,14 +75,14 @@ const WaitingList = () => {
 
       if (!validFormData.success) {
         console.error("Invalid rider information:", validFormData.error);
-        setError("Please provide valid information");
+        toast.error("Please provide valid information");
         return null;
       }
 
       const validatedFormData = validFormData.data;
 
       setPending(true);
-      // Make a request to sign up the user
+      // Make a request to sign up the rider user
       const res = await fetch("/api/riders", {
         method: "POST",
         headers: {
@@ -88,10 +99,10 @@ const WaitingList = () => {
 
       const user = await res.json();
 
-      console.log(`Hey! ${user.name}. Form successfully submitted.`);
+      toast.success(`Hey! ${user.name}. Form successfully submitted.`);
     } catch (error) {
       console.error("Error creating rider user:", error);
-      setError("An unexpected error occurred. Please try again later.");
+      toast.error("An unexpected error occurred. Please try again later.");
       setPending(false);
     }
   };
@@ -101,6 +112,7 @@ const WaitingList = () => {
       id="waiting-list"
       className="bg-gradient-to-b from-gray-50 to-gray-700 flex items-center justify-center p-12"
     >
+      <Toaster />
       <div className="relative max-w-5xl mx-auto bg-white bg-opacity-95 p-8 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-8">
         <div className="text-center md:text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-800 mb-4">
@@ -118,8 +130,11 @@ const WaitingList = () => {
         <Form
           formType="waitingList"
           formData={formData}
+          pending={pending}
           onSubmit={handleSubmit}
           handleFormData={handleFormData}
+          isConsentGiven={isConsentGiven}
+          handleCheckboxChange={handleCheckboxChange}
         />
       </div>
     </section>
