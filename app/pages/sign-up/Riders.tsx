@@ -23,7 +23,10 @@ const RiderSignUp = () => {
     availability: "",
     interestReason: "",
     additionalComments: "",
+    consent: false,
   });
+
+  console.log("FORM DATA: ", formData);
 
   const handleFormData = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -57,13 +60,14 @@ const RiderSignUp = () => {
       !formData.phoneNumber ||
       !formData.cityRegion ||
       !formData.postCode ||
-      formData.bicycleType ||
-      formData.cyclingDistance ||
-      formData.bicycleCondition ||
-      formData.imageUrl ||
+      !formData.bicycleType ||
+      !formData.cyclingDistance ||
+      !formData.bicycleCondition ||
+      !formData.imageUrl ||
       !formData.regularRoutes ||
-      formData.availability ||
-      !formData.interestReason
+      !formData.availability ||
+      !formData.interestReason ||
+      !formData.consent
     ) {
       toast.error("Please provide all the required information.");
       return;
@@ -97,9 +101,9 @@ const RiderSignUp = () => {
         throw new Error("Failed to create rider user");
       }
 
-      const user = await res.json();
+      const { newRider } = await res.json();
 
-      console.log(`Hey! ${user.name}. Form successfully submitted.`);
+      toast.success(`Hi ${newRider.fullName}, Welcome to the team!`);
     } catch (error) {
       console.error("Error creating rider user:", error);
       toast.error("An unexpected error occurred. Please try again later.");

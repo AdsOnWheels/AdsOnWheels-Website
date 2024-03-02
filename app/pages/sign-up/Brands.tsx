@@ -101,11 +101,9 @@ const BrandSignUp = () => {
         throw new Error("Failed to create brand user");
       }
 
-      const user = await res.json();
+      const newBrand = await res.json();
 
-      toast.success(
-        `Hey! ${user.name || "John"}. Form successfully submitted.`
-      );
+      toast.success(`Hi ${newBrand.firstName}, Welcome to the team!`);
       setPending(false);
     } catch (error) {
       console.error("Error creating brand user:", error);

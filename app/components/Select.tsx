@@ -45,11 +45,10 @@ const Select: React.FC<Props> = ({
         id={name}
         key={name}
         name={name}
-        value={value}
+        value={value!}
         onChange={onChange}
         className={selectClasses}
         title={placeHolder}
-        defaultValue="Select an option"
         required={required}
       >
         {placeHolder && (
