@@ -11,7 +11,7 @@ import Heading2 from "../layout/Heading2";
 
 const About = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <section className="py-24 bg-gradient-to-r from-blue-50 to-indigo-50">
       <div className="container mx-auto px-4">
         <Heading1
           text="About Us"
@@ -20,7 +20,7 @@ const About = () => {
 
         <div className="space-y-8 max-w-4xl mt-16 mx-auto">
           {/* Mission Section */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg px-12 py-14">
             <Heading2
               text="Mission"
               className="text-xl md:text-2xl font-semibold mb-4 flex items-center justify-center text-gray-800"
@@ -44,7 +44,7 @@ const About = () => {
           </div>
 
           {/* Vision Section */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg px-12 py-14">
             <Heading2
               text="Vision"
               className="text-xl md:text-2xl font-semibold mb-4 flex items-center justify-center text-gray-800"
@@ -67,7 +67,7 @@ const About = () => {
           </div>
 
           {/* Values Section */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg px-12 py-14">
             <Heading2
               text="Values"
               className="text-xl md:text-2xl font-semibold mb-4 flex items-center justify-center text-gray-800"

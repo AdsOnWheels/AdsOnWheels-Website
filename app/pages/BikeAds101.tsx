@@ -35,13 +35,13 @@ const bikeAdsData = [
     title: "Effectiveness and ROI",
     color: "red",
     description:
-      "Understand the effectiveness and return on investment that bike ads offer compared to traditional advertising mediums.",
+      "Discover bike ads effectiveness and ROI compared to traditional advertising methods.",
   },
 ];
 
 const BikeAds101 = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-600 via-indigo-500 to-[#ff4f00]">
+    <section className="px-8 py-24 bg-gradient-to-br from-purple-600 via-indigo-500 to-[#ff4f00]">
       <div id="bike-ads" className="container mx-auto px-4">
         <Heading2
           text="Bike Ads 101: Unlock the Potential"
@@ -56,14 +56,14 @@ const BikeAds101 = () => {
             <>
               <div
                 key={index}
-                className={`bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 flex flex-col`}
+                className={`bg-white text-left rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 flex flex-col`}
               >
                 <FontAwesomeIcon
                   icon={icon}
-                  className={`text-${color}-500 text-6xl mb-4`}
+                  className={`w-16 h-16 text-${color}-500 text-6xl text-left mb-4`}
                 />
                 <h3 className="text-2xl font-semibold mb-3">{title}</h3>
-                <p className="text-lg text-gray-700 flex-grow">{description}</p>
+                <p className="text-lg text-gray-700 ">{description}</p>
               </div>
             </>
           ))}

@@ -114,27 +114,23 @@ const RiderSignUp = () => {
   return (
     <section
       id="rider-signUp"
-      className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 py-16"
+      className="bg-gradient-to-br from-purple-600 via-indigo-800 to-indigo-500 py-24"
     >
       <Toaster />
-      <Heading2
-        text="BECOME A RIDER"
-        color="light"
-        align="center"
-        className="mb-16"
-      />
+      <div className="text-center mb-16">
+        <Heading2
+          text="Join Our Riding Force!"
+          color="light"
+          className="mb-6"
+        />
+        <p className="text-white text-xl mb-4">
+          Become a part of the revolution in mobile advertising.
+        </p>
+      </div>
       <div className="container mx-auto flex flex-col md:flex-row">
         {/* Left Section - Encouraging Text/Image */}
         <div className="md:flex-1 flex items-center justify-center p-4">
           <div className="text-center">
-            <Heading2
-              text="Join Our Riding Force!"
-              color="white"
-              className="mb-6"
-            />
-            <p className="text-white text-xl mb-4">
-              Become a part of the revolution in mobile advertising.
-            </p>
             {/* Add an image if needed */}
             {/* <img src="path-to-your-image.jpg" alt="Encouraging Drivers" className="mt-4 max-w-full h-auto" /> */}
           </div>

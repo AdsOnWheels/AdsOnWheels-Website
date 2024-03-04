@@ -9,7 +9,7 @@ import Heading3 from "../layout/Heading3";
 import Button from "../components/Button";
 import BackgroundImage from "../../assets/Bike-in-front-of-canals.png";
 
-const HomePage = () => {
+const HeroSection = () => {
   const router = useRouter();
 
   const goToPage = (path: string) => {
@@ -58,10 +58,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {/* Next section scroll hint */}
-      {/* <ScrollHint nextSectionId="call-to-action" /> */}
     </section>
   );
 };
 
-export default HomePage;
+export default HeroSection;

@@ -1,4 +1,4 @@
-import HomePage from "./pages/HomePage";
+import HeroSection from "./pages/HeroSection";
 import CallToAction from "./pages/CallToAction";
 import BrandBenefits from "./brands/BrandBenefits";
 import Portfolio from "./pages/Portfolio";
@@ -11,7 +11,7 @@ import ScrollHint from "./components/ScrollHint";
 export default function Home() {
   return (
     <>
-      <HomePage />
+      <HeroSection />
       <CallToAction />
       <BikeAds101 />
       <BrandBenefits />

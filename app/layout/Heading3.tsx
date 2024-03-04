@@ -66,7 +66,7 @@ const textAlignClasses = {
   justify: "text-justify",
 };
 
-const responsiveClasses = "md:text-lg lg:text-xl 2xl:text-3xl";
+const responsiveClasses = "md:text-lg lg:text-xl 2xl:text-3xl leading-tight";
 
 const Heading3 = ({
   id,

@@ -25,19 +25,19 @@ type Props = {
 };
 
 const textSizeClasses = {
-  sm: "text-sm",
-  md: "text-md",
-  base: "text-base",
-  lg: "text-lg",
-  xl: "text-xl",
-  "2xl": "text-2xl",
-  "3xl": "text-3xl",
-  "4xl": "text-4xl",
-  "5xl": "text-5xl",
-  "6xl": "text-6xl",
-  "7xl": "text-7xl",
-  "8xl": "text-8xl",
-  "9xl": "text-9xl",
+  sm: "text-sm lg:text-base",
+  md: "text-md lg:text-lg",
+  base: "text-base lg:text-xl",
+  lg: "text-lg lg:text-2xl",
+  xl: "text-xl lg:text-3xl",
+  "2xl": "text-2xl lg:text-4xl",
+  "3xl": "text-3xl lg:text-4xl",
+  "4xl": "text-4xl lg:text-6xl",
+  "5xl": "text-5xl lg:text-6xl",
+  "6xl": "text-6xl lg:text-8xl",
+  "7xl": "text-7xl lg:text-9xl",
+  "8xl": "text-8xl lg:text-10xl",
+  "9xl": "text-9xl lg:text-11xl",
 };
 
 const textWeightClasses = {
@@ -66,8 +66,6 @@ const textAlignClasses = {
   justify: "text-justify",
 };
 
-const responsiveClasses = "lg:text-6xl";
-
 const Heading2 = ({
   id,
   text,
@@ -82,7 +80,7 @@ const Heading2 = ({
   const textWeightClass = textWeightClasses[fontWeight];
   const textColorClass = textColorClasses[color] || textColorClasses.dark;
   const textAlignClass = textAlignClasses[align];
-  const combinedClasses = `${responsiveClasses} ${textSizeClass} ${textWeightClass} ${textColorClass} ${textAlignClass} ${margin} ${
+  const combinedClasses = `${textSizeClass} ${textWeightClass} ${textColorClass} ${textAlignClass} ${margin} ${
     className || ""
   }`;
 
