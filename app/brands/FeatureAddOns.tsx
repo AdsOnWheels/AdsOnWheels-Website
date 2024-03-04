@@ -36,7 +36,7 @@ const FeatureAddOns = () => {
   ];
 
   return (
-    <section id="add-ons" className="bg-gray-200 py-16">
+    <section id="add-ons" className="bg-gray-200 py-24">
       <div className="container mx-auto px-4">
         <Heading2
           text="Bicycle Ad Features"
@@ -63,13 +63,13 @@ const FeatureAddOns = () => {
                   <h3 className="text-2xl font-semibold text-center text-gray-800 my-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-center mb-4">
+                  <p className="text-gray-600 text-center mb-2">
                     {feature.description}
                   </p>
-                  <div className="bg-[#ff4f00] group-hover:bg-[#ff621a] py-4 transform hover:scale-110 transition duration-300 ease-in-out">
+                  <div className="flex justify-center p-4 mb-4">
                     <Link
                       href={feature.learnMoreLink}
-                      className="text-white font-semibold text-center block"
+                      className="text-white font-semibold text-center block bg-[#ff4f00] group-hover:bg-[#ff621a] px-8 py-3 focus:outline-none focus:shadow-outline rounded-full hover:shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out"
                     >
                       Learn More
                     </Link>

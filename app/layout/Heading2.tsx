@@ -19,7 +19,7 @@ type Props = {
     | "9xl";
   fontWeight?: "normal" | "medium" | "semibold" | "bold" | "extrabold";
   margin?: "mt" | "mb" | "my" | "mx" | string;
-  color?: "light" | "white" | "dark" | "blue" | "indigo" | "purple";
+  color?: "light" | "white" | "dark" | "gray" | "blue" | "indigo" | "purple";
   align?: "none" | "left" | "center" | "right" | "justify";
   className?: string;
 };
@@ -53,6 +53,7 @@ const textColorClasses = {
   white: "text-white",
   black: "text-black",
   dark: "text-gray-800",
+  gray: "text-gray-500",
   blue: "text-blue-500",
   indigo: "text-indigo-500",
   purple: "text-purple-500",

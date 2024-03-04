@@ -22,8 +22,9 @@ const FAQItem = ({ question, answer, isOpen, onClick }: Props) => {
         <h3 className="text-xl font-semibold text-gray-800">{question}</h3>
         <FontAwesomeIcon
           icon={isOpen ? faChevronUp : faChevronDown}
-          className="transition transform duration-300 text-gray-800"
-          style={{ rotate: isOpen ? "180deg" : "0deg" }}
+          className={`w-4 h-4 transition transform duration-300 text-gray-800 rotate-${
+            isOpen ? "180" : "0"
+          }`}
         />
       </button>
       <div
@@ -100,7 +101,7 @@ const FAQsBrands = () => {
   return (
     <section
       id="faqs-brands"
-      className="py-12 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800"
+      className="py-24 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800"
     >
       <div className="text-center max-w-2xl mx-auto">
         <Heading2

@@ -37,10 +37,12 @@ const AdFormat = ({
           className="rounded-md"
         />
       </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-700">{description}</p>
-      <p className="text-gray-500 mt-2">{`Potential Reach: ${reach}`}</p>
-      <p className="text-gray-500">{`Demographics: ${demographics}`}</p>
+      <div className="text-left">
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <p className="text-gray-800">{description}</p>
+        <p className="text-sm text-gray-400 mt-2">{`Potential Reach: ${reach}`}</p>
+        <p className="text-sm text-gray-400">{`Demographics: ${demographics}`}</p>
+      </div>
     </div>
   );
 };
