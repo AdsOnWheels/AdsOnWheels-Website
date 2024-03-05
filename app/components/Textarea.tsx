@@ -27,6 +27,7 @@ const Textarea: React.FC<TextareaProps> = ({
 
   return (
     <textarea
+      key={name}
       name={name}
       value={value}
       placeholder={placeHolder}

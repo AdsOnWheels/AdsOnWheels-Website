@@ -48,8 +48,9 @@ const Input = ({
         </label>
       )}
       <input
-        type={type}
+        key={name}
         name={name}
+        type={type}
         value={value}
         required={required}
         readOnly={readOnly}

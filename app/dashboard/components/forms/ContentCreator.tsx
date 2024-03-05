@@ -2,12 +2,13 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 interface Props {
   pageTitle: string;
   titleLabel: string;
   bodyLabel: string;
-  content: { title: string; body: string };
   pending: boolean;
   error: string;
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -25,17 +26,14 @@ const ContentCreator = ({
   pageTitle,
   titleLabel,
   bodyLabel,
-  content,
   pending,
   error,
   handleInputChange,
   handleContentChange,
   handleSubmit,
 }: Props) => {
-  const { title, body } = content;
-
-  console.log("title: ", title);
-  console.log("body: ", body);
+  const { answer, question } = useSelector((state: RootState) => state.faqForm);
+  const { title, body } = useSelector((state: RootState) => state.contentForm);
 
   return (
     <div className="flex flex-wrap -mx-3">
@@ -60,7 +58,7 @@ const ContentCreator = ({
                 name="title"
                 aria-label="Title"
                 aria-describedby="title-addon"
-                value={title}
+                value={title || question}
                 className="focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
                 onChange={(e) => handleInputChange(e)}
               />
@@ -74,7 +72,7 @@ const ContentCreator = ({
               </label>
               <LazyReactQuill
                 theme="snow"
-                value={body}
+                value={body || answer}
                 className="ql-container"
                 onChange={handleContentChange}
               />

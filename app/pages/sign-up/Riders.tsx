@@ -1,53 +1,67 @@
 "use client";
 
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import Heading2 from "../../layout/Heading2";
-import Form from "../../components/Form";
-import { riderSchema } from "@/app/schemas/riderSchema";
+import { useSelector, useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 
-const RiderSignUp = () => {
-  const [pending, setPending] = useState(false);
-  const [isConsentGiven, setIsConsentGiven] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-    cityRegion: "",
-    postCode: "",
-    bicycleType: "",
-    cyclingDistance: "",
-    bicycleCondition: "",
-    imageUrl: "",
-    regularRoutes: "",
-    availability: "",
-    interestReason: "",
-    additionalComments: "",
-    consent: false,
-  });
+import Form from "../../components/Form";
+import Heading2 from "../../layout/Heading2";
+import { riderSchema } from "@/app/schemas/riderSchema";
+import {
+  setFullName,
+  setEmail,
+  setPhoneNumber,
+  setCityRegion,
+  setPostCode,
+  setBicycleType,
+  setCyclingDistance,
+  setBicycleCondition,
+  setImageUrl,
+  setRegularRoutes,
+  setAvailability,
+  setInterestReason,
+  setAdditionalComments,
+  setConsent,
+  selectRiderFormData,
+} from "@/redux/slices/riderForm";
+import { RiderFormData } from "@/types/types";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
-  console.log("FORM DATA: ", formData);
+const RiderSignUp = () => {
+  const riderFormData = useSelector(selectRiderFormData);
+  const [isConsentGiven, setIsConsentGiven] = useState(false);
+  const [pending, setPending] = useState(false);
+  const dispatch = useDispatch();
+
+  const {
+    fullName,
+    email,
+    phoneNumber,
+    cityRegion,
+    postCode,
+    bicycleType,
+    cyclingDistance,
+    bicycleCondition,
+    imageUrl,
+    regularRoutes,
+    availability,
+    interestReason,
+    additionalComments,
+    consent,
+  } = riderFormData;
 
   const handleFormData = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    // Your logic to handle form data changes
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    const fieldName = name as keyof RiderFormData;
+    dispatch(getAction(fieldName)(value));
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked;
     setIsConsentGiven(isChecked);
-
-    // Update the consent field in the form data
-    setFormData((prev) => ({
-      ...prev,
-      consent: isChecked,
-    }));
+    dispatch(setConsent(isChecked));
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -55,19 +69,20 @@ const RiderSignUp = () => {
 
     // Validate form data
     if (
-      !formData.fullName ||
-      !formData.email ||
-      !formData.phoneNumber ||
-      !formData.cityRegion ||
-      !formData.postCode ||
-      !formData.bicycleType ||
-      !formData.cyclingDistance ||
-      !formData.bicycleCondition ||
-      !formData.imageUrl ||
-      !formData.regularRoutes ||
-      !formData.availability ||
-      !formData.interestReason ||
-      !formData.consent
+      !fullName ||
+      !email ||
+      !phoneNumber ||
+      !cityRegion ||
+      !postCode ||
+      !bicycleType ||
+      !cyclingDistance ||
+      !bicycleCondition ||
+      !imageUrl ||
+      !regularRoutes ||
+      !availability ||
+      !interestReason ||
+      !additionalComments ||
+      !consent
     ) {
       toast.error("Please provide all the required information.");
       return;
@@ -75,7 +90,7 @@ const RiderSignUp = () => {
 
     try {
       // Validate form data using Zod schema
-      const validFormData = riderSchema.safeParse(formData);
+      const validFormData = riderSchema.safeParse(riderFormData);
 
       if (!validFormData.success) {
         console.error("Invalid rider information:", validFormData.error);
@@ -87,7 +102,7 @@ const RiderSignUp = () => {
 
       setPending(true);
       // Make a request to sign up the rider user
-      const res = await fetch("/api/rider", {
+      const res = await fetch("/api/riders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,14 +116,41 @@ const RiderSignUp = () => {
         throw new Error("Failed to create rider user");
       }
 
-      const { newRider } = await res.json();
+      const newRider = await res.json();
 
-      toast.success(`Hi ${newRider.fullName}, Welcome to the team!`);
+      toast.success(
+        `Thank you, ${newRider?.fullName}! You've successfully signed up as a rider.`
+      );
+      setPending(false);
     } catch (error) {
       console.error("Error creating rider user:", error);
       toast.error("An unexpected error occurred. Please try again later.");
       setPending(false);
     }
+  };
+
+  // Dynamically get the action creator based on the input field name
+  const getAction = (name: keyof RiderFormData) => {
+    const actionMap: Record<
+      keyof RiderFormData,
+      ActionCreatorWithPayload<any, any>
+    > = {
+      fullName: setFullName,
+      email: setEmail,
+      phoneNumber: setPhoneNumber,
+      cityRegion: setCityRegion,
+      postCode: setPostCode,
+      bicycleType: setBicycleType,
+      cyclingDistance: setCyclingDistance,
+      bicycleCondition: setBicycleCondition,
+      imageUrl: setImageUrl,
+      regularRoutes: setRegularRoutes,
+      availability: setAvailability,
+      interestReason: setInterestReason,
+      additionalComments: setAdditionalComments,
+      consent: setConsent,
+    };
+    return actionMap[name];
   };
 
   return (
@@ -144,7 +186,7 @@ const RiderSignUp = () => {
             margin="mx-auto"
             padding="p-6"
             pending={pending}
-            formData={formData}
+            formData={riderFormData}
             onSubmit={handleSubmit}
             handleFormData={handleFormData}
             isConsentGiven={isConsentGiven}

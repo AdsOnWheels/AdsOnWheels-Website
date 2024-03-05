@@ -1,53 +1,65 @@
 "use client";
 
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 
 import Form from "../../components/Form";
 import Heading2 from "@/app/layout/Heading2";
 import { brandSchema } from "@/app/schemas/brandSchema";
-import toast, { Toaster } from "react-hot-toast";
+import {
+  setCompany,
+  setIndustry,
+  setWebsite,
+  setPostCode,
+  setTitle,
+  setFirstName,
+  setLastName,
+  setBusinessEmail,
+  setPhone,
+  setAdType,
+  setBudget,
+  setTargetAudience,
+  setConsent,
+  selectBrandFormData,
+} from "@/redux/slices/brandForm";
+import { BrandFormData } from "@/types/types";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
 const BrandSignUp = () => {
-  const [pending, setPending] = useState(false);
+  const brandFormData = useSelector(selectBrandFormData);
   const [isConsentGiven, setIsConsentGiven] = useState(false);
-  const [formData, setFormData] = useState({
-    company: "",
-    industry: "",
-    website: "",
-    postCode: "",
-    title: "",
-    firstName: "",
-    lastName: "",
-    businessEmail: "",
-    phone: "",
-    adType: "",
-    budget: "",
-    targetAudience: "",
-    consent: false,
-  });
+  const [pending, setPending] = useState(false);
+  const dispatch = useDispatch();
 
-  console.log("Form Data:", formData);
+  const {
+    company,
+    industry,
+    website,
+    postCode,
+    title,
+    firstName,
+    lastName,
+    businessEmail,
+    phone,
+    adType,
+    budget,
+    targetAudience,
+    consent,
+  } = brandFormData;
 
   const handleFormData = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    // Your logic to handle form data changes
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    const fieldName = name as keyof BrandFormData;
+    dispatch(getAction(fieldName)(value));
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked;
     setIsConsentGiven(isChecked);
-
-    // Update the consent field in the form data
-    setFormData((prev) => ({
-      ...prev,
-      consent: isChecked,
-    }));
+    dispatch(setConsent(isChecked));
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -55,19 +67,19 @@ const BrandSignUp = () => {
 
     // Validate form data
     if (
-      !formData.company ||
-      !formData.industry ||
-      !formData.website ||
-      !formData.postCode ||
-      !formData.title ||
-      !formData.firstName ||
-      !formData.lastName ||
-      !formData.businessEmail ||
-      !formData.phone ||
-      !formData.adType ||
-      !formData.budget ||
-      !formData.targetAudience ||
-      !formData.consent
+      !company ||
+      !industry ||
+      !website ||
+      !postCode ||
+      !title ||
+      !firstName ||
+      !lastName ||
+      !businessEmail ||
+      !phone ||
+      !adType ||
+      !budget ||
+      !targetAudience ||
+      !consent
     ) {
       toast.error("Please provide all the required information.");
       return;
@@ -75,7 +87,7 @@ const BrandSignUp = () => {
 
     try {
       // Validate form data using Zod schema
-      const validFormData = brandSchema.safeParse(formData);
+      const validFormData = brandSchema.safeParse(brandFormData);
 
       if (!validFormData.success) {
         console.error("Invalid information:", validFormData.error);
@@ -103,13 +115,38 @@ const BrandSignUp = () => {
 
       const newBrand = await res.json();
 
-      toast.success(`Hi ${newBrand.firstName}, Welcome to the team!`);
+      toast.success(
+        `Thank you, ${newBrand?.firstName}! Your application has been submitted successfully.`
+      );
       setPending(false);
     } catch (error) {
       console.error("Error creating brand user:", error);
       toast.error("An unexpected error occurred. Please try again later.");
       setPending(false);
     }
+  };
+
+  // Dynamically get the action creator based on the input field name
+  const getAction = (name: keyof BrandFormData) => {
+    const actionMap: Record<
+      keyof BrandFormData,
+      ActionCreatorWithPayload<any, any>
+    > = {
+      company: setCompany,
+      industry: setIndustry,
+      website: setWebsite,
+      postCode: setPostCode,
+      title: setTitle,
+      firstName: setFirstName,
+      lastName: setLastName,
+      businessEmail: setBusinessEmail,
+      phone: setPhone,
+      adType: setAdType,
+      budget: setBudget,
+      targetAudience: setTargetAudience,
+      consent: setConsent,
+    };
+    return actionMap[name];
   };
 
   return (
@@ -138,7 +175,7 @@ const BrandSignUp = () => {
               margin="mx-auto"
               padding="p-6"
               pending={pending}
-              formData={formData}
+              formData={brandFormData}
               onSubmit={handleSubmit}
               handleFormData={handleFormData}
               isConsentGiven={isConsentGiven}

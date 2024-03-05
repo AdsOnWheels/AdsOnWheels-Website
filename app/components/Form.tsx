@@ -1,20 +1,16 @@
 "use client";
 
-import React, {
-  useState,
-  ChangeEvent,
-  FormEvent,
-  FormEventHandler,
-} from "react";
+import React, { useState, ChangeEvent, FormEventHandler } from "react";
+import Link from "next/link";
 
 import Button from "./Button";
 import Input from "./Input";
 import Select from "./Select";
 import Checkbox from "./Checkbox";
 import Textarea from "./Textarea";
+import ImageUploadInput from "./ImageUploadInput";
 import formConfig from "@/app/config/formConfig";
 import { RiderFormData, BrandFormData, ContactFormData } from "@/types/types";
-import Link from "next/link";
 
 interface Field {
   name: string;
@@ -54,6 +50,17 @@ const Form = ({
   const [currentStep, setCurrentStep] = useState<number>(1);
 
   const renderField = (field: Field) => {
+    // Check if the field is ImageUploadInput
+    if (field.name === "bikePhoto") {
+      return (
+        <ImageUploadInput
+          key={field.name}
+          name={field.name}
+          required={field.required}
+        />
+      );
+    }
+
     const fieldValue = formData
       ? (formData as unknown as { [key: string]: string })[field.name]
       : undefined;

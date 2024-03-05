@@ -1,36 +1,24 @@
 "use client";
 
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import DOMPurify from "dompurify";
 
+import { RootState } from "@/redux/store";
 import { faqSchema } from "@/app/schemas/faqSchema";
 import useRequestHandler from "@/app/hooks/useRequestHandler";
 import ContentCreator from "../../components/forms/ContentCreator";
+import { setAnswer, setQuestion } from "@/redux/slices/faqForm";
 
 const CreateFAQ = () => {
-  const [content, setContent] = useState({ title: "", body: "" });
+  const { answer, question } = useSelector((state: RootState) => state.faqForm);
   const { pending, error, requestHandler } = useRequestHandler();
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // It's a ChangeEvent<HTMLInputElement>
-    const { name, value } = e.target;
-    setContent((prevContent) => ({
-      ...prevContent,
-      [name]: value,
-    }));
-  };
+  const dispatch = useDispatch();
 
   const handleContentChange = (content: string) => {
-    // Remove HTML tags from the content
-    const sanitizedContent = DOMPurify.sanitize(content, {
-      ALLOWED_TAGS: [], // remove all HTML tags
-    });
-
-    setContent((prevContent) => ({
-      ...prevContent,
-      body: sanitizedContent, // Property for ReactQuill content
-    }));
+    const sanitizedContent = DOMPurify.sanitize(content, { ALLOWED_TAGS: [] });
+    dispatch(setAnswer(sanitizedContent));
   };
 
   // Handle submission of faq content
@@ -38,14 +26,16 @@ const CreateFAQ = () => {
     e.preventDefault();
 
     // Validate form data
-    if (!content.title || !content.body) {
+    if (!question || !answer) {
       toast.error("Please provide all the required information.");
       return;
     }
 
+    const formData = { question, answer };
+
     try {
       // Validate form data using Zod schema
-      const validFormData = faqSchema.safeParse(content);
+      const validFormData = faqSchema.safeParse(formData);
 
       if (!validFormData.success) {
         console.error("Invalid rider information:", validFormData.error);
@@ -67,10 +57,16 @@ const CreateFAQ = () => {
       pageTitle="Create New FAQ"
       titleLabel="Question"
       bodyLabel="Answer"
-      content={content}
       pending={pending}
       error={error}
-      handleInputChange={handleInputChange}
+      handleInputChange={(e: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        if (name === "title") {
+          dispatch(setQuestion(value));
+        } else if (name === "body") {
+          dispatch(setAnswer(value));
+        }
+      }}
       handleContentChange={handleContentChange}
       handleSubmit={handleSubmit}
     />

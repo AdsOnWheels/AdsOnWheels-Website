@@ -28,6 +28,7 @@ export interface RiderFormData {
   availability: string;
   interestReason: string;
   additionalComments: string;
+  consent: boolean;
 }
 
 export interface BrandFormData {
