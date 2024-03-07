@@ -20,7 +20,7 @@ const MetricCard2 = ({
       key={key}
       className="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/3"
     >
-      <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-800 shadow-xl dark:shadow-dark-xl rounded-2xl bg-clip-border transition-shadow duration-300 ease-in-out">
+      <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-950 shadow-xl dark:shadow-xl rounded-2xl bg-clip-border transition-shadow duration-300 ease-in-out">
         <div className="flex-auto p-4">
           <div className="flex flex-row -mx-3">
             <div className="flex-none w-2/3 max-w-full px-3">
@@ -32,7 +32,7 @@ const MetricCard2 = ({
                   {value}
                 </h5>
                 <p className="mb-0 dark:text-white dark:opacity-60">
-                  <span className="text-sm font-bold leading-normal text-emerald-500">
+                  <span className="text-sm font-bold leading-normal text-lime-500">
                     +{percentageIncrease}%
                   </span>{" "}
                   since last month

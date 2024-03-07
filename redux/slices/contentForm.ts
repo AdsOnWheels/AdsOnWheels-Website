@@ -4,6 +4,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialContentFormData: ContentFormData = {
   title: "",
   body: "",
+  tag: "rider",
 };
 
 const contentFormSlice = createSlice({
@@ -16,10 +17,13 @@ const contentFormSlice = createSlice({
     setBody: (state, action: PayloadAction<string>) => {
       state.body = action.payload;
     },
+    setTag: (state, action: PayloadAction<"rider" | "brand">) => {
+      state.tag = action.payload;
+    },
   },
 });
 
-export const { setTitle, setBody } = contentFormSlice.actions;
+export const { setTitle, setBody, setTag } = contentFormSlice.actions;
 
 const contentFormReducer = contentFormSlice.reducer;
 export default contentFormReducer;

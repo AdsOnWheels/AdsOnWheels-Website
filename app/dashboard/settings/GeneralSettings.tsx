@@ -63,9 +63,9 @@ const GeneralSettings = () => {
 
   return (
     <div className="w-full md:w-1/2 px-3 mb-6">
-      <div className="bg-white dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl">
+      <div className="bg-white dark:bg-gray-950 dark:shadow-xl rounded-2xl">
         <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
-          <h6 className="mb-0 text-slate-700">General Settings</h6>
+          <h6 className="mb-0 dark:text-white">General Settings</h6>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="flex-auto p-4">
@@ -79,7 +79,7 @@ const GeneralSettings = () => {
               id="privacyPolicy"
               name="privacyPolicy"
               rows={5}
-              className="mt-1 block w-full px-4 py-2 rounded-md shadow-sm border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              className="mt-1 block w-full px-4 py-2 shadow-sm focus:ring-blue-500 focus:shadow-blue-500 dark:bg-gray-950 dark:placeholder:text-white/80 text-sm leading-5 ease-linear appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
               value={privacyPolicy}
               onChange={handlePrivacyPolicyChange}
             ></textarea>
@@ -94,10 +94,10 @@ const GeneralSettings = () => {
                     <li
                       key={version.id}
                       onClick={() => handleVersionSelect(version.id)}
-                      className={`cursor-pointer ${
+                      className={`cursor-pointer shadow-md focus:ring-blue-500 focus:shadow-blue-500 dark:bg-gray-950 text-sm leading-5 ease-linear appearance-none rounded-lg bg-white bg-clip-padding font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none ${
                         selectedVersion === version.id
-                          ? "bg-blue-100 text-blue-800"
-                          : "bg-gray-100 text-gray-800"
+                          ? "dark:bg-blue-500 bg-blue-200 dark:text-white/80 text-blue-500"
+                          : "dark:bg-gray-500 bg-gray-100 dark:text-white/70 text-gray-500"
                       } px-3 py-2 rounded-md`}
                     >
                       Version {version.versionNumber}
@@ -119,7 +119,7 @@ const GeneralSettings = () => {
               id="termsOfService"
               name="termsOfService"
               rows={5}
-              className="mt-1 block w-full px-4 py-2 rounded-md shadow-sm border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              className="mt-1 block w-full px-4 py-2 shadow-sm focus:ring-blue-500 focus:shadow-blue-500 dark:bg-gray-950 dark:placeholder:text-white/80 text-sm leading-5 ease-linear appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
               value={termsOfService}
               onChange={handleTermsOfServiceChange}
             ></textarea>
@@ -136,7 +136,7 @@ const GeneralSettings = () => {
               id="legalSettings"
               name="legalSettings"
               rows={5}
-              className="mt-1 block w-full px-4 py-2 rounded-md shadow-sm border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              className="mt-1 block w-full px-4 py-2 shadow-sm focus:ring-blue-500 focus:shadow-blue-500 dark:bg-gray-950 dark:placeholder:text-white/80 text-sm leading-5 ease-linear appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
               value={legalSettings}
               onChange={handleLegalSettingsChange}
             ></textarea>

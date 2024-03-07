@@ -135,12 +135,14 @@ const DataTable: React.FC<TableProps> = ({
 
   return (
     <div className="w-full max-w-full px-3 flex-0">
-      <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl">
+      <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl">
         <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6">
-          <h5 className="mb-0 text-gray-800">{title}</h5>
-          <p className="mb-0 text-sm leading-normal">{description}</p>
+          <h5 className="mb-0 dark:text-white">{title}</h5>
+          <p className="mb-0 text-sm text-gray-500 leading-normal">
+            {description}
+          </p>
         </div>
-        <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl rounded-b-2xl dark:bg-slate-850 dark:shadow-dark-xl bg-clip-border">
+        <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl rounded-b-2xl dark:bg-gray-950 dark:shadow-xl bg-clip-border">
           <div className="overflow-x-auto ps">
             {/* Entries per page dropdown */}
             {entriesPerPage || canSearch ? (
@@ -210,7 +212,7 @@ const DataTable: React.FC<TableProps> = ({
               {/* Table Body */}
               <tbody
                 {...getTableBodyProps()}
-                className="bg-white divide-y divide-gray-200"
+                className="divide-y divide-gray-200"
               >
                 {page.map((row: any, rowIndex: number) => {
                   prepareRow(row);
@@ -280,7 +282,7 @@ const DataTable: React.FC<TableProps> = ({
                         className={`border border-gray-300 rounded-full px-2.5 py-0.5 mr-1 ${
                           index === pageIndex
                             ? "bg-gray-800 text-white"
-                            : "bg-gray-200"
+                            : "bg-gray-200 dark:bg-gray-950"
                         }`}
                         onClick={() => gotoPage(index)}
                       >
@@ -328,7 +330,7 @@ const DataTable: React.FC<TableProps> = ({
                             gotoPage(pageCount - 1);
                           }
                         }}
-                        className="w-[50px] border border-gray-300 px-2 py-0.5 rounded"
+                        className="w-[50px] dark:bg-gray-950 border border-gray-300 px-2 py-0.5 rounded"
                       />
                     </span>{" "}
                   </div>

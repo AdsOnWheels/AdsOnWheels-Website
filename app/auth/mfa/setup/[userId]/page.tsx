@@ -58,7 +58,7 @@ const MFASetup = ({ params: { userId } }: Props) => {
   return (
     <BgImageContainer image={{ src: BackgroundImage }}>
       <div className="flex flex-col w-full max-w-full px-6 mx-auto shrink-0 md:flex-0 md:w-6/12 lg:w-5/12 xl:w-4/12 overflow-hidden">
-        <div className="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 shadow-xl dark:bg-slate-850 rounded-2xl bg-clip-border">
+        <div className="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
           <div className="flex-auto p-6 text-center lg:px-12 lg:py-12">
             <div>
               <div className="mb-6 text-center text-slate-500">

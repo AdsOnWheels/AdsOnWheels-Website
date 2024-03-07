@@ -7,7 +7,7 @@ const ResetPassword = () => {
   return (
     <BgImageContainer image={{ src: BackgroundImage }}>
       <div className="w-full max-w-full px-6 mt-12 mx-auto shrink-0 md:flex-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
-        <div className="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-xl md:mb-32 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+        <div className="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-xl md:mb-32 dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
           <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6">
             <div className="flex">
               <div className="inline-block w-12 h-12 text-center bg-blue-500 rounded-lg shadow-sm">

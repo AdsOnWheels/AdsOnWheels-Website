@@ -65,7 +65,7 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
   };
 
   return (
-    <div className="block justify-between items-center p-4 mb-6 bg-white rounded-2xl shadow-xl shadow-gray-200 lg:p-5 sm:flex">
+    <div className="block justify-between items-center p-4 mb-6 dark:bg-gray-950 bg-white rounded-2xl shadow-xl lg:p-5 sm:flex">
       <div className="mb-1 w-full">
         <div className="sm:flex">
           {searchBar && (
@@ -77,7 +77,7 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
             <div className="w-full max-w-full mx-auto mt-4 sm:my-auto sm:ml-0 md:w-1/2 md:flex-none lg:w-4/12">
               <div className="relative left-0">
                 <ul
-                  className="relative flex flex-wrap p-1 list-none bg-gray-200 rounded-xl"
+                  className="relative flex flex-wrap p-1 list-none dark:bg-[#141728] bg-gray-200 rounded-xl"
                   nav-pills=""
                   role="tablist"
                 >
@@ -85,7 +85,7 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
                     <li key={index} className="z-30 flex-auto text-center">
                       <Link
                         href="#"
-                        className={`z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg bg-inherit text-slate-700 ${
+                        className={`z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg bg-inherit dark:text-white/80 text-slate-700 ${
                           selectedTab === tab
                             ? "text-blue-500"
                             : "text-gray-500"
@@ -105,7 +105,7 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
                     style={movingTabStyle}
                   >
                     <a
-                      className="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg text-white bg-white shadow-sm animate-none duration-200"
+                      className="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg dark:text-gray-950 text-white dark:bg-gray-950 bg-white shadow-sm animate-none duration-200"
                       nav-link=""
                       role="tab"
                       aria-selected="true"

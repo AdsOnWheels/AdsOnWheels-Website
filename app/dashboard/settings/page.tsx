@@ -56,7 +56,7 @@ const Settings = () => {
         <BrandSubscription />
         {/* APIs and Integrations Section */}
         <div className="w-full px-3 mb-6">
-          <div className="bg-white dark:bg-slate-850 dark:shadow-dark-xl rounded-lg p-6">
+          <div className="bg-white dark:bg-gray-950 dark:shadow-xl rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">
               APIs and Integrations
             </h2>

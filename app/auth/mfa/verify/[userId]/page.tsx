@@ -66,7 +66,7 @@ const MFAVerification = ({ params: { userId } }: Props) => {
   return (
     <BgImageContainer image={{ src: BackgroundImage }}>
       <div className="flex flex-col w-full max-w-full px-6 mx-auto shrink-0 md:flex-0 md:w-6/12 lg:w-5/12 xl:w-4/12">
-        <div className="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 shadow-xl dark:bg-slate-850 rounded-2xl bg-clip-border">
+        <div className="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
           <div className="flex-auto p-6 text-center lg:px-12 lg:py-12">
             <div>
               <div className="mb-6 text-center text-slate-500">
@@ -90,7 +90,7 @@ const MFAVerification = ({ params: { userId } }: Props) => {
                           autoComplete="off"
                           type="text"
                           value={verificationCode[index] || ""}
-                          className="min-h-unset focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder-white-80 dark:text-white-80 text-sm leading-5.6 block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding p-3 font-normal text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+                          className="min-h-unset focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder-white-80 dark:text-white-80 text-sm leading-5.6 block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding p-3 font-normal text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none"
                           onChange={(e) => {
                             const newValue = e.target.value;
                             const newVerificationCode = [...verificationCode];

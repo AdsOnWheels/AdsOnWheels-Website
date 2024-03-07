@@ -82,7 +82,6 @@ const CreateHelpArticle = () => {
       pageTitle="Create New Help Article"
       titleLabel="Topic"
       bodyLabel="Content"
-      content={content}
       pending={pending}
       error={error}
       handleInputChange={handleInputChange}

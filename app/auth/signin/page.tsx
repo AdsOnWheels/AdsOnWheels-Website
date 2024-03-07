@@ -91,7 +91,7 @@ const SignIn = () => {
   return (
     <BgImageContainer image={{ src: BackgroundImage }}>
       <div className="w-full max-w-full px-6 mx-auto shrink-0 md:flex-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
-        <div className="relative z-10 flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+        <div className="relative z-10 flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
           <div className="text-center border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6">
             <h3 className="text-xl font-bold">Admin Portal Sign In</h3>
             <p className="mb-0">Enter your email and password to sign in</p>

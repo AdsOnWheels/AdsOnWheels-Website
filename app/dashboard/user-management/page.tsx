@@ -134,7 +134,7 @@ const UserManagement = () => {
         <div className="w-full max-w-full px-3 lg:flex-0 shrink-0 lg:w-7/12 xl:w-8/12">
           <div className="flex flex-wrap -mx-3">
             <div className="w-full max-w-full px-3 sm:flex-0 shrink-0 sm:w-4/12">
-              <div className="border-black/12.5 shadow-xl dark:shadow-dark-xl relative flex min-w-0 flex-col overflow-hidden break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+              <div className="border-black/12.5 shadow-xl dark:shadow-xl dark:bg-gray-950 relative flex min-w-0 flex-col overflow-hidden break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div className="p-4 pb-0 rounded-t-2xl">
                   <p className="mb-0 text-sm font-semibold leading-normal capitalize dark:text-white dark:opacity-60">
                     Visitors
@@ -152,7 +152,7 @@ const UserManagement = () => {
               </div>
             </div>
             <div className="w-full max-w-full px-3 mt-6 sm:flex-0 shrink-0 sm:mt-0 sm:w-4/12">
-              <div className="border-black/12.5 shadow-xl dark:shadow-dark-xl relative flex min-w-0 flex-col overflow-hidden break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+              <div className="border-black/12.5 shadow-xl dark:shadow-xl dark:bg-gray-950 relative flex min-w-0 flex-col overflow-hidden break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div className="p-4 pb-0 rounded-t-2xl">
                   <p className="mb-0 text-sm font-semibold leading-normal capitalize dark:text-white dark:opacity-60">
                     Income
@@ -173,7 +173,7 @@ const UserManagement = () => {
           {/* Bar Chart */}
           <div className="flex flex-wrap mt-6 -mx-3">
             <div className="w-full max-w-full px-3 flex-0">
-              <div className="widget-calendar border-black/12.5 shadow-xl dark:shadow-dark-xl relative flex h-full min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+              <div className="border-black/12.5 shadow-xl dark:shadow-xl relative flex h-full min-w-0 flex-col break-words rounded-2xl border-0 border-solid dark:bg-gray-950 bg-white bg-clip-border">
                 <div className="p-4 pb-0 rounded-t-2xl">
                   <h6 className="mb-0 dark:text-white">Calendar</h6>
                   <div className="flex">
@@ -198,9 +198,9 @@ const UserManagement = () => {
         <div className="w-full max-w-full px-3 mt-6 lg:flex-0 shrink-0 lg:mt-0 lg:w-5/12 xl:w-4/12">
           <div className="flex flex-wrap -mx-3">
             <div className="w-full max-w-full px-3 sm:flex-0 shrink-0 sm:w-4/12 lg:w-full">
-              <div className="border-black/12.5 shadow-xl dark:shadow-dark-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border p-4">
+              <div className="border-black/12.5 shadow-xl dark:shadow-xl dark:bg-gray-950 relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border p-4">
                 <div className="relative h-full overflow-hidden rounded-xl">
-                  <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 opacity-80"></span>
+                  <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-gray-950 dark:to-gray-800 opacity-80"></span>
                   <div className="relative z-10 flex-auto h-full p-4">
                     <h6 className="mb-4 font-bold text-white">Hey John!</h6>
                     <p className="mb-4 text-white dark:opacity-60">
@@ -212,7 +212,7 @@ const UserManagement = () => {
               </div>
             </div>
             <div className="w-full max-w-full px-3 sm:flex-0 shrink-0 sm:w-6/12 lg:w-full">
-              <div className="border-black/12.5 shadow-xl dark:shadow-dark-xl relative mt-6 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+              <div className="border-black/12.5 shadow-xl dark:shadow-xl dark:bg-gray-950 relative mt-6 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                 <div className="p-4 pb-0 rounded-t-4">
                   <h6 className="mb-0 dark:text-white">Categories</h6>
                 </div>

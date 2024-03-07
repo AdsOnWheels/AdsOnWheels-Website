@@ -123,7 +123,7 @@ const DashboardNavigation = () => {
                   text={isOpen ? item.text : ""}
                   icon={item.icon}
                   tooltip={item.tooltip}
-                  color="light"
+                  color="neutral"
                 />
                 {isOpen && (
                   <span className="ml-auto">
@@ -131,7 +131,7 @@ const DashboardNavigation = () => {
                       href={item.href}
                       icon={isUserManagementOpen ? faChevronUp : faChevronDown}
                       className="ml-2"
-                      color="light"
+                      color="neutral"
                     />
                   </span>
                 )}
@@ -146,7 +146,7 @@ const DashboardNavigation = () => {
                         icon={subItem.icon}
                         tooltip={subItem.tooltip}
                         className="flex items-center justify-start px-4 py-3 rounded-md transition duration-300 hover:bg-gray-700 hover:text-white"
-                        color="light"
+                        color="neutral"
                       />
                     </li>
                   ))}
@@ -160,7 +160,7 @@ const DashboardNavigation = () => {
               icon={item.icon}
               tooltip={item.tooltip}
               className="flex items-center justify-start px-4 py-3 rounded-md transition duration-300 hover:bg-gray-700 hover:text-white"
-              color="light"
+              color="neutral"
             />
           )}
         </li>

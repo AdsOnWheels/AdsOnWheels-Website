@@ -17,7 +17,7 @@ const BasicTable = ({ headers, rows, button, searchQuery }: Props) => {
   return (
     <table className="w-full whitespace-nowrap">
       <thead>
-        <tr className="bg-gray-100">
+        <tr className="text-gray-500">
           {headers.map((header, i: number) => (
             <th
               key={i}
@@ -32,7 +32,10 @@ const BasicTable = ({ headers, rows, button, searchQuery }: Props) => {
         {filteredRows.map((row, rowIndex) => (
           <tr key={rowIndex} className="border-t border-gray-200">
             {row.map((cell: any, cellIndex: number) => (
-              <td key={cellIndex} className="px-4 py-3 text-sm text-gray-800">
+              <td
+                key={cellIndex}
+                className="px-4 py-3 text-sm dark:text-white/80"
+              >
                 {cell}
               </td>
             ))}

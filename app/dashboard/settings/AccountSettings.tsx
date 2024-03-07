@@ -16,9 +16,9 @@ const AccountSettings = () => {
     <>
       <div className="flex flex-wrap -mx-3">
         <div className="w-full max-w-full px-3 sm:flex-0 shrink-0 sm:w-6/12">
-          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
             <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
-              <h6 className="mb-0 text-slate-700">Security Settings</h6>
+              <h6 className="mb-0 dark:text-white">Security Settings</h6>
             </div>
             <div className="flex-auto p-4">
               {labels.map((label, index) => (
@@ -41,10 +41,10 @@ const AccountSettings = () => {
           </div>
         </div>
         <div className="w-full max-w-full px-3 mt-6 sm:flex-0 shrink-0 sm:w-6/12 md:mt-0">
-          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
             <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
               <div className="flex items-center">
-                <h6 className="mb-0 text-slate-700">
+                <h6 className="mb-0 dark:text-white">
                   Two factor authentication
                 </h6>
                 <button
@@ -61,9 +61,11 @@ const AccountSettings = () => {
                 to your account by requiring more than just a password to log
                 in.
               </p>
-              <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+              <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
                 <div className="flex-auto p-4 bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-xl">
-                  <h6 className="mb-0 text-white">Questions about security?</h6>
+                  <h6 className="mb-0 dark:text-white">
+                    Questions about security?
+                  </h6>
                   <p className="mb-6 text-sm leading-normal text-white dark:text-white/60">
                     Have a question, concern, or comment about security? Please
                     contact us.
@@ -82,9 +84,9 @@ const AccountSettings = () => {
       </div>
       <div className="flex flex-wrap mt-6 -mx-3">
         <div className="w-full max-w-full px-3 md:flex-0 shrink-0 md:w-6/12">
-          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
             <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
-              <h6 className="mb-1 text-slate-700">Change password</h6>
+              <h6 className="mb-1 dark:text-white">Change password</h6>
               <p className="mb-0 text-sm leading-normal text-slate-700">
                 We will send you an email with the verification code.
               </p>
@@ -101,7 +103,7 @@ const AccountSettings = () => {
                   type="password"
                   name="Current password"
                   placeholder="Current password"
-                  className="focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                  className="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
                 />
               </div>
               <label
@@ -115,7 +117,7 @@ const AccountSettings = () => {
                   type="password"
                   name="New password"
                   placeholder="New password"
-                  className="focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80  text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                  className="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80  text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
                 />
               </div>
               <label
@@ -129,7 +131,7 @@ const AccountSettings = () => {
                   type="password"
                   name="Confirm password"
                   placeholder="Confirm password"
-                  className="focus:shadow-primary-outline dark:bg-slate-850 dark:placeholder:text-white/80  text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                  className="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
                 />
               </div>
               <button
@@ -142,9 +144,9 @@ const AccountSettings = () => {
           </div>
         </div>
         <div className="w-full max-w-full px-3 mt-6 md:flex-0 shrink-0 md:mt-0 md:w-6/12">
-          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
             <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
-              <h6 className="mb-1 text-slate-700">Password requirements</h6>
+              <h6 className="mb-1 dark:text-white">Password requirements</h6>
               <p className="mb-0 text-sm leading-normal text-slate-700">
                 Please follow this guide for a strong password:
               </p>

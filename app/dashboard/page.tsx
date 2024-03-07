@@ -151,7 +151,7 @@ const Dashboard = () => {
             key={key}
             className="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
           >
-            <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-800 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border transition-shadow duration-300 ease-in-out">
+            <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-950 shadow-xl dark:shadow-xl rounded-2xl bg-clip-border transition-shadow duration-300 ease-in-out">
               <div className="flex-auto p-4">
                 <div className="flex flex-row -mx-3">
                   <div className="flex-none w-2/3 max-w-full px-3">
@@ -163,7 +163,7 @@ const Dashboard = () => {
                         {value}
                       </h5>
                       <p className="mb-0 dark:text-white dark:opacity-60">
-                        <span className="text-sm font-bold leading-normal text-emerald-500">
+                        <span className="text-sm font-bold leading-normal text-lime-500">
                           +{percentageIncrease}%
                         </span>{" "}
                         since last month
@@ -182,12 +182,12 @@ const Dashboard = () => {
       <div className="flex flex-wrap mt-6 -mx-3">
         {/* Line Chart */}
         <div className="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
-          <div className="border-black/12.5 dark:bg-gray-800 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+          <div className="border-black/12.5 dark:bg-gray-950 dark:shadow-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
             <div className="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
               <h6 className="capitalize dark:text-white">Sales overview</h6>
               <p className="mb-2 text-sm leading-normal dark:text-white dark:opacity-60">
                 <i
-                  className="fa fa-arrow-up text-emerald-500"
+                  className="fa fa-arrow-up text-lime-500"
                   aria-hidden="true"
                 ></i>
                 <span className="font-semibold">4% more</span> in 2021
@@ -211,12 +211,12 @@ const Dashboard = () => {
 
         {/* Doughnut Chart */}
         <div className="w-full max-w-full px-3 lg:w-5/12 lg:flex-none">
-          <div className="relative w-full h-full overflow-hidden dark:bg-gray-800 dark:shadow-dark-xl shadow-xl break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+          <div className="relative w-full h-full overflow-hidden dark:bg-gray-950 dark:shadow-xl shadow-xl break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
             <div className="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
               <h6 className="capitalize dark:text-white">Total Orders</h6>
               <p className="mb-2 text-sm leading-normal dark:text-white dark:opacity-60">
                 <i
-                  className="fa fa-arrow-up text-emerald-500"
+                  className="fa fa-arrow-up text-lime-500"
                   aria-hidden="true"
                 ></i>
                 <span className="font-semibold">10% more</span> in 2021
@@ -241,12 +241,12 @@ const Dashboard = () => {
             key={index}
             className="w-full max-w-full px-3 mb-6 shrink-0 lg:w-4/12 md:flex-0 md:w-6/12 lg:mb-0"
           >
-            <div className="relative flex flex-col h-full min-w-0 break-words bg-white shadow-xl dark:bg-gray-800 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+            <div className="relative flex flex-col h-full min-w-0 break-words bg-white shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
               <div className="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
                 <h6 className="capitalize dark:text-white">Total Orders</h6>
                 <p className="mb-2 text-sm leading-normal dark:text-white dark:opacity-60">
                   <i
-                    className="fa fa-arrow-up text-emerald-500"
+                    className="fa fa-arrow-up text-lime-500"
                     aria-hidden="true"
                   ></i>
                   <span className="font-semibold">10% more</span> in 2021
@@ -263,12 +263,12 @@ const Dashboard = () => {
             key={index}
             className="w-full max-w-full px-3 shrink-0 md:flex-0 md:w-6/12"
           >
-            <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl z-2 dark:bg-gray-800 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+            <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl z-2 dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
               <div className="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
                 <h6 className="capitalize dark:text-white">Total Orders</h6>
                 <p className="mb-2 text-sm leading-normal dark:text-white dark:opacity-60">
                   <i
-                    className="fa fa-arrow-up text-emerald-500"
+                    className="fa fa-arrow-up text-lime-500"
                     aria-hidden="true"
                   ></i>
                   <span className="font-semibold">10% more</span> in 2021
@@ -283,7 +283,7 @@ const Dashboard = () => {
       </div>
       <div className="flex flex-wrap mt-6 -mx-3">
         <div className="w-full max-w-full px-3 flex-0">
-          <div className="shadow-3xl dark:bg-gray-800 dark:shadow-dark-xl border-black/12.5 bg-white relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-clip-border dark:bg-none">
+          <div className="shadow-3xl dark:bg-gray-950 dark:shadow-xl border-black/12.5 bg-white relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-clip-border dark:bg-none">
             <div className="flex-auto"></div>
           </div>
         </div>

@@ -13,7 +13,7 @@ const EntriesPerPageDropdown: React.FC<EntriesPerPageDropdownProps> = ({
 }) => {
   return (
     <select
-      className="border border-gray-300 rounded px-2 py-1"
+      className="dark:bg-gray-950 border border-gray-300 rounded px-2 py-1"
       value={value}
       onChange={(e) => onChange(Number(e.target.value))}
     >

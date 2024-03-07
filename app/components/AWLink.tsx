@@ -11,6 +11,7 @@ interface Props {
   icon?: IconProp | undefined;
   tooltip?: string;
   className?: string;
+  iconClasses?: string;
   color?:
     | "primary"
     | "danger"
@@ -37,12 +38,12 @@ const colorClasses = {
   info: "text-blue-300",
   light: "text-gray-100",
   dark: "text-gray-800",
-  neutral: "text-gray-500",
+  neutral: "text-slate-500 dark:text-white/80",
   accent: "text-pink-500",
   indigo: "text-indigo-500",
   teal: "text-teal-500",
   amber: "text-amber-500",
-  emerald: "text-emerald-500",
+  emerald: "text-lime-500",
 };
 
 const AWLink = ({
@@ -52,6 +53,7 @@ const AWLink = ({
   tooltip,
   color = "light",
   className,
+  iconClasses,
 }: Props) => {
   const textColorClass = colorClasses[color] || colorClasses.primary;
 
@@ -61,7 +63,12 @@ const AWLink = ({
 
   return (
     <Link href={href} title={tooltip} className={linkClasses}>
-      {icon && <FontAwesomeIcon icon={icon} className="inline-block mr-2" />}
+      {icon && (
+        <FontAwesomeIcon
+          icon={icon}
+          className={`inline-block mr-2 ${iconClasses}`}
+        />
+      )}
       {text}
     </Link>
   );

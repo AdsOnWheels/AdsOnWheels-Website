@@ -13,7 +13,7 @@ const Sidebar = ({ isOpen }: Props) => {
   return (
     <>
       <aside
-        className={`fixed inset-y-0 left-0 flex-wrap items-center justify-between block w-full p-0 my-4 transition-all duration-200 -translate-x-full bg-white border-0 shadow-none xl:ml-4 dark:bg-gray-950 ease-in-out z-40 rounded-2xl xl:translate-x-0 ps-0 ${
+        className={`fixed inset-y-0 left-0 flex-wrap items-center justify-between block w-full p-0 my-4 transition-all duration-200 -translate-x-full bg-white border-0 shadow-xl xl:ml-4 dark:bg-gray-950 ease-in-out z-40 rounded-2xl xl:translate-x-0 ps-0 ${
           isOpen ? "max-w-64" : "max-w-24"
         }`}
       >

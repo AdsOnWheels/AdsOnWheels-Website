@@ -57,6 +57,7 @@ export interface ContactFormData {
 export interface ContentFormData {
   title: string;
   body: string;
+  tag: "rider" | "brand";
 }
 
 export interface FAQFormData {

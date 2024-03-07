@@ -48,7 +48,7 @@ const BrandSubscription = () => {
   return (
     <div className="w-full md:w-1/2 px-3 mb-6">
       {/* Subscribed Brands Section */}
-      <div className="bg-white dark:bg-slate-850 dark:shadow-dark-xl rounded-lg p-6">
+      <div className="bg-white dark:bg-gray-950 dark:shadow-xl rounded-lg p-6">
         <h2 className="text-xl font-semibold mb-4">Subscribed Brands</h2>
         <div className="overflow-auto max-h-72">
           <table className="min-w-full divide-y divide-gray-200">

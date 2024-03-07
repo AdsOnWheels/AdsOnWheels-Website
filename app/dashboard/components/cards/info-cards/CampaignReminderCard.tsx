@@ -16,7 +16,7 @@ const CampaignReminderCard = ({ title, description, date }: Props) => {
       </div>
       <div className="ml-4">
         <div>
-          <h6 className="mb-1 text-sm leading-normal dark:text-white text-slate-700">
+          <h6 className="mb-1 text-sm leading-normal dark:text-white">
             {title}
           </h6>
           {description && (

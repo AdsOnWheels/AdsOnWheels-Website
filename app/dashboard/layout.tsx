@@ -20,7 +20,7 @@ const AdminLayout = ({ children }: Props) => {
   return (
     <Provider>
       <div
-        className={`fixed inset-0 flex dark:bg-gray-900 bg-gray-100 text-slate-500 dark:text-white`}
+        className={`fixed inset-0 flex dark:bg-[#141728] bg-gray-50 text-slate-500 dark:text-white/80`}
       >
         <Sidebar isOpen={isSidebarOpen} />
         <div
@@ -33,13 +33,13 @@ const AdminLayout = ({ children }: Props) => {
           <Breadcrumb />
           {/* Main content goes here */}
           <div
-            className={`w-full mx-auto sm:px-6 lg:px-6 lg:py-6 bg-gray-100 dark:bg-gray-900 font-sans min-h-screen`}
+            className={`w-full mx-auto sm:px-6 lg:px-6 lg:py-6 dark:bg-[#141728] bg-gray-50 text-slate-500 dark:text-white/80 font-sans min-h-screen`}
           >
             {children}
           </div>
           <div
             fixed-plugin-button=""
-            className="fixed px-3 py-2 text-xl bg-white dark:bg-slate-700 shadow-2xl cursor-pointer bottom-8 right-8 z-[990] rounded-full"
+            className="fixed px-3 py-2 text-xl bg-white dark:bg-slate-950 shadow-2xl cursor-pointer bottom-8 right-8 z-[990] rounded-full"
           >
             <ToggleTheme />
           </div>

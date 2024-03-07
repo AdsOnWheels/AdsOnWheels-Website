@@ -11,13 +11,13 @@ const DataTableBodyCell: React.FC<DataTableBodyCellProps> = ({
   return (
     <td
       key={key}
-      className={`text-sm font-normal leading-normal py-2 px-6  ${
+      className={`dark:text-white/80 text-sm font-normal leading-normal py-2 px-6  ${
         align === "right"
           ? "text-right"
           : align === "center"
           ? "text-center"
           : "text-left"
-      } ${noBorder ? "" : "border-[1px]"}`}
+      } ${noBorder ? "" : "border-[1px] border-x-0"}`}
       {...rest}
     >
       {children}

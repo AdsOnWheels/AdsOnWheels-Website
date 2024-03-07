@@ -30,12 +30,10 @@ const CampaignForm: React.FC<CampaignFormProps> = ({
     onSubmit(formData);
   };
 
-  // bg-white px-8 pt-6 pb-8 mb-4
-
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full h-auto min-w-0 p-4 break-words bg-white border-0 opacity-100 dark:bg-slate-850 bg-clip-border"
+      className="w-full h-auto min-w-0 p-4 break-words bg-white border-0 opacity-100 dark:bg-gray-950 bg-clip-border"
     >
       <div className="mb-4">
         <label

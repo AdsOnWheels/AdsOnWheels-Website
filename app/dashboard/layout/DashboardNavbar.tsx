@@ -161,7 +161,7 @@ const DashboardNavbar = ({
                 <input
                   id="search"
                   name="search"
-                  className="block w-full pl-10 pr-3 py-1.5 border border-gray-300 rounded-full leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="block w-full pl-10 pr-3 py-1.5 border border-gray-300 rounded-full leading-5 dark:bg-[#141728] bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Search"
                   type="search"
                   value={searchQuery}
@@ -206,7 +206,7 @@ const DashboardNavbar = ({
 
             {/* Dropdown menu */}
             {isDropdownOpen && (
-              <ul className="text-sm before:font-awesome before:leading-4 before:duration-[350ms] before:ease-linear before:sm:right-[35px] lg:shadow-2xl duration-[250ms] min-w-44 before:right-14 before:text-xl dark:bg-gray-800 absolute right-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-700 transition-all before:absolute before:left-auto before:z-50 before:inline-block before:font-normal before:text-white dark:before:text-gray-800 before:bg-white dark:before:bg-gray-800 before:antialiased before:transition-all before:h-4 before:content-['\f219'] before:rotate-45 sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer before:-top-1.5">
+              <ul className="text-sm before:font-awesome before:leading-4 before:duration-[350ms] before:ease-linear before:sm:right-[35px] lg:shadow-2xl duration-[250ms] min-w-44 before:right-14 before:text-xl dark:bg-gray-950 absolute right-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-700 transition-all before:absolute before:left-auto before:z-50 before:inline-block before:font-normal before:text-white dark:before:text-gray-800 before:bg-white dark:before:bg-gray-800 before:antialiased before:transition-all before:h-4 before:content-['\f219'] before:rotate-45 sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer before:-top-1.5">
                 {notifications.map((notification) => (
                   <li key={notification.id} className="relative mb-2">
                     <Link

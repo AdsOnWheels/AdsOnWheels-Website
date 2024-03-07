@@ -319,7 +319,7 @@ const AdCampaignManagement = () => {
                 value={filter}
                 onChange={handleFilterChange}
                 placeholder="Search campaigns..."
-                className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                className="dark:bg-gray-950 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
               />
             </div>
           </form>
@@ -329,7 +329,7 @@ const AdCampaignManagement = () => {
             <button
               type="button"
               data-modal-toggle="create-campaign"
-              className="inline-flex items-center py-2 px-3 text-sm font-bold text-center leading-normal text-white rounded-lg bg-gradient-to-tl from-blue-500 to-violet-500 sm:ml-auto shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform"
+              className="inline-flex items-center py-2 px-3 text-sm font-bold text-center leading-normal text-white rounded-lg bg-gradient-to-tl from-blue-500 to-violet-500 sm:ml-auto shadow-md hover:scale-[1.02] transition-transform"
             >
               <svg
                 className="mr-2 -ml-1 w-6 h-6"
@@ -349,7 +349,7 @@ const AdCampaignManagement = () => {
           <div key="export" className="relative inline-block">
             <button
               type="button"
-              className="inline-flex justify-center items-center py-2 px-3 w-1/2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:scale-[1.02] transition-transform sm:w-auto"
+              className="inline-flex justify-center items-center py-2 px-3 w-1/2 text-sm font-medium text-center dark:text-white text-gray-900 dark:bg-gray-950 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:scale-[1.02] transition-transform sm:w-auto"
               onClick={toggleDropdown}
             >
               <svg
@@ -515,10 +515,10 @@ const AdCampaignManagement = () => {
       {/* Data Tables */}
       <div className="flex flex-wrap mt-6 -mx-3">
         <div className="w-full max-w-full px-3 shrink-0 sm:flex-0 sm:w-6/12">
-          <div className="relative flex flex-col h-full min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div className="relative flex flex-col h-full min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
             <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
               <div className="flex items-center">
-                <h6 className="text-slate-700 mb-2">Barcode Scan Data</h6>
+                <h6 className="dark:text-white mb-2">Barcode Scan Data</h6>
                 <button
                   type="button"
                   className="active:shadow-sm active:opacity-80 ease-in leading-normal text-xs  rounded-full p-1.2 h-6 w-6 mb-0 ml-auto flex cursor-pointer items-center justify-center border border-solid border-slate-400 bg-transparent text-center align-middle font-bold text-slate-400 shadow-none transition-all hover:bg-transparent hover:text-slate-400 hover:opacity-75 hover:shadow-none active:bg-slate-400 active:text-black hover:active:bg-transparent hover:active:text-slate-400 hover:active:opacity-75 hover:active:shadow-none"
@@ -554,13 +554,13 @@ const AdCampaignManagement = () => {
           </div>
         </div>
         <div className="w-full max-w-full px-3 shrink-0 sm:flex-0 sm:w-6/12">
-          <div className="relative flex flex-col h-full min-w-0 mt-6 break-words bg-white border-0 shadow-xl md:mt-0 dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div className="relative flex flex-col h-full min-w-0 mt-6 break-words bg-white border-0 shadow-xl md:mt-0 dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
             <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
               <div className="flex items-center">
-                <h6 className="text-slate-700 mb-2">Website Visit Data</h6>
+                <h6 className="dark:text-white mb-2">Website Visit Data</h6>
                 <button
                   type="button"
-                  className="active:shadow-sm active:opacity-80 ease-in leading-normal text-xs rounded-full p-1.2 h-6 w-6 mb-0 ml-auto flex cursor-pointer items-center justify-center border border-solid border-emerald-500 bg-transparent text-center align-middle font-bold text-emerald-500 shadow-none transition-all hover:bg-transparent hover:text-emerald-500 hover:opacity-75 hover:shadow-none active:bg-emerald-500 active:text-black hover:active:bg-transparent hover:active:text-emerald-500 hover:active:opacity-75 hover:active:shadow-none"
+                  className="active:shadow-sm active:opacity-80 ease-in leading-normal text-xs rounded-full p-1.2 h-6 w-6 mb-0 ml-auto flex cursor-pointer items-center justify-center border border-solid border-emerald-500 bg-transparent text-center align-middle font-bold text-lime-500 shadow-none transition-all hover:bg-transparent hover:text-lime-500 hover:opacity-75 hover:shadow-none active:bg-emerald-500 active:text-black hover:active:bg-transparent hover:active:text-lime-500 hover:active:opacity-75 hover:active:shadow-none"
                   data-target="tooltip_trigger"
                 >
                   <i className="fas fa-check text-3xs" aria-hidden="true"></i>

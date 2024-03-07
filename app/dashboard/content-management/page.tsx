@@ -34,7 +34,7 @@ const ContentManagement = () => {
             <button
               type="button"
               data-modal-toggle="create-campaign"
-              className="inline-flex items-center py-2 px-3 text-sm font-bold text-center leading-normal text-white rounded-lg dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 sm:ml-auto shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform"
+              className="inline-flex items-center py-2 px-3 text-sm font-bold text-center leading-normal text-white rounded-lg bg-gradient-to-tl from-zinc-800 to-zinc-700 sm:ml-auto shadow-md hover:scale-[1.02] transition-transform"
             >
               <svg
                 className="mr-2 -ml-1 w-6 h-6"
@@ -59,7 +59,7 @@ const ContentManagement = () => {
         ]}
       />
 
-      <div className="bg-white shadow-md rounded-2xl p-6">
+      <div className="dark:bg-gray-950 bg-white shadow-md rounded-2xl p-6">
         {selectedTab === "Blogs" ? (
           <Blogs />
         ) : selectedTab === "FAQs" ? (

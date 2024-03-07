@@ -11,7 +11,7 @@ const StatisticsCard = ({ icon, value, label }: Props) => {
     <div className="w-full max-w-full px-3 flex-0 lg:w-6/12">
       <div className="flex flex-wrap -mx-3">
         <div className="w-full max-w-full px-3 flex-0 md:w-6/12">
-          <div className="dark:bg-slate-850 dark:shadow-dark-xl shadow-xl bg-cover relative flex min-w-0 flex-col break-words rounded-2xl border-0 bg-white">
+          <div className="dark:bg-gray-950 dark:shadow-xl shadow-xl bg-cover relative flex min-w-0 flex-col break-words rounded-2xl border-0 bg-white">
             <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 rounded-2xl opacity-80"></span>
           </div>
           <div className="relative flex-auto p-4">

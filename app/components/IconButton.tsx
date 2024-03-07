@@ -41,7 +41,7 @@ const colorClasses = {
   indigo: "text-gray-700 hover:text-indigo-700",
   teal: "text-teal-500 hover:text-teal-700",
   amber: "text-amber-500 hover:text-amber-700",
-  emerald: "text-emerald-500 hover:text-emerald-700",
+  emerald: "text-lime-500 hover:text-emerald-700",
   dutch: "text-[#ff4f00] hover:text-[#ff621a]",
   outline:
     "text-white hover:text-[#ff4f00] text-[#ff4f00] hover: border-2 border-[#ff4f00]",

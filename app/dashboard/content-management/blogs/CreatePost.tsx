@@ -82,7 +82,6 @@ const CreatePost = () => {
       pageTitle="Create New Blog Post"
       titleLabel="Title"
       bodyLabel="Content"
-      content={content}
       pending={pending}
       error={error}
       handleInputChange={handleInputChange}

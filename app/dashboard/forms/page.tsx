@@ -133,7 +133,7 @@ const Forms = () => {
                 value={searchQuery}
                 onChange={handleQueryChange}
                 placeholder="Search inquiries..."
-                className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                className="border border-gray-300 text-gray-900 dark:bg-gray-950 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
               />
             </div>
           </form>
@@ -143,7 +143,7 @@ const Forms = () => {
             key="zohoMail"
             type="button"
             data-modal-toggle="open-zohoMail"
-            className="inline-flex items-center py-2.5 px-4 text-sm font-bold text-center leading-normal text-white rounded-lg dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 sm:ml-auto shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform"
+            className="inline-flex items-center py-2.5 px-4 text-sm font-bold text-center leading-normal text-white rounded-lg dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 sm:ml-auto shadow-md hover:scale-[1.02] transition-transform"
             onClick={openZohoMail}
           >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2 -ml-1 w-4 h-4" />
@@ -152,7 +152,7 @@ const Forms = () => {
           <div key="export" className="relative inline-block">
             <button
               type="button"
-              className="inline-flex justify-center items-center py-2 px-3 w-1/2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:scale-[1.02] transition-transform sm:w-auto"
+              className="inline-flex justify-center items-center py-2 px-3 w-1/2 text-sm font-medium text-center dark:text-white text-gray-900 dark:bg-gray-950 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:scale-[1.02] transition-transform sm:w-auto"
               onClick={exportToCSV}
             >
               <svg
@@ -172,8 +172,8 @@ const Forms = () => {
           </div>,
         ]}
       />
-      <div className="bg-white shadow-md rounded-2xl p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-6">
+      <div className="dark:bg-gray-950 bg-white shadow-md rounded-2xl p-6">
+        <h2 className="text-xl font-bold dark:text-white text-gray-800 mb-6">
           Contact Form Inquiries
         </h2>
         <div className="overflow-x-auto">
