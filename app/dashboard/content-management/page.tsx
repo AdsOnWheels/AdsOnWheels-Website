@@ -1,13 +1,17 @@
 "use client";
 
-import React, { PropsWithChildren } from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
 
 import ActionPanel from "../layout/ActionPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
-const ContentManagement = ({ children }: PropsWithChildren) => {
+interface Props {
+  children: ReactNode;
+}
+
+const ContentManagement = ({ children }: Props) => {
   const selectedTab = useSelector((state: RootState) => state.tab.selectedTab);
 
   const tabs = ["Blogs", "FAQs", "Help Articles"];
