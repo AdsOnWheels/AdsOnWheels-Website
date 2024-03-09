@@ -7,11 +7,7 @@ import ActionPanel from "../layout/ActionPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
-interface Props {
-  children: ReactNode;
-}
-
-const ContentManagement = ({ children }: Props) => {
+const ContentManagement = ({ children }: { children: ReactNode }) => {
   const selectedTab = useSelector((state: RootState) => state.tab.selectedTab);
 
   const tabs = ["Blogs", "FAQs", "Help Articles"];
