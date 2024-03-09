@@ -1,11 +1,13 @@
 import "./styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Provider from "@/redux/provider";
+
+import Navbar from "./layout/Navbar";
 import CookieConsent from "./legal/CookieConsent";
 import Footer2 from "./layout/footer/Footer2";
-import Navbar from "./layout/Navbar";
+import Provider from "@/redux/provider";
 import AuthProvider from "./auth/Provider";
+import QueryClientProvider from "./QueryClientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,16 +24,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth dark">
       <Provider>
-        <AuthProvider>
-          <body className={inter.className}>
-            <Navbar />
-            <main className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans">
-              {children}
-            </main>
-            <Footer2 />
-            <CookieConsent />
-          </body>
-        </AuthProvider>
+        <QueryClientProvider>
+          <AuthProvider>
+            <body className={inter.className}>
+              <Navbar />
+              <main className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans">
+                {children}
+              </main>
+              <Footer2 />
+              <CookieConsent />
+            </body>
+          </AuthProvider>
+        </QueryClientProvider>
       </Provider>
     </html>
   );

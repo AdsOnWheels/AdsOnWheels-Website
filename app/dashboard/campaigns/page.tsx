@@ -465,10 +465,10 @@ const AdCampaignManagement = () => {
 
             {/* Approval workflow section */}
             <div className="flex items-center">
-              <button className="px-4 py-2 text-sm font-semibold text-white bg-green-500 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+              <button className="inline-block px-8 py-2 text-xs font-bold align-middle transition-all ease-in border-0 text-white bg-gradient-to-tl from-green-600 to-lime-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                 Approve
               </button>
-              <span className="ml-2 text-sm text-gray-400">
+              <span className="inline-block px-8 py-2 ml-2 mb-0 text-xs font-bold leading-normal text-center text-lime-500 align-middle transition-all ease-in bg-transparent border border-lime-500 border-solid rounded-lg shadow-none cursor-pointer active:opacity-85 tracking-tight-rem bg-150 bg-x-25 hover:-translate-y-px active:shadow-xs hover:text-lime-500 hover:opacity-75 hover:shadow-none active:scale-100 active:border-lime-500 active:bg-lime-500 active:text-white hover:active:border-lime-500 active:hover:bg-transparent hover:active:text-lime-500 hover:active:opacity-75">
                 Pending Approval
               </span>
             </div>

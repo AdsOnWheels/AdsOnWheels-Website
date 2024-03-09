@@ -31,14 +31,14 @@ const Sidebar = ({ isOpen }: Props) => {
           >
             <Image
               src={BrandIcon}
-              className="hidden h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:inline-block"
+              className="inline-block h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:hidden"
               alt="main_logo"
               width={100}
               height={100}
             />
             <Image
               src={BrandIcon}
-              className="inline-block h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:hidden"
+              className="hidden h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:inline-block"
               alt="main_logo"
               width={100}
               height={100}

@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
     if (!validateSignUpData.success) {
       return NextResponse.json(
-        { error: "Invalid data", details: validateSignUpData.error.errors },
+        { error: "Invalid data", details: validateSignUpData.error.format() },
         { status: 400 }
       );
     }

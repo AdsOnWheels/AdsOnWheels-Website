@@ -1,13 +1,16 @@
-import { FormData } from "@/types/types";
+"use client";
+
 import { useState } from "react";
+import { FormData } from "@/types/types";
 
 const useRequestHandler = () => {
   const [pending, setPending] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const requestHandler = async (
     validatedData: FormData,
-    apiEndpoint: string
+    apiEndpoint: string,
+    errorMessage?: string
   ) => {
     try {
       setPending(true);
@@ -21,8 +24,8 @@ const useRequestHandler = () => {
       });
 
       if (!res.ok) {
-        const errorMessage = await res.text();
-        setError(`Failed to submit form: ${errorMessage}`);
+        const errorMessageText = errorMessage || "Failed to submit form.";
+        setError(errorMessageText);
         setPending(false);
         return null;
       }

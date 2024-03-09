@@ -6,7 +6,9 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 function Breadcrumb() {
   const path = usePathname();
-  const paths = path.split("/").filter((segment) => segment !== "dashboard"); // Exclude "dashboard" segment
+  const paths = path
+    .split("/")
+    .filter((segment) => segment !== "dashboard" && !segment.startsWith("65")); // Exclude "dashboard" segment
 
   return (
     <nav className="flex flex-wrap text-sm font-medium text-gray-600 pt-2 ml-11 bg-transparent">

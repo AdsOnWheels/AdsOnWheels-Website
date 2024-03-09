@@ -1,22 +1,24 @@
-import React, { ChangeEvent, FormEvent, useState, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+"use client";
+
+import React, { useCallback, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Toaster, toast } from "react-hot-toast";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import { z } from "zod";
 
-import { RootState } from "@/redux/store";
-import { setTag } from "@/redux/slices/contentForm";
+import { formats, modules } from "../../config/quillConfig";
+import { sanitizeContent } from "@/utils/sanitizeContent";
+import Spinner from "../Spinner";
 
 interface Props {
-  pageTitle: string;
-  titleLabel: string;
-  bodyLabel: string;
+  heading: string;
+  inputName: string;
+  editorName: string;
   tags?: boolean;
-  pending: boolean;
-  error: string;
-  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleContentChange: (c: string) => void;
-  handleSubmit: (e: FormEvent) => Promise<null | undefined>;
+  schema: z.ZodType<any, any>;
+  apiEndpoint: string;
 }
 
 // Dynamically import ReactQuill
@@ -26,21 +28,27 @@ const LazyReactQuill = dynamic(
 );
 
 const ContentCreator = ({
-  pageTitle,
-  titleLabel,
-  bodyLabel,
+  heading,
+  inputName,
+  editorName,
   tags,
-  pending,
-  error,
-  handleInputChange,
-  handleContentChange,
-  handleSubmit,
+  schema,
+  apiEndpoint,
 }: Props) => {
-  const { title, body } = useSelector((state: RootState) => state.contentForm);
+  const {
+    register,
+    control,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(schema!),
+  });
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [pending, setPending] = useState(false);
 
-  const dispatch = useDispatch();
-
+  // Handle tag selection
   const handleTagSelection = useCallback(
     (tag: string) => {
       // Toggle the selection of the clicked tag
@@ -51,53 +59,56 @@ const ContentCreator = ({
       // Update the selected tags state
       setSelectedTags(newSelectedTags);
 
-      // Dispatch the selected tag to Redux
-      dispatch(setTag(tag.toLowerCase() as "rider" | "brand"));
+      // Update the form data with the selected tag
+      setValue("tag", tag.toLowerCase() as "rider" | "brand");
     },
-    [selectedTags, setSelectedTags, dispatch]
+    [selectedTags, setValue]
   );
 
-  const modules = {
-    toolbar: [
-      [{ header: "1" }, { header: "2" }],
-      [{ size: [] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image", "video"],
-      ["clean"],
-    ],
-  };
+  // Handle form submission
+  const onSubmit = handleSubmit(async (formData) => {
+    try {
+      setPending(true);
 
-  const formats = [
-    "header",
-    "size",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-    "video",
-  ];
+      // Sanitize the content value to remove HTML elements
+      formData[editorName] = sanitizeContent(formData[editorName], editorName);
+
+      const response = await fetch(apiEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Success! Your post has been published.");
+
+        // Clear form
+        reset();
+      } else if (response.status === 409) {
+        toast.error("Failed to submit form. Duplicate entry.");
+      } else
+        throw new Error(
+          "An unexpected error occurred. Please try again later."
+        );
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error("An unexpected error occurred. Please try again later.");
+    } finally {
+      setPending(false);
+    }
+  });
+
+  const capitalizedInputName =
+    inputName.charAt(0).toUpperCase() + inputName.slice(1);
 
   return (
     <div className="flex flex-wrap -mx-3">
       <div className="w-full max-w-full px-3 m-auto flex-0 lg:w-8/12">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onSubmit}>
           <h2 className="text-xl font-bold text-gray-800 dark:text-white pt-4 mb-4">
-            {pageTitle}
+            {heading.charAt(0).toUpperCase() + heading.slice(1)}
           </h2>
           <Toaster />
-          {error && toast.error(error)}
           <div className="dark:bg-gray-950 bg-white shadow-lg overflow-hidden rounded-2xl">
             <div className="p-6">
               <div className="mb-4">
@@ -105,34 +116,49 @@ const ContentCreator = ({
                   htmlFor="title"
                   className="mb-3 ml-1 text-sm font-bold dark:text-white/80 text-slate-700 dark:text-slate-700"
                 >
-                  {titleLabel}
+                  {capitalizedInputName}
                 </label>
                 <input
-                  id="title"
+                  id={inputName}
                   type="text"
-                  name="title"
-                  aria-label="Title"
-                  aria-describedby="title-addon"
-                  value={title}
+                  aria-label={capitalizedInputName}
+                  aria-describedby={`${inputName}-addon`}
                   className="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
-                  onChange={handleInputChange}
+                  {...register(inputName)}
                 />
+                {errors[inputName]?.message && (
+                  <p className="bg-red-100 text-sm text-red-500 p-2 mt-2">
+                    This field is required
+                  </p>
+                )}
               </div>
               <div className="mb-4">
                 <label
-                  htmlFor="content"
+                  htmlFor={editorName}
                   className="mb-3 ml-1 text-sm font-bold dark:text-white/80 text-slate-700"
                 >
-                  {bodyLabel}
+                  {editorName.charAt(0).toUpperCase() + editorName.slice(1)}
                 </label>
-                <LazyReactQuill
-                  theme="snow"
-                  value={body}
-                  modules={modules}
-                  formats={formats}
-                  className="ql-container"
-                  onChange={handleContentChange}
+                <Controller
+                  name={editorName}
+                  control={control}
+                  render={({ field }) => (
+                    <LazyReactQuill
+                      theme="snow"
+                      modules={modules}
+                      formats={formats}
+                      value={field.value}
+                      onChange={field.onChange}
+                      onBlur={field.onBlur}
+                      className="ql-container"
+                    />
+                  )}
                 />
+                {errors[editorName]?.message && (
+                  <p className="bg-red-100 text-sm text-red-500 p-2 mt-2">
+                    This field is required
+                  </p>
+                )}
               </div>
             </div>
             {tags && (
@@ -177,7 +203,13 @@ const ContentCreator = ({
                 className="inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25"
                 disabled={pending ? true : false}
               >
-                {pending ? "Posting" : "Post"}
+                {pending ? (
+                  <>
+                    Posting <Spinner />
+                  </>
+                ) : (
+                  "Post"
+                )}
               </button>
             </div>
           </div>

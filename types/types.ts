@@ -55,12 +55,14 @@ export interface ContactFormData {
 }
 
 export interface ContentFormData {
+  id?: string;
   title: string;
   body: string;
   tag: "rider" | "brand";
 }
 
 export interface FAQFormData {
+  id?: string;
   question: string;
   answer: string;
   tag: "rider" | "brand";

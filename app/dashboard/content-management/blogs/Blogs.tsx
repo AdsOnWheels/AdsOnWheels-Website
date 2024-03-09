@@ -59,11 +59,11 @@ const Blogs = () => {
                 {post.content}
               </p>
               <div className="mt-4 flex justify-end space-x-2">
-                <button className="text-sm font-semibold text-blue-500 hover:text-blue-600 focus:outline-none focus:ring focus:ring-blue-400 dark:text-blue-300 dark:hover:text-blue-200">
+                <button className="text-sm font-semibold text-blue-500 hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-200">
                   <FontAwesomeIcon icon={faEdit} className="w-3.5 h-3.5 mr-1" />
                   Edit
                 </button>
-                <button className="text-sm font-semibold text-red-500 hover:text-red-600 focus:outline-none focus:ring focus:ring-red-400 dark:text-red-300 dark:hover:text-red-200">
+                <button className="text-sm font-semibold text-red-500 hover:text-red-600 dark:text-red-300 dark:hover:text-red-200">
                   <FontAwesomeIcon icon={faTrash} className="w-3 h-3.5 mr-1" />
                   Delete
                 </button>
