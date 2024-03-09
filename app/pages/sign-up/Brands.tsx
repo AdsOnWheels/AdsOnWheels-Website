@@ -23,7 +23,7 @@ import {
   setConsent,
   selectBrandFormData,
 } from "@/redux/slices/brandForm";
-import { BrandFormData } from "@/types/types";
+import { Brand } from "@/types/types";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
 const BrandSignUp = () => {
@@ -52,7 +52,7 @@ const BrandSignUp = () => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    const fieldName = name as keyof BrandFormData;
+    const fieldName = name as keyof Brand;
     dispatch(getAction(fieldName)(value));
   };
 
@@ -127,11 +127,8 @@ const BrandSignUp = () => {
   };
 
   // Dynamically get the action creator based on the input field name
-  const getAction = (name: keyof BrandFormData) => {
-    const actionMap: Record<
-      keyof BrandFormData,
-      ActionCreatorWithPayload<any, any>
-    > = {
+  const getAction = (name: keyof Brand) => {
+    const actionMap: Record<keyof Brand, ActionCreatorWithPayload<any, any>> = {
       company: setCompany,
       industry: setIndustry,
       website: setWebsite,

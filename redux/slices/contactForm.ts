@@ -1,7 +1,7 @@
-import { ContactFormData } from "@/types/types";
+import { Contact } from "@/types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialContactFormData: ContactFormData = {
+const initialContactFormData: Contact = {
   firstName: "",
   lastName: "",
   email: "",

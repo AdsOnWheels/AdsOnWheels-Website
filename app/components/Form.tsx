@@ -10,7 +10,7 @@ import Checkbox from "./Checkbox";
 import Textarea from "./Textarea";
 import ImageUploadInput from "./ImageUploadInput";
 import formConfig from "@/app/config/formConfig";
-import { RiderFormData, BrandFormData, ContactFormData } from "@/types/types";
+import { Rider, Brand, Contact } from "@/types/types";
 
 interface Field {
   name: string;
@@ -21,7 +21,7 @@ interface Field {
 }
 
 interface Props {
-  formData: RiderFormData | BrandFormData | ContactFormData;
+  formData: Rider | Brand | Contact;
   formType: "rider" | "contact" | "brand" | "waitingList";
   maxWidth?: string;
   margin?: string;

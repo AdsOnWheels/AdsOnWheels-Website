@@ -1,8 +1,8 @@
-import { BrandFormData } from "@/types/types";
+import { Brand } from "@/types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-const initialBrandFormData: BrandFormData = {
+const initialBrandFormData: Brand = {
   company: "",
   industry: "",
   website: "",

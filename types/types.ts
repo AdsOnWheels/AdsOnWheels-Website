@@ -1,7 +1,9 @@
 import { StaticImageData } from "next/image";
-import { ChangeEvent } from "react";
 import { TableInstance, TableState } from "react-table";
 
+/**
+ * Represents a field in a form.
+ */
 export interface Field {
   name: string;
   placeHolder: string;
@@ -11,10 +13,29 @@ export interface Field {
 }
 
 /**
- * Represents form data from input elements.
+ * Represents a user.
  */
+export interface User {
+  id: string;
+  username: string;
+  email: string;
+  emailVerified?: Date;
+  role?: string;
+  active?: boolean;
+  lastLogin?: Date;
+  profilePicture?: string;
+  phoneNumber?: string;
+  address?: string;
+  department?: string;
+  manager?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
-export interface RiderFormData {
+/**
+ * Represents a rider.
+ */
+export interface Rider {
   fullName: string;
   email: string;
   phoneNumber: string;
@@ -31,7 +52,10 @@ export interface RiderFormData {
   consent: boolean;
 }
 
-export interface BrandFormData {
+/**
+ * Represents a brand.
+ */
+export interface Brand {
   company: string;
   industry: string;
   website: string;
@@ -47,13 +71,19 @@ export interface BrandFormData {
   consent: boolean;
 }
 
-export interface ContactFormData {
+/**
+ * Represents a contact.
+ */
+export interface Contact {
   firstName: string;
   lastName: string;
   email: string;
   message: string;
 }
 
+/**
+ * Represents form data from input elements.
+ */
 export interface ContentFormData {
   id?: string;
   title: string;
@@ -61,6 +91,9 @@ export interface ContentFormData {
   tag: "rider" | "brand";
 }
 
+/**
+ * Represents form data for FAQs.
+ */
 export interface FAQFormData {
   id?: string;
   question: string;
@@ -68,13 +101,11 @@ export interface FAQFormData {
   tag: "rider" | "brand";
 }
 
-export type FormData =
-  | RiderFormData
-  | BrandFormData
-  | ContactFormData
-  | ContentFormData
-  | FAQFormData;
+export type FormData = Rider | Brand | Contact | ContentFormData | FAQFormData;
 
+/**
+ * Represents a testimonial.
+ */
 export interface Testimonial {
   id: number;
   name: string;
@@ -82,6 +113,9 @@ export interface Testimonial {
   quote: string;
 }
 
+/**
+ * Represents a dataset for a chart.
+ */
 export interface Dataset {
   label: string;
   data: number[];
@@ -92,11 +126,16 @@ export interface ChartData {
   datasets: Dataset[];
 }
 
-// Tailwind color map (simplified example)
+/**
+ * Represents a tailwind color map.
+ */
 export interface TailwindColorMap {
   [key: string]: string;
 }
 
+/**
+ * Represents dataset for a doughnut chart.
+ */
 export interface DoughnutChartDataset {
   label: string;
   data: number[];
@@ -109,6 +148,9 @@ export interface DoughnutChartDataset {
   hoverOffset: number;
 }
 
+/**
+ * Represents a campaign.
+ */
 export interface Campaign {
   id: number;
   name: string;
@@ -118,6 +160,9 @@ export interface Campaign {
   status: string;
 }
 
+/**
+ * Represents campaign performance data.
+ */
 export interface CampaignPerformanceData {
   labels: string[];
   datasets: {
@@ -129,6 +174,9 @@ export interface CampaignPerformanceData {
   }[];
 }
 
+/**
+ * Represents budget allocation data.
+ */
 export interface BudgetAllocationData {
   labels: string[];
   datasets: {
@@ -140,10 +188,16 @@ export interface BudgetAllocationData {
   }[];
 }
 
+/**
+ * Represents props for ad campaign management.
+ */
 export interface AdCampaignManagementProps {
   campaigns: Campaign[];
 }
 
+/**
+ * Represents props for table actions.
+ */
 export interface TableActionsProps {
   editSelectedCampaign: (id: number) => void;
   pauseSelectedCampaign: () => void;
@@ -151,9 +205,13 @@ export interface TableActionsProps {
   deleteSelectedCampaign: () => void;
 }
 
-// TypeScript type for DataTable
+/**
+ * TypeScript types for DataTable
+ */
 
-// TypeScript type for a column in the table
+/**
+ * Represents a table column.
+ */
 export interface TableColumn {
   id: string;
   Header: string; // Header text for the column
@@ -164,6 +222,9 @@ export interface TableColumn {
   align?: "left" | "right" | "center"; // Alignment of the column content
 }
 
+/**
+ * Represents a table rows.
+ */
 interface Rows {
   campaignId: number;
   campaignName: string;
@@ -173,11 +234,16 @@ interface Rows {
 }
 [];
 
+/**
+ * Represents a custom table state.
+ */
 export interface CustomTableState extends TableState<object> {
   pageIndex: number;
 }
 
-// TypeScript type for props of DataTable component
+/**
+ * Represents props for DataTable component.
+ */
 export interface TableProps {
   entriesPerPage: {
     defaultValue?: number; // Default number of entries per page
@@ -199,7 +265,9 @@ export interface TableProps {
   enableActionButtons?: boolean; // Indicates if table has no end border
 }
 
-// TypeScript type for props of DataTableHeadCell component
+/**
+ * Represents props for DataTableHeadCell component.
+ */
 export interface DataTableHeadCellProps {
   key: string | number;
   width?: string; // Width of the table header cell
@@ -208,7 +276,9 @@ export interface DataTableHeadCellProps {
   align?: "left" | "right" | "center"; // Alignment of the column content
 }
 
-// TypeScript type for props of DataTableBodyCell component
+/**
+ * Represents props for DataTableBodyCell component.
+ */
 export interface DataTableBodyCellProps {
   row?: any;
   key: string | number;
@@ -218,6 +288,9 @@ export interface DataTableBodyCellProps {
   enableActionButtons?: boolean | undefined;
 }
 
+/**
+ * Represents a table instance.
+ */
 export type MyTableInstance = TableInstance<object> & {
   // Define the properties you expect the table instance to have
   page: any[]; // Assuming page is an array
@@ -237,7 +310,9 @@ export type MyTableInstance = TableInstance<object> & {
   // Add more properties if needed
 };
 
-// TypeScript type for the debounce function
+/**
+ * Represents a debounce function.
+ */
 export interface DebounceFunction {
   <T extends any[]>(callback: (...args: T) => void, delay: number): (
     ...args: T

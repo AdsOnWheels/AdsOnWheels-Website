@@ -24,7 +24,7 @@ import {
   setConsent,
   selectRiderFormData,
 } from "@/redux/slices/riderForm";
-import { RiderFormData } from "@/types/types";
+import { Rider } from "@/types/types";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
 const RiderSignUp = () => {
@@ -54,7 +54,7 @@ const RiderSignUp = () => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    const fieldName = name as keyof RiderFormData;
+    const fieldName = name as keyof Rider;
     dispatch(getAction(fieldName)(value));
   };
 
@@ -130,11 +130,8 @@ const RiderSignUp = () => {
   };
 
   // Dynamically get the action creator based on the input field name
-  const getAction = (name: keyof RiderFormData) => {
-    const actionMap: Record<
-      keyof RiderFormData,
-      ActionCreatorWithPayload<any, any>
-    > = {
+  const getAction = (name: keyof Rider) => {
+    const actionMap: Record<keyof Rider, ActionCreatorWithPayload<any, any>> = {
       fullName: setFullName,
       email: setEmail,
       phoneNumber: setPhoneNumber,

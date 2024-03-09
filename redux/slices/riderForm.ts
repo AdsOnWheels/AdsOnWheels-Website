@@ -1,8 +1,8 @@
-import { RiderFormData } from "@/types/types";
+import { Rider } from "@/types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-const initialRiderFormData: RiderFormData = {
+const initialRiderFormData: Rider = {
   fullName: "",
   email: "",
   phoneNumber: "",
