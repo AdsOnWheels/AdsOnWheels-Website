@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import ContentCreator from "../../components/forms/ContentCreator";
+import ContentCreator from "../../../components/forms/ContentCreator";
 import { articleSchema } from "@/app/schemas/articleSchema";
 
 const CreateHelpArticle = () => {
@@ -11,6 +11,7 @@ const CreateHelpArticle = () => {
   const editorName = "content";
   const schema = articleSchema;
   const apiEndpoint = "/api/articles";
+  const method = "POST";
 
   return (
     <ContentCreator
@@ -19,6 +20,7 @@ const CreateHelpArticle = () => {
       editorName={editorName}
       schema={schema}
       apiEndpoint={apiEndpoint}
+      method={method}
     />
   );
 };

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { Fragment, ReactNode } from "react";
-import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 
 import useIsSidebarOpen from "@/app/hooks/dashboard/useIsSidebarOpen";
 import { setTab } from "@/redux/slices/tab";
@@ -20,6 +20,8 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
   const isSidebarOpen = useIsSidebarOpen();
 
   const dispatch = useDispatch();
+
+  const router = useRouter();
 
   // Function to calculate the width of the moving tab based on the selected tab
   const tab1 = tabs ? tabs[0] : "";
@@ -62,6 +64,19 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
     if (onTabClick) {
       onTabClick(tab);
     }
+    router.push(`/dashboard/content-management/${getTabRoute(tab)}`);
+  };
+
+  const getTabRoute = (tab: string): string => {
+    switch (tab) {
+      case "Help Articles":
+        return "articles";
+      case "FAQs":
+        return "faqs";
+      case "Blogs":
+      default:
+        return "blogs";
+    }
   };
 
   return (
@@ -83,8 +98,7 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
                 >
                   {tabs.map((tab, index) => (
                     <li key={index} className="z-30 flex-auto text-center">
-                      <Link
-                        href="#"
+                      <button
                         className={`z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg bg-inherit dark:text-white/80 text-slate-700 ${
                           selectedTab === tab
                             ? "text-blue-500"
@@ -95,7 +109,7 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
                         onClick={() => handleTabClick(tab)}
                       >
                         <span className="ml-2">{tab}</span>
-                      </Link>
+                      </button>
                     </li>
                   ))}
                   <div

@@ -20,7 +20,7 @@ const AdminLayout = ({ children }: Props) => {
   return (
     <Provider>
       <div
-        className={`fixed inset-0 flex dark:bg-[#141728] bg-gray-50 text-slate-500 dark:text-white/80`}
+        className={`m-0 font-sans antialiased font-normal text-left leading-default text-base dark:bg-[#141728] bg-gray-50 text-slate-500 dark:text-white/80`}
       >
         <Sidebar isOpen={isSidebarOpen} />
         <div

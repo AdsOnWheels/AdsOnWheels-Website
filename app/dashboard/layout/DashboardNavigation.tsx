@@ -56,7 +56,7 @@ const DashboardNavigation = () => {
     },
     {
       id: 3,
-      href: "/dashboard/content-management",
+      href: "/dashboard/content-management/blogs",
       text: "Content Management",
       icon: faPaste,
       tooltip: "Content Management",

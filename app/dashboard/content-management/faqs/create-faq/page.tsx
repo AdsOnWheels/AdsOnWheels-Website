@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import ContentCreator from "../../components/forms/ContentCreator";
+import ContentCreator from "../../../components/forms/ContentCreator";
 import { faqSchema } from "@/app/schemas/faqSchema";
 
 const CreateFAQ = () => {
@@ -11,6 +11,7 @@ const CreateFAQ = () => {
   const editorName = "answer";
   const schema = faqSchema;
   const apiEndpoint = "/api/faqs";
+  const method = "POST";
 
   return (
     <ContentCreator
@@ -20,6 +21,7 @@ const CreateFAQ = () => {
       tags={true}
       schema={schema}
       apiEndpoint={apiEndpoint}
+      method={method}
     />
   );
 };

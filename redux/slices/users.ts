@@ -1,16 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Brand, Rider, User } from "@/types/types";
+import { User } from "@/types/types";
 
 interface UserList {
   users: User[];
-  riders: Rider[];
-  brands: Brand[];
 }
 
 const initialState: UserList = {
   users: [],
-  riders: [],
-  brands: [],
 };
 
 const usersSlice = createSlice({
@@ -20,15 +16,27 @@ const usersSlice = createSlice({
     setUsers: (state, action: PayloadAction<User[]>) => {
       state.users = action.payload;
     },
-    setRiders: (state, action: PayloadAction<Rider[]>) => {
-      state.riders = action.payload;
+    addUser: (state, action: PayloadAction<User>) => {
+      state.users.push(action.payload);
     },
-    setBrands: (state, action: PayloadAction<Brand[]>) => {
-      state.brands = action.payload;
+    removeUser: (state, action: PayloadAction<string>) => {
+      state.users = state.users.filter((user) => user.id !== action.payload);
+    },
+    updateUserName: (
+      state,
+      action: PayloadAction<{ id: string; name: string }>
+    ) => {
+      state.users = state.users.map((user) => {
+        if (user.id === action.payload.id) {
+          return { ...user, name: action.payload.name };
+        }
+        return user;
+      });
     },
   },
 });
 
-export const { setUsers, setRiders, setBrands } = usersSlice.actions;
+export const { setUsers, addUser, removeUser, updateUserName } =
+  usersSlice.actions;
 
 export default usersSlice.reducer;

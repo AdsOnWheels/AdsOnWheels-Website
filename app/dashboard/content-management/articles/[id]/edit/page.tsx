@@ -3,30 +3,30 @@
 import React, { useEffect, useState } from "react";
 
 import ContentCreator from "@/app/dashboard/components/forms/ContentCreator";
-import { faqUpdateSchema } from "@/app/schemas/faqSchema";
-import { FAQFormData } from "@/types/types";
+import { articleUpdateSchema } from "@/app/schemas/articleSchema";
+import { ContentFormData } from "@/types/types";
 
 interface Props {
   params: { id: string };
 }
 
-const EditFAQ = ({ params }: Props) => {
-  const faqId = params.id;
+const EditArticle = ({ params }: Props) => {
+  const articleId = params.id;
 
-  const [faq, setFaq] = useState<FAQFormData | null>(null);
+  const [article, setArticle] = useState<ContentFormData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    const fetchFaq = async () => {
+    const fetchArticle = async () => {
       try {
         // Perform the data fetching for a single item by its ID
-        const response = await fetch(`/api/faqs/${faqId}`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch FAQ");
+        const res = await fetch(`/api/articles/${articleId}`);
+        if (!res.ok) {
+          throw new Error("Failed to fetch Article");
         }
-        const data = await response.json();
-        setFaq(data);
+        const data = await res.json();
+        setArticle(data);
       } catch (error: any) {
         setError(error);
       } finally {
@@ -34,21 +34,21 @@ const EditFAQ = ({ params }: Props) => {
       }
     };
 
-    fetchFaq();
-  }, [faqId]);
+    fetchArticle();
+  }, [articleId]);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  if (!faq) {
-    return <div>Faq not found</div>;
+  if (!article) {
+    return <div>Article not found</div>;
   }
 
-  const heading = "Edit FAQ";
-  const inputName = "question";
-  const editorName = "answer";
-  const schema = faqUpdateSchema;
-  const apiEndpoint = `/api/faqs/${faqId}`;
+  const heading = "Edit Article";
+  const inputName = "title";
+  const editorName = "content";
+  const schema = articleUpdateSchema;
+  const apiEndpoint = `/api/articles/${articleId}`;
   const method = "PUT";
 
   return (
@@ -60,9 +60,9 @@ const EditFAQ = ({ params }: Props) => {
       schema={schema}
       apiEndpoint={apiEndpoint}
       method={method}
-      initialData={faq}
+      initialData={article}
     />
   );
 };
 
-export default EditFAQ;
+export default EditArticle;

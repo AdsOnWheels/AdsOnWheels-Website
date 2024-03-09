@@ -1,16 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import Link from "next/link";
 
 import ActionPanel from "../layout/ActionPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-import Blogs from "./blogs/Blogs";
-import FAQs from "./faqs/FAQs";
-import HelpArticles from "./articles/HelpArticles";
 
-const ContentManagement = () => {
+const ContentManagement = ({ children }: PropsWithChildren) => {
   const selectedTab = useSelector((state: RootState) => state.tab.selectedTab);
 
   const tabs = ["Blogs", "FAQs", "Help Articles"];
@@ -23,12 +20,18 @@ const ContentManagement = () => {
         buttons={[
           <Link
             key="create"
-            href={`/dashboard/content-management/create-${
-              selectedTab === "Blogs"
-                ? "post"
+            href={`/dashboard/content-management/${
+              selectedTab === "Help Articles"
+                ? "articles"
+                : selectedTab === "FAQs"
+                ? "faqs"
+                : "blogs"
+            }/create-${
+              selectedTab === "Help Articles"
+                ? "article"
                 : selectedTab === "FAQs"
                 ? "faq"
-                : "article"
+                : "post"
             }`}
           >
             <button
@@ -49,24 +52,18 @@ const ContentManagement = () => {
                 ></path>
               </svg>
               Create new{" "}
-              {selectedTab === "Blogs"
-                ? "post"
+              {selectedTab === "Help Articles"
+                ? "article"
                 : selectedTab === "FAQs"
                 ? "faqs"
-                : "article"}
+                : "post"}
             </button>
           </Link>,
         ]}
       />
 
       <div className="dark:bg-gray-950 bg-white shadow-md rounded-2xl p-6">
-        {selectedTab === "Blogs" ? (
-          <Blogs />
-        ) : selectedTab === "FAQs" ? (
-          <FAQs />
-        ) : (
-          <HelpArticles />
-        )}
+        {children}
       </div>
     </>
   );

@@ -36,6 +36,7 @@ export interface User {
  * Represents a rider.
  */
 export interface Rider {
+  id: string;
   fullName: string;
   email: string;
   phoneNumber: string;
@@ -56,6 +57,7 @@ export interface Rider {
  * Represents a brand.
  */
 export interface Brand {
+  id: string;
   company: string;
   industry: string;
   website: string;
@@ -89,6 +91,7 @@ export interface ContentFormData {
   title: string;
   body: string;
   tag: "rider" | "brand";
+  [key: string]: any;
 }
 
 /**
@@ -99,6 +102,7 @@ export interface FAQFormData {
   question: string;
   answer: string;
   tag: "rider" | "brand";
+  [key: string]: any;
 }
 
 export type FormData = Rider | Brand | Contact | ContentFormData | FAQFormData;
@@ -309,6 +313,25 @@ export type MyTableInstance = TableInstance<object> & {
   setGlobalFilter: any;
   // Add more properties if needed
 };
+
+/**
+ * Represents table pagination props.
+ */
+export interface TablePaginationProps {
+  showTotalEntries: boolean; // Indicates whether to display total entries information
+  entriesStart: number; // Index of the first entry on the current page
+  entriesEnd: number; // Index of the last entry on the current page
+  rows: any[]; // Array of data rows
+  pagination: boolean; // Indicates whether pagination controls should be rendered
+  pageIndex: number; // The current page index (0-based)
+  pageCount: number; // The total number of pages
+  canPreviousPage: boolean; // Indicates if there's a previous page
+  canNextPage: boolean; // Indicates if there's a next page
+  gotoPage: (pageIndex: number) => void; // Function to navigate to a specific page
+  previousPage: () => void; // Function to navigate to the previous page
+  nextPage: () => void; // Function to navigate to the next page
+  pageOptions: number[]; // Array of available page indices
+}
 
 /**
  * Represents a debounce function.

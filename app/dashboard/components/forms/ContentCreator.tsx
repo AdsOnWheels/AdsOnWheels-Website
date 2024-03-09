@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Toaster, toast } from "react-hot-toast";
@@ -8,9 +8,10 @@ import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 import { z } from "zod";
 
-import { formats, modules } from "../../config/quillConfig";
-import { sanitizeContent } from "@/utils/sanitizeContent";
 import Spinner from "../Spinner";
+import { sanitizeContent } from "@/utils/sanitizeContent";
+import { formats, modules } from "../../config/quillConfig";
+import { ContentFormData, FAQFormData } from "@/types/types";
 
 interface Props {
   heading: string;
@@ -19,6 +20,8 @@ interface Props {
   tags?: boolean;
   schema: z.ZodType<any, any>;
   apiEndpoint: string;
+  method: string;
+  initialData?: FAQFormData | ContentFormData;
 }
 
 // Dynamically import ReactQuill
@@ -34,6 +37,8 @@ const ContentCreator = ({
   tags,
   schema,
   apiEndpoint,
+  method,
+  initialData,
 }: Props) => {
   const {
     register,
@@ -44,9 +49,17 @@ const ContentCreator = ({
     reset,
   } = useForm({
     resolver: zodResolver(schema!),
+    defaultValues: initialData,
   });
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [pending, setPending] = useState(false);
+
+  // Set default values for tags based on initialData
+  useEffect(() => {
+    if (initialData && initialData.tag) {
+      setSelectedTags([initialData.tag]);
+    }
+  }, [initialData]);
 
   // Handle tag selection
   const handleTagSelection = useCallback(
@@ -74,7 +87,7 @@ const ContentCreator = ({
       formData[editorName] = sanitizeContent(formData[editorName], editorName);
 
       const response = await fetch(apiEndpoint, {
-        method: "POST",
+        method: method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
