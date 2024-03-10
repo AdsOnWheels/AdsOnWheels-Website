@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 import ContentCreator from "@/app/dashboard/components/forms/ContentCreator";
 import { articleUpdateSchema } from "@/app/schemas/articleSchema";
@@ -13,29 +14,24 @@ interface Props {
 const EditArticle = ({ params }: Props) => {
   const articleId = params.id;
 
-  const [article, setArticle] = useState<ContentFormData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    const fetchArticle = async () => {
+  const {
+    data: article,
+    isLoading,
+    error,
+  } = useQuery<ContentFormData, Error>({
+    queryKey: ["articles", articleId],
+    queryFn: async () => {
       try {
-        // Perform the data fetching for a single item by its ID
         const res = await fetch(`/api/articles/${articleId}`);
         if (!res.ok) {
           throw new Error("Failed to fetch Article");
         }
-        const data = await res.json();
-        setArticle(data);
+        return res.json();
       } catch (error: any) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
+        throw new Error(`Error fetching Article: ${error.message}`);
       }
-    };
-
-    fetchArticle();
-  }, [articleId]);
+    },
+  });
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;

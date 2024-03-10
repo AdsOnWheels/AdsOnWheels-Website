@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 import ContentCreator from "@/app/dashboard/components/forms/ContentCreator";
 import { faqUpdateSchema } from "@/app/schemas/faqSchema";
@@ -13,36 +14,28 @@ interface Props {
 const EditFAQ = ({ params }: Props) => {
   const faqId = params.id;
 
-  const [faq, setFaq] = useState<FAQFormData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    const fetchFaq = async () => {
+  const {
+    data: faq,
+    isLoading,
+    error,
+  } = useQuery<FAQFormData, Error>({
+    queryKey: ["faqs", faqId],
+    queryFn: async () => {
       try {
-        // Perform the data fetching for a single item by its ID
-        const response = await fetch(`/api/faqs/${faqId}`);
-        if (!response.ok) {
+        const res = await fetch(`/api/faqs/${faqId}`);
+        if (!res.ok) {
           throw new Error("Failed to fetch FAQ");
         }
-        const data = await response.json();
-        setFaq(data);
+        return res.json();
       } catch (error: any) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
+        throw new Error(`Error fetching FAQ: ${error.message}`);
       }
-    };
-
-    fetchFaq();
-  }, [faqId]);
+    },
+  });
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-
-  if (!faq) {
-    return <div>Faq not found</div>;
-  }
+  if (!faq) return <div>Faq not found</div>;
 
   const heading = "Edit FAQ";
   const inputName = "question";

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 import ContentCreator from "@/app/dashboard/components/forms/ContentCreator";
 import { blogUpdateSchema } from "@/app/schemas/blogSchema";
@@ -13,29 +14,24 @@ interface Props {
 const EditBlog = ({ params }: Props) => {
   const blogId = params.id;
 
-  const [blog, setBlog] = useState<ContentFormData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    const fetchBlog = async () => {
+  const {
+    data: blog,
+    isLoading,
+    error,
+  } = useQuery<ContentFormData, Error>({
+    queryKey: ["blogs", blogId],
+    queryFn: async () => {
       try {
-        // Perform the data fetching for a single item by its ID
         const res = await fetch(`/api/blogs/${blogId}`);
         if (!res.ok) {
           throw new Error("Failed to fetch Blog");
         }
-        const data = await res.json();
-        setBlog(data);
+        return res.json();
       } catch (error: any) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
+        throw new Error(`Error fetching Blog: ${error.message}`);
       }
-    };
-
-    fetchBlog();
-  }, [blogId]);
+    },
+  });
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
