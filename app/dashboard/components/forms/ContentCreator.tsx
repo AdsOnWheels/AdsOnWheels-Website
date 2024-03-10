@@ -122,7 +122,7 @@ const ContentCreator = ({
             {heading.charAt(0).toUpperCase() + heading.slice(1)}
           </h2>
           <Toaster />
-          <div className="dark:bg-gray-950 bg-white shadow-lg overflow-hidden rounded-2xl">
+          <div className="dark:bg-gray-900 bg-white shadow-lg overflow-hidden rounded-2xl">
             <div className="p-6">
               <div className="mb-4">
                 <label
@@ -136,7 +136,7 @@ const ContentCreator = ({
                   type="text"
                   aria-label={capitalizedInputName}
                   aria-describedby={`${inputName}-addon`}
-                  className="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
+                  className="focus:shadow-primary-outline dark:bg-gray-900 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none"
                   {...register(inputName)}
                 />
                 {errors[inputName]?.message && (
@@ -210,7 +210,7 @@ const ContentCreator = ({
                 </div>
               </div>
             )}
-            <div className="dark:bg-gray-950 bg-gray-100 px-6 py-4 flex justify-end">
+            <div className="dark:bg-gray-900 bg-gray-100 px-6 py-4 flex justify-end">
               <button
                 type="submit"
                 className="inline-block px-6 py-3 mb-0 ml-auto text-xs font-bold text-right text-white uppercase align-middle transition-all ease-in border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 bg-gradient-to-tl from-zinc-800 to-zinc-700 leading-pro tracking-tight-rem bg-150 bg-x-25"

@@ -7,7 +7,11 @@ import ActionPanel from "../layout/ActionPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
-const ContentManagement = ({ children }: { children: ReactNode }) => {
+interface Props {
+  children?: ReactNode;
+}
+
+const ContentLayout = ({ children }: Props) => {
   const selectedTab = useSelector((state: RootState) => state.tab.selectedTab);
 
   const tabs = ["Blogs", "FAQs", "Help Articles"];
@@ -69,4 +73,4 @@ const ContentManagement = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default ContentManagement;
+export default ContentLayout;

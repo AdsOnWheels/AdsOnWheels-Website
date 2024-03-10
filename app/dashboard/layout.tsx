@@ -14,7 +14,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const AdminLayout = ({ children }: Props) => {
+const DashboardLayout = ({ children }: Props) => {
   const isSidebarOpen = useIsSidebarOpen();
 
   return (
@@ -51,4 +51,4 @@ const AdminLayout = ({ children }: Props) => {
   );
 };
 
-export default AdminLayout;
+export default DashboardLayout;

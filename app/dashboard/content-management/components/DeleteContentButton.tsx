@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -7,30 +9,35 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import Spinner from "../../components/Spinner";
 
-const DeleteFAQButton = ({ faqId }: { faqId: string }) => {
+interface Props {
+  name: string;
+  apiEndpoint: string;
+}
+
+const DeleteContentButton = ({ name, apiEndpoint }: Props) => {
   const [pending, setPending] = useState(false);
   const queryClient = useQueryClient();
   const router = useRouter();
 
-  const handleDelete = async (faqId: string) => {
+  const handleDelete = async () => {
     try {
       setPending(true);
-      const response = await fetch(`/api/faqs/${faqId}`, {
+      const res = await fetch(apiEndpoint, {
         method: "DELETE",
       });
 
-      if (response.ok) {
-        toast.success("FAQ deleted successfully");
+      if (res.ok) {
+        toast.success(`${name} deleted successfully`);
 
         setPending(false);
         // Invalidate the cache to trigger refetching of data
         queryClient.invalidateQueries();
         router.refresh();
       } else {
-        throw new Error("Failed to delete FAQ");
+        throw new Error(`Failed to delete ${name}`);
       }
     } catch (error) {
-      console.error("Error deleting FAQ:", error);
+      console.error(`Error deleting ${name}:`, error);
       toast.error("An unexpected error occurred. Please try again later.");
       setPending(false);
     }
@@ -39,7 +46,7 @@ const DeleteFAQButton = ({ faqId }: { faqId: string }) => {
   return (
     <button
       className="text-sm font-semibold text-red-500 hover:text-red-600 dark:text-red-300 dark:hover:text-red-200"
-      onClick={() => handleDelete(faqId)}
+      onClick={handleDelete}
       disabled={pending ? true : false}
     >
       <FontAwesomeIcon icon={faTrash} className="w-3 h-3.5 mr-1" />
@@ -49,4 +56,4 @@ const DeleteFAQButton = ({ faqId }: { faqId: string }) => {
   );
 };
 
-export default DeleteFAQButton;
+export default DeleteContentButton;
