@@ -31,8 +31,8 @@ const NotificationCard = ({
       </p>
       {expanded && (
         <div className="flex justify-end mt-2">
-          {true && <ViewButton />}
-          {true && <LearnMoreButton />}
+          <ViewButton />
+          <LearnMoreButton />
         </div>
       )}
       <DismissButton />
