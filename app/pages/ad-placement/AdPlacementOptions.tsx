@@ -52,7 +52,7 @@ const adFormats = [
     alt: "Wheel Rim Cover Ad",
     title: "Wheel Rim Cover Ads",
     description:
-      "Ads attached to the rim of bicycle wheels. Creates a visually dynamic effect, ideal for event promotions, sponsorships, and limited-time offers.",
+      "Ads attached to the bicycle wheel. Creates a visually dynamic effect, ideal for event promotions, sponsorships, and offers.",
     reach:
       "Dynamic visibility while in motion; effective at events and group rides.",
     demographics:

@@ -1,5 +1,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import Heading2 from "@/app/layout/Heading2";
 
 interface Props {
   id?: string;
@@ -38,7 +39,13 @@ const AdFormat = ({
         />
       </div>
       <div className="text-left">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <Heading2
+          text={title}
+          color="dark"
+          size="xl"
+          align="left"
+          margin="mb-4"
+        />
         <p className="text-gray-800">{description}</p>
         <p className="text-sm text-gray-400 mt-2">{`Potential Reach: ${reach}`}</p>
         <p className="text-sm text-gray-400">{`Demographics: ${demographics}`}</p>

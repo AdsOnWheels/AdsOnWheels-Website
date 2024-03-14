@@ -10,12 +10,18 @@ interface Props {
 const Step = ({ number, title, description }: Props) => {
   return (
     <div className="flex flex-col items-center justify-center min-w-md group">
-      <div className="p-6 lg:p-8 relative h-full flex flex-col">
-        <div className="absolute top-44 left-1/2 flex items-center justify-center text-[14rem] md:text-[18rem] lg:text-[25rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 transform -translate-x-1/2 -translate-y-1/2 opacity-20 z-10 mb-6">
+      <div className="relative h-full flex flex-col">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[14rem] md:text-[18rem] lg:text-[25rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 opacity-20 z-10 mb-6">
           {number}
         </div>
-        <div className="relative top-6 transform transition duration-300 hover:scale-105 z-20 my-8">
-          <h3 className="text-3xl font-semibold mb-4 text-gray-800">{title}</h3>
+        <div className="relative flex flex-col justify-between text-left top-6 transition duration-300 hover:scale-105 z-20 my-8 bg-white bg-opacity-70 rounded-lg p-8 h-full">
+          <Heading2
+            text={title}
+            color="dark"
+            size="xl"
+            align="left"
+            margin="mb-4"
+          />
           <p className="text-gray-600 text-lg flex-grow">{description}</p>
         </div>
       </div>

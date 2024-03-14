@@ -47,12 +47,11 @@ const Step = ({ icon, color, title, description, id }: StepType) => (
     key={id}
     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
   >
-    <div className="p-8 text-center">
-      <div
-        className={`text-${color}-500 text-6xl mx-auto mb-4 transform hover:scale-110 transition-transform duration-300`}
-      >
-        <FontAwesomeIcon icon={icon} />
-      </div>
+    <div className="p-8 text-left">
+      <FontAwesomeIcon
+        icon={icon}
+        className={`w-16 h-16 text-${color}-500 text-6xl text-left mx-auto mb-5 transform hover:scale-110 transition-transform duration-300`}
+      />
       <h3 className="text-2xl text-black font-semibold mb-4">{title}</h3>
       <p className="text-gray-700">{description}</p>
     </div>
@@ -62,7 +61,7 @@ const Step = ({ icon, color, title, description, id }: StepType) => (
 const HowItWorksRiders = () => (
   <section
     id="how-it-works"
-    className="py-16 bg-gradient-to-br from-purple-200 via-indigo-100 to-indigo-400"
+    className="py-24 bg-gradient-to-br from-purple-200 via-indigo-100 to-indigo-400"
   >
     <div className="container mx-auto px-6 text-center">
       <Heading2 text="How It Works" color="dark" className="mb-16" />

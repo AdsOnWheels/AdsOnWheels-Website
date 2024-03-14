@@ -149,11 +149,11 @@ const BrandSignUp = () => {
   return (
     <section
       id="brand-signUp"
-      className="container mx-auto py-16 px-4 md:px-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100"
+      className="py-24 px-4 md:px-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100"
     >
       <Toaster />
-      <div className="flex flex-wrap justify-center">
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-indigo-700">
+      <div className="container max-w-[60rem] mx-auto">
+        <div className="bg-white shadow-2xl rounded-3xl overflow-hidden border-t-4 border-indigo-700">
           <div className="p-6 md:p-10 text-center">
             <Heading2
               text="Partner With Us"
@@ -168,7 +168,7 @@ const BrandSignUp = () => {
             </p>
             <Form
               formType="brand"
-              maxWidth="max-w-9/12"
+              maxWidth="max-w-5xl"
               margin="mx-auto"
               padding="p-6"
               pending={pending}

@@ -28,7 +28,7 @@ export default function RootLayout({
           <AuthProvider>
             <body className={inter.className}>
               <Navbar />
-              <main className="bg-gray-100 dark:bg-gray-900 min-h-screen font-sans">
+              <main className="bg-gray-100 min-h-screen font-sans">
                 {children}
               </main>
               <Footer2 />

@@ -36,44 +36,42 @@ const FeatureAddOns = () => {
   ];
 
   return (
-    <section id="add-ons" className="bg-gray-200 py-24">
-      <div className="container mx-auto px-4">
+    <section id="add-ons" className="bg-gray-200 py-12 lg:py-24">
+      <div className="container max-w-6xl mx-auto px-4">
         <Heading2
           text="Bicycle Ad Features"
           color="dark"
           align="center"
-          className="mb-12"
+          className="mb-8 lg:mb-12"
         />
 
-        {/* Flex container for the feature cards */}
-        <div className="flex justify-center items-center gap-10 flex-wrap lg:flex-nowrap">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {features.map((feature) => (
-            <div key={feature.id} className="flex-1 min-w-[280px] max-w-xs">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
-                <div className="relative h-52">
-                  <Image
-                    src={feature.imageUrl}
-                    alt={feature.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-t-3xl"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-center text-gray-800 my-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 text-center mb-2">
-                    {feature.description}
-                  </p>
-                  <div className="flex justify-center p-4 mb-4">
-                    <Link
-                      href={feature.learnMoreLink}
-                      className="text-white font-semibold text-center block bg-[#ff4f00] group-hover:bg-[#ff621a] px-8 py-3 focus:outline-none focus:shadow-outline rounded-full hover:shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
+            <div
+              key={feature.id}
+              className="rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out"
+            >
+              <div className="relative h-52">
+                <Image
+                  src={feature.imageUrl}
+                  alt={feature.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-3xl"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl lg:text-2xl font-semibold text-gray-800 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 mb-4">{feature.description}</p>
+                <div className="text-center">
+                  <Link
+                    href={feature.learnMoreLink}
+                    className="inline-block text-white font-semibold bg-[#ff4f00] hover:bg-[#ff621a] px-8 py-3 focus:outline-none focus:shadow-outline rounded-full hover:shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out"
+                  >
+                    Learn More
+                  </Link>
                 </div>
               </div>
             </div>

@@ -68,7 +68,7 @@ const Pricing = () => {
                 text={plan.name}
                 color="gray"
                 size="xl"
-                align="center"
+                align="left"
                 margin="mb-4"
               />
               <p className="text-base text-gray-700 mb-6">{plan.description}</p>
@@ -85,7 +85,7 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <Button
                   text="Get Started"
                   color="dutch"

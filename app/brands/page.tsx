@@ -6,7 +6,6 @@ import AdPlacementOptions from "../pages/ad-placement/AdPlacementOptions";
 import HowItWorksBrands from "../pages/how-it-works/Brands";
 import Pricing from "../pages/ad-placement/Pricing";
 import USP from "./USP";
-import FeatureAddOns from "./FeatureAddOns";
 import BrandSignUp from "../pages/sign-up/Brands";
 import FAQsBrands from "./FAQsBrands";
 import ScrollToTop from "../layout/ScrollToTop";
@@ -20,7 +19,6 @@ const Brand = () => {
       <AdPlacementOptions />
       <HowItWorksBrands />
       <Pricing />
-      <FeatureAddOns />
       <USP />
       <BrandSignUp />
       <FAQsBrands />

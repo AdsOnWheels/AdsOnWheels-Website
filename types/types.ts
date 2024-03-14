@@ -36,7 +36,7 @@ export interface User {
  * Represents a rider.
  */
 export interface Rider {
-  id: string;
+  id?: string;
   fullName: string;
   email: string;
   phoneNumber: string;
@@ -57,7 +57,7 @@ export interface Rider {
  * Represents a brand.
  */
 export interface Brand {
-  id: string;
+  id?: string;
   company: string;
   industry: string;
   website: string;

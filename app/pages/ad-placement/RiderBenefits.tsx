@@ -12,21 +12,20 @@ const RiderBenefits = () => {
     {
       title: "Flexible Earnings",
       description:
-        "Maximize your earning potential with our flexible and driver-friendly compensation model",
+        "Maximize your earnings with our flexible rider compensation model",
       icon: faDollarSign,
       color: "blue",
     },
     {
       title: "Effortless Setup",
-      description:
-        "Experience seamless ad setup and management, allowing you more time to focus on what you do best",
+      description: "Seamless ad setup and management",
       icon: faHandsHelping,
       color: "green",
     },
     {
       title: "Community Connection",
       description:
-        "Join a vibrant community of drivers, sharing insights and growing together in the mobile advertising world",
+        "Join riders, share insights, grow in mobile advertising together.",
       icon: faUserFriends,
       red: "red",
     },
@@ -57,7 +56,7 @@ const RiderBenefits = () => {
             >
               <FontAwesomeIcon
                 icon={benefit.icon}
-                className="text-gray-600 text-6xl mb-5"
+                className="w-16 h-16 text-gray-600 text-6xl mb-5"
               />
               <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">
                 {benefit.title}

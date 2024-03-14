@@ -32,42 +32,62 @@ const ImageUploadInput: React.FC<ImageUploadInputProps> = ({
     const fileList = e.target.files;
     if (fileList && fileList.length > 0) {
       const file = fileList[0];
+      uploadImage(file);
+    }
+  };
 
-      try {
-        // Upload file to Cloudinary
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("upload_preset", UPLOADPRESET!);
+  const handleDrop = async (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const fileList = e.dataTransfer.files;
+    if (fileList && fileList.length > 0) {
+      const file = fileList[0];
+      uploadImage(file);
+    }
+  };
 
-        const response = await fetch(
-          `https://api.cloudinary.com/v1_1/${CLOUDNAME!}/upload`,
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
 
-        if (response.ok) {
-          const data = await response.json();
-          const imageUrl = data.secure_url;
-          // Dispatch actions to update Redux store
-          dispatch(setPublicId(data.public_id));
-          dispatch(setImageName(file.name));
+  const uploadImage = async (file: File) => {
+    try {
+      // Upload file to Cloudinary
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", UPLOADPRESET!);
 
-          // Update form data with the image URL
-          dispatch(setImageUrl(imageUrl));
-        } else {
-          throw new Error("Failed to upload image to Cloudinary");
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${CLOUDNAME!}/upload`,
+        {
+          method: "POST",
+          body: formData,
         }
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        // Handle error (e.g., display error message)
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        const imageUrl = data.secure_url;
+        // Dispatch actions to update Redux store
+        dispatch(setPublicId(data.public_id));
+        dispatch(setImageName(file.name));
+
+        // Update form data with the image URL
+        dispatch(setImageUrl(imageUrl));
+      } else {
+        throw new Error("Failed to upload image to Cloudinary");
       }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      // Handle error (e.g., display error message)
     }
   };
 
   return (
-    <div className="max-w-lg w-full p-4 mt-6 bg-opacity-80 bg-white border border-gray-400 rounded-3xl appearance-none">
+    <div
+      className="max-w-lg w-full p-4 mt-6 bg-opacity-80 bg-white border border-gray-400 rounded-3xl appearance-none"
+      onDrop={handleDrop}
+      onDragOver={handleDragOver}
+    >
       <div className="flex items-center">
         <div className="flex-1">
           {imageName && <p className="text-gray-700">Name: {imageName}</p>}
