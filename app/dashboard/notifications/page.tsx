@@ -29,7 +29,7 @@ const Notification = () => {
       type: "warning",
     },
     {
-      id: 4,
+      id: 5,
       title: "Notification 5",
       message: "This is the fifth notification.",
       type: "error",
@@ -39,10 +39,26 @@ const Notification = () => {
   // Define an array of colors to choose from
   const colors = [
     "from-blue-500 to-violet-500",
-    "from-green-500 to-blue-500",
-    "from-yellow-500 to-red-500",
-    "from-purple-500 to-pink-500",
-    "from-orange-500 to-yellow-500",
+    "from-green-600 to-lime-500",
+    "from-slate-600 to-slate-300",
+    "from-emerald-500 to-teal-400",
+    "from-red-600 to-rose-400",
+    "from-orange-500 to-yellow-400",
+    "from-blue-600 to-cyan-400",
+    "from-gray-400 to-gray-100",
+    "from-zinc-800 to-zinc-700",
+  ];
+
+  const borderColors = [
+    "border-blue-300",
+    "border-lime-300",
+    "border-slate-100",
+    "border-emerald-300",
+    "border-red-300",
+    "border-orange-100",
+    "border-cyan-200",
+    "border-slate-100",
+    "border-slate-100",
   ];
 
   return (
@@ -61,7 +77,9 @@ const Notification = () => {
                 backgroundColor={`bg-gradient-to-tl ${
                   colors[notification.id % colors.length]
                 }`} // Choose a color based on the index
-                headingType={notification.type} // Pass the type of heading
+                borderColors={`${
+                  borderColors[notification.id % colors.length]
+                }`}
               />
             ))}
           </div>
