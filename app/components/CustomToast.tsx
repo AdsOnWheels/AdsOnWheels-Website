@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import { Toast, toast } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,7 +11,7 @@ import {
 
 interface CustomToastProps {
   title: string;
-  message: string;
+  message: string | ReactNode;
   icon: IconDefinition;
   iconColor: string;
   bgColor: string;
@@ -95,7 +95,7 @@ const CustomToast: React.FC<CustomToastProps> = ({
 };
 
 // Success toast
-const showSuccessToast = (title: string, message: string) => {
+const showSuccessToast = (title: string, message: string | ReactNode) => {
   const notificationTime = new Date();
   toast.custom((t) => (
     <CustomToast
@@ -111,7 +111,7 @@ const showSuccessToast = (title: string, message: string) => {
 };
 
 // Error toast
-const showErrorToast = (title: string, message: string) => {
+const showErrorToast = (title: string, message: string | ReactNode) => {
   const notificationTime = new Date();
   toast.custom((t) => (
     <CustomToast
@@ -127,7 +127,7 @@ const showErrorToast = (title: string, message: string) => {
 };
 
 // Warning toast
-const showWarningToast = (title: string, message: string) => {
+const showWarningToast = (title: string, message: string | ReactNode) => {
   const notificationTime = new Date();
   toast.custom((t) => (
     <CustomToast
@@ -143,7 +143,7 @@ const showWarningToast = (title: string, message: string) => {
 };
 
 // Info toast
-const showInfoToast = (title: string, message: string) => {
+const showInfoToast = (title: string, message: string | ReactNode) => {
   const notificationTime = new Date();
   toast.custom((t) => (
     <CustomToast

@@ -53,6 +53,85 @@ body {
   max-height: calc(100vh - 90px);
 }
 
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+  background-color: transparent; /* Hide background */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  display: block;
+  opacity: 0;
+  background: transparent; /* Color of the track */
+  z-index: -1; /* Ensure the track appears behind the thumb */
+  -webkit-transition: background-color 0.2s linear, opacity 0.2s linear;
+  width: 15px;
+  height: 341px;
+  top: 817px;
+  right: 0px;
+  position: absolute;
+}
+
+/* Handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #aaa; /* Color of the handle */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.2s linear, width 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s linear, width 0.2s ease-in-out;
+  width: 6px;
+  height: 80px;
+  top: 194px;
+  right: 2px;
+  position: absolute;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999; /* Darker color on hover */
+}
+
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+.ps__rail-x {
+  display: none;
+  opacity: 0;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+  -webkit-transition: background-color 0.2s linear, opacity 0.2s linear;
+  height: 15px;
+  bottom: 0;
+  position: absolute;
+}
+
+/* Rail style */
+.ps__rail-y {
+  display: none;
+  opacity: 0;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+  -webkit-transition: background-color 0.2s linear, opacity 0.2s linear;
+  width: 15px;
+  right: 0;
+  position: absolute;
+}
+
+.ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: transparent;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #999;
+  width: 11px;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */

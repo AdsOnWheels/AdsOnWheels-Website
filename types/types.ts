@@ -2,6 +2,16 @@ import { StaticImageData } from "next/image";
 import { TableInstance, TableState } from "react-table";
 
 /**
+ * Represents a notification
+ */
+export interface Notification {
+  id: string;
+  imageUrl: StaticImageData;
+  title: string;
+  time: string;
+}
+
+/**
  * Represents a field in a form.
  */
 export interface Field {

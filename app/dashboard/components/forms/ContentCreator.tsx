@@ -86,18 +86,18 @@ const ContentCreator = ({
       // Sanitize the content value to remove HTML elements
       formData[editorName] = sanitizeContent(formData[editorName], editorName);
 
-      const response = await fetch(apiEndpoint, {
+      const res = await fetch(apiEndpoint, {
         method: method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      if (res.ok) {
         toast.success("Success! Your post has been published.");
 
         // Clear form
         reset();
-      } else if (response.status === 409) {
+      } else if (res.status === 409) {
         toast.error("Failed to submit form. Duplicate entry.");
       } else
         throw new Error(

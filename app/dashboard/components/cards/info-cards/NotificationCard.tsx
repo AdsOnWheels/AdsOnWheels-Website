@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 import DismissButton from "@/app/dashboard/notifications/components/DismissButton";
 import LearnMoreButton from "@/app/dashboard/notifications/components/LearnMoreButton";
-import ViewButton from "@/app/dashboard/notifications/components/ViewButton";
 
 interface Props {
   message: string;
@@ -31,7 +30,6 @@ const NotificationCard = ({
       </p>
       {expanded && (
         <div className="flex justify-end mt-2">
-          <ViewButton />
           <LearnMoreButton />
         </div>
       )}

@@ -1,21 +1,29 @@
 "use client";
 
 import React, { Fragment, ReactNode } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
 
-import useIsSidebarOpen from "@/app/hooks/dashboard/useIsSidebarOpen";
 import { setTab } from "@/redux/slices/tab";
 import { RootState } from "@/redux/store";
+import useIsSidebarOpen from "@/app/hooks/dashboard/useIsSidebarOpen";
+import UserProfile from "./components/UserProfile";
 
 interface Props {
+  userProfile?: boolean;
   searchBar?: ReactNode;
   tabs?: string[];
   buttons?: ReactNode[];
   onTabClick?: (tab: string) => void;
 }
 
-const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
+const ActionPanel = ({
+  userProfile,
+  searchBar,
+  tabs,
+  buttons,
+  onTabClick,
+}: Props) => {
   const selectedTab = useSelector((state: RootState) => state.tab.selectedTab);
   const isSidebarOpen = useIsSidebarOpen();
 
@@ -83,6 +91,7 @@ const ActionPanel = ({ searchBar, tabs, buttons, onTabClick }: Props) => {
     <div className="block justify-between items-center p-4 mb-6 dark:bg-gray-950 bg-white rounded-2xl shadow-xl lg:p-5 sm:flex">
       <div className="mb-1 w-full">
         <div className="sm:flex">
+          {userProfile && <UserProfile />}
           {searchBar && (
             <div className="hidden items-center mb-3 sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0">
               {searchBar}

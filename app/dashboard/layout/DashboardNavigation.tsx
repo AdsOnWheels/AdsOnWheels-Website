@@ -17,10 +17,13 @@ import {
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import useIsSidebarOpen from "@/app/hooks/dashboard/useIsSidebarOpen";
+import { usePathname } from "next/navigation";
 
 const DashboardNavigation = () => {
   const [isUserManagementOpen, setIsUserManagementOpen] = useState(false);
   const isOpen = useIsSidebarOpen();
+
+  const path = usePathname();
 
   const navigationItems = [
     {
@@ -109,28 +112,31 @@ const DashboardNavigation = () => {
   };
 
   return (
-    <ul className="flex flex-col p-4 mb-0 list-none">
+    <ul className="flex flex-col pl-0 mb-0 list-none">
       {navigationItems.map((item) => (
-        <li key={item.id} className="mb-2">
+        <li key={item.id} className="mt-2 w-full">
           {item.submenu ? (
             <>
               <div
+                className={`flex items-center py-3 px-4 active my-0 mx-4 rounded-lg duration-300 dark:hover:bg-gray-700 hover:bg-gray-200/80 ${
+                  path === item.href ? "dark:bg-gray-700 bg-gray-200/80" : ""
+                }`}
                 onClick={handleSubMenuToggle}
-                className="flex items-center justify-start px-4 py-3 rounded-md transition duration-300 hover:bg-gray-700 hover:text-white cursor-pointer"
               >
                 <AWLink
                   href={item.href}
                   text={isOpen ? item.text : ""}
                   icon={item.icon}
+                  iconClasses="stroke-none shadow-2xl bg-gradient-to-tl from-purple-700 to-blue-500 h-4 w-4 rounded-lg bg-white bg-center fill-current p-2.5 text-center text-white"
                   tooltip={item.tooltip}
+                  className="ease-in-out text-sm flex items-center whitespace-nowrap font-medium text-slate-500 shadow-none transition-colors"
                   color="neutral"
                 />
                 {isOpen && (
-                  <span className="ml-auto">
+                  <span className="mx-4">
                     <AWLink
                       href={item.href}
                       icon={isUserManagementOpen ? faChevronUp : faChevronDown}
-                      className="ml-2"
                       color="neutral"
                     />
                   </span>
@@ -145,7 +151,7 @@ const DashboardNavigation = () => {
                         text={isOpen ? subItem.text : ""}
                         icon={subItem.icon}
                         tooltip={subItem.tooltip}
-                        className="flex items-center justify-start px-4 py-3 rounded-md transition duration-300 hover:bg-gray-700 hover:text-white"
+                        className="ease-in-out py-1.5 ml-5 pl-4 text-sm relative my-0 mr-4 flex items-center whitespace-nowrap bg-transparent pr-4 font-medium text-slate-800/50 shadow-none transition-colors dark:text-white dark:opacity-60"
                         color="neutral"
                       />
                     </li>
@@ -158,8 +164,11 @@ const DashboardNavigation = () => {
               href={item.href}
               text={isOpen ? item.text : ""}
               icon={item.icon}
+              iconClasses="stroke-none shadow-2xl bg-gradient-to-tl from-purple-700 to-blue-500 flex h-4 w-4 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-white"
               tooltip={item.tooltip}
-              className="flex items-center justify-start px-4 py-3 rounded-md transition duration-300 hover:bg-gray-700 hover:text-white"
+              className={`ease-in-out text-sm py-3 active my-0 mx-4 flex items-center whitespace-nowrap px-4 font-medium text-slate-500 shadow-none transition-colors rounded-lg duration-300 dark:hover:bg-gray-700 hover:bg-gray-200/80 ${
+                path === item.href ? "dark:bg-gray-700 bg-gray-200/80" : ""
+              }`}
               color="neutral"
             />
           )}
