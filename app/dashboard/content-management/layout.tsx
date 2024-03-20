@@ -14,7 +14,11 @@ interface Props {
 const ContentLayout = ({ children }: Props) => {
   const selectedTab = useSelector((state: RootState) => state.tab.selectedTab);
 
-  const tabs = ["Blogs", "FAQs", "Help Articles"];
+  const tabs = [
+    { id: 1, tab: "Blogs", icon: "fa-blog" },
+    { id: 2, tab: "FAQs", icon: "fa-clipboard-question" },
+    { id: 3, tab: "Help Articles", icon: "fa-newspaper" },
+  ];
 
   return (
     <>
