@@ -13,6 +13,7 @@ import {
   faAnglesLeft,
   faAnglesRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { debounce } from "lodash";
 
 import DataTableHeadCell from "./DataTableHeadCell";
 import DataTableBodyCell from "./DataTableBodyCell";
@@ -87,10 +88,13 @@ const DataTable: React.FC<TableProps> = ({
   const [search, setSearch] = useState(globalFilter);
 
   // Search input state handle
-  const onSearchChange = debounceSearch((value: string) => {
-    setGlobalFilter(value || undefined);
-    console.log("Debounced search:", value);
-  }, 200);
+  const onSearchChange = useMemo(
+    () =>
+      debounce((value) => {
+        setGlobalFilter(value || undefined);
+      }, 300),
+    [setGlobalFilter] // Dependency array to ensure the function is only created once
+  );
 
   // useEffect to update the global filter when the filter prop changes
   useEffect(() => {
@@ -185,9 +189,9 @@ const DataTable: React.FC<TableProps> = ({
             >
               {/* Table Header */}
               <thead>
-                {headerGroups.map((headerGroup: any) => (
+                {headerGroups.map((headerGroup: any, headerIndex: number) => (
                   <tr
-                    key={headerGroup.id}
+                    key={headerGroup.id || headerIndex}
                     {...headerGroup.getHeaderGroupProps()}
                   >
                     {headerGroup.headers.map(
@@ -220,10 +224,10 @@ const DataTable: React.FC<TableProps> = ({
                   const rowProps = row.getRowProps();
                   return (
                     <tr {...rowProps} key={rowId}>
-                      {row.cells.map((cell: any) => (
+                      {row.cells.map((cell: any, cellIndex: number) => (
                         <DataTableBodyCell
                           {...cell.getCellProps()}
-                          key={rowId}
+                          key={cell.id || cellIndex}
                           noBorder={noEndBorder && rows.length - 1 === rowId}
                           align={cell.column.align ? cell.column.align : "left"}
                         >

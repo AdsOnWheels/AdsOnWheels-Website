@@ -2,20 +2,18 @@ import { DataTableHeadCellProps } from "@/types/types";
 import React from "react";
 
 const DataTableHeadCell: React.FC<DataTableHeadCellProps> = ({
-  key,
-  width = "auto",
   children,
   sorted,
+  width = "auto",
   align = "left",
   ...rest
 }) => {
   return (
     <th
-      key={key}
       className={`text-gray-500 py-1.5 px-6 border-b border-gray-200 ${width}`}
-      {...rest}
     >
       <div
+        {...rest}
         className={`relative text-${align} uppercase font-bold text-xs cursor-${
           sorted ? "pointer" : "default"
         } select-none`}
@@ -30,8 +28,10 @@ const DataTableHeadCell: React.FC<DataTableHeadCellProps> = ({
             <div className="text-center text-md">
               <div
                 className={`absolute top-[-2px] ${
-                  sorted === "asce" ? "text-black" : "text-gray-500"
-                } opacity-${sorted === "asc" ? "100" : "50"}`}
+                  sorted === "asce"
+                    ? "dark:text-gray-200 text-black"
+                    : "text-gray-500"
+                } opacity-${sorted === "asce" ? "100" : "50"}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,9 @@ const DataTableHeadCell: React.FC<DataTableHeadCellProps> = ({
               </div>
               <div
                 className={`absolute top-2 ${
-                  sorted === "desc" ? "text-black" : "text-gray-500"
+                  sorted === "desc"
+                    ? "text-black dark:text-gray-200"
+                    : "text-gray-500"
                 } opacity-${sorted === "desc" ? "100" : "50"}`}
               >
                 <svg

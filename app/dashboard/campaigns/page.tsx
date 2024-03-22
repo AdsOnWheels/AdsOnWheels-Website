@@ -174,8 +174,8 @@ const AdCampaignManagement = () => {
     console.log("Edit button clicked");
   };
 
-  const includeStatusColumn = false; // Set to false to disable the status column
-  const includeActionsColumn = false; // Set to false to disable the actions column
+  const includeStatusColumn = true; // Set to false to disable the status column
+  const includeActionsColumn = true; // Set to false to disable the actions column
 
   const columns = [
     { id: "campaignId", Header: "Campaign ID", accessor: "campaignId" },
@@ -203,84 +203,43 @@ const AdCampaignManagement = () => {
         <div>
           {/* Render buttons conditionally based on the status */}
           {row.status === "Active" && (
-            <button
-              className="inline-flex items-center py-1 px-2 mr-2 rounded-lg text-sm font-medium text-center text-gray-200 bg-blue-500 hover:bg-blue-600 hover:scale-[1.02] focus:outline-none focus:ring focus:ring-blue-400 transition-all"
-              onClick={() => handleEdit(row.campaignId)}
-            >
-              <svg
-                className="mr-1 w-4 h-4"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
-                <path
-                  fill-rule="evenodd"
-                  d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              Edit
-            </button>
+            <Link href="#" className="mr-4">
+              <i
+                className="fa-solid fa-eye text-slate-400 dark:text-white/70"
+                aria-hidden="true"
+              ></i>
+            </Link>
           )}
           {row.status === "Active" && (
-            <button
-              className="inline-flex items-center py-1 px-2 mr-2 rounded-lg text-sm font-medium text-center text-gray-200 bg-yellow-500 hover:bg-yellow-600 hover:scale-[1.02] focus:outline-none focus:ring focus:ring-yellow-400 transition-all"
-              onClick={() => handlePause(row.campaignId)}
-            >
-              <svg
-                className="mr-1 w-4 h-4"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 6a1 1 0 011-1h2a1 1 0 110 2H10a1 1 0 01-1-1zm0 4a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm2-7a1 1 0 00-2 0v3a1 1 0 102 0V3z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              Pause
-            </button>
+            <Link href="#" className="mr-4">
+              <i
+                className="fa-solid fa-pen-to-square text-slate-400 dark:text-white/70"
+                aria-hidden="true"
+              ></i>
+            </Link>
+          )}
+          {row.status === "Active" && (
+            <Link href="#" className="mr-4">
+              <i
+                className="fa-solid fa-circle-pause text-slate-400 dark:text-white/70"
+                aria-hidden="true"
+              ></i>
+            </Link>
           )}
           {row.status === "Paused" && (
-            <button
-              className="inline-flex items-center py-1 px-2 mr-2 rounded-lg text-sm font-medium text-center text-gray-200 bg-green-500 hover:bg-green-600 hover:scale-[1.02] focus:outline-none focus:ring focus:ring-green-400 transition-all"
-              onClick={() => handleResume(row.campaignId)}
-            >
-              <svg
-                className="mr-1 w-4 h-4"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-14a6 6 0 100 12 6 6 0 000-12zm-1 4a1 1 0 011-1h2a1 1 0 110 2H10a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              Resume
-            </button>
+            <Link href="#" className="mr-4">
+              <i
+                className="fa-solid fa-circle-play text-slate-400 dark:text-white/70"
+                aria-hidden="true"
+              ></i>
+            </Link>
           )}
-          <button
-            className="inline-flex items-center py-1 px-2 mr-2 rounded-lg text-sm font-medium text-center text-gray-200 bg-red-500 hover:bg-red-600 hover:scale-[1.02] focus:outline-none focus:ring focus:ring-red-400 transition-all"
-            onClick={() => handleDelete(row.campaignId)}
-          >
-            <svg
-              className="mr-1 w-4 h-4"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            Delete
-          </button>
+          <Link href="#">
+            <i
+              className="fa-solid fa-trash text-slate-400 dark:text-white/70"
+              aria-hidden="true"
+            ></i>
+          </Link>
         </div>
       ),
     })),
@@ -296,7 +255,7 @@ const AdCampaignManagement = () => {
   const pagination = true;
   const isSorted = true;
   const noEndBorder = false;
-  const enableActionButtons = false;
+  const enableActionButtons = true;
 
   const title = "Ongoing Campaigns";
   const description =

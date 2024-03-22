@@ -4,17 +4,20 @@ import Link from "next/link";
 
 import DashboardNavigation from "./DashboardNavigation";
 import BrandIcon from "../assets/images/Brand-icon.png";
+import useIsSidebarOpen from "@/app/hooks/dashboard/useIsSidebarOpen";
+import useTransparentSidebar from "@/app/hooks/dashboard/useTransparentSidebar";
 
-interface Props {
-  isOpen: boolean | undefined;
-}
+const Sidebar = () => {
+  const isOpen = useIsSidebarOpen();
+  const isTransparent = useTransparentSidebar();
 
-const Sidebar = ({ isOpen }: Props) => {
   return (
     <aside
-      className={`fixed inset-y-0 left-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto transition-all duration-200 -translate-x-full bg-white border-0 shadow-xl xl:ml-4 dark:bg-gray-950 ease-in-out z-40 rounded-2xl xl:translate-x-0 ps-0 ps--active-y ps--scrolling-y ${
-        isOpen ? "max-w-64" : "max-w-24"
-      }`}
+      className={`fixed inset-y-0 left-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto transition-all duration-200 -translate-x-full border-0 xl:ml-4 dark:bg-gray-950 bg-white ease-in-out z-40 rounded-2xl xl:translate-x-0 ps-0 ps--active-y ${
+        isTransparent
+          ? "lg:bg-transparent shadow-none"
+          : "bg-white lg:shadow-xl"
+      } ${isOpen ? "max-w-64" : "max-w-24"}`}
     >
       <div className="h-20">
         {isOpen && (

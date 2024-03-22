@@ -127,7 +127,7 @@ const DashboardNavigation = () => {
                   href={item.href}
                   text={isOpen ? item.text : ""}
                   icon={item.icon}
-                  iconClasses="stroke-none shadow-2xl bg-gradient-to-tl from-purple-700 to-blue-500 h-4 w-4 rounded-lg bg-white bg-center fill-current p-2.5 text-center text-white"
+                  iconClasses="stroke-none shadow-2xl bg-gradient-to-tl from-purple-700 to-blue-500 h-4 w-4 rounded-lg bg-white bg-center fill-current p-2 text-center text-white"
                   tooltip={item.tooltip}
                   className="ease-in-out text-sm flex items-center whitespace-nowrap font-medium text-slate-500 shadow-none transition-colors"
                   color="neutral"
@@ -164,7 +164,7 @@ const DashboardNavigation = () => {
               href={item.href}
               text={isOpen ? item.text : ""}
               icon={item.icon}
-              iconClasses="stroke-none shadow-2xl bg-gradient-to-tl from-purple-700 to-blue-500 flex h-4 w-4 items-center justify-center rounded-lg bg-white bg-center fill-current p-2.5 text-center text-white"
+              iconClasses="stroke-none shadow-2xl bg-gradient-to-tl from-purple-700 to-blue-500 flex h-4 w-4 items-center justify-center rounded-lg bg-white bg-center fill-current p-2 text-center text-white"
               tooltip={item.tooltip}
               className={`ease-in-out text-sm py-3 active my-0 mx-4 flex items-center whitespace-nowrap px-4 font-medium text-slate-500 shadow-none transition-colors rounded-lg duration-300 dark:hover:bg-gray-700 hover:bg-gray-200/80 ${
                 path === item.href ? "dark:bg-gray-700 bg-gray-200/80" : ""

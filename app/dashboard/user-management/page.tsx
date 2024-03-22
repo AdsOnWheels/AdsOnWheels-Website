@@ -111,14 +111,11 @@ const UserManagement = () => {
   };
 
   // Define other props like entriesPerPage, canSearch, showTotalEntries, etc.
-  const entriesPerPage = {
-    defaultValue: 10,
-    entries: [5, 10, 15, 20, 25],
-  };
+  const entriesPerPage = {};
 
   const canSearch = false;
   const showTotalEntries = false;
-  const pagination = true;
+  const pagination = false;
   const isSorted = false;
   const noEndBorder = false;
   const enableActionButtons = false;

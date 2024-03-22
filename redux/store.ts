@@ -4,7 +4,7 @@ import sidebarReducer from "./slices/sidebarToggle";
 import campaignReducer from "./slices/campaign";
 import sortingReducer from "./slices/sorting";
 import paginationReducer from "./slices/pagination";
-import buttonReducer from "./slices/buttonToggle";
+import toggleStickyNavbarReducer from "./slices/toggleStickyNavbar";
 import tabReducer from "./slices/tab";
 import themeReducer from "./slices/themeMode";
 import imageUploadReducer from "./slices/imageUpload";
@@ -13,6 +13,7 @@ import contactFormReducer from "./slices/contactForm";
 import brandFormReducer from "./slices/brandForm";
 import riderFormReducer from "./slices/riderForm";
 import contentFormReducer from "./slices/contentForm";
+import transparentSidebarReducer from "./slices/transparentSidebar";
 
 export const store = configureStore({
   reducer: {
@@ -27,7 +28,8 @@ export const store = configureStore({
     sorting: sortingReducer,
     tab: tabReducer,
     toggleSidebar: sidebarReducer,
-    toggleButton: buttonReducer,
+    toggleStickyNavbar: toggleStickyNavbarReducer,
+    toggleTransparentSidebar: transparentSidebarReducer,
     toggleTheme: themeReducer,
   },
   devTools: process.env.NODE_ENV !== "production",

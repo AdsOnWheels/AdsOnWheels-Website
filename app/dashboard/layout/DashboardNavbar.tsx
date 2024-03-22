@@ -18,6 +18,9 @@ import notifications from "../notifications/components/data/notificationsData";
 import Skeleton from "react-loading-skeleton";
 
 const DashboardNavbar = () => {
+  const stickyNavbar = useSelector(
+    (state: RootState) => state.toggleStickyNavbar.isSticky
+  );
   const isSidebarOpen = useSelector(
     (state: RootState) => state.toggleSidebar.isSidebar
   );
@@ -27,7 +30,7 @@ const DashboardNavbar = () => {
   const dispatch = useDispatch();
 
   const handleToggle = () => {
-    dispatch(toggle(!isSidebarOpen));
+    dispatch(toggle());
   };
 
   const pathSegments = path.split("/").filter((segment) => segment);
@@ -49,7 +52,12 @@ const DashboardNavbar = () => {
   const { status, data: session } = useSession();
 
   return (
-    <div className="px-0 py-1.5 mx-6 mt-4 transition-all shadow-none duration-200 ease-in rounded-2xl">
+    <div
+      className={`px-0 py-1.5 mx-6 mt-4 transition-all shadow-none duration-[250ms] ease-in rounded-2xl ${
+        stickyNavbar &&
+        "sticky top-[1%] dark:border dark:border-gray-500/80 backdrop-saturate-200 backdrop-blur-2xl bg-white/80 drop-shadow-xl z-[110] dark:bg-gray-950/80"
+      }`}
+    >
       <div className="navbar px-4">
         <div className="navbar-start">
           <div className="flex-1 px-2 lg:px-0">

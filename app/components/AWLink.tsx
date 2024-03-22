@@ -64,12 +64,11 @@ const AWLink = ({
   return (
     <Link href={href} title={tooltip} className={linkClasses}>
       {icon && (
-        <FontAwesomeIcon
-          icon={icon}
-          className={`inline-block mr-2 ${iconClasses}`}
-        />
+        <FontAwesomeIcon icon={icon} className={`mr-2 ${iconClasses}`} />
       )}
-      {text}
+      <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-in">
+        {text}
+      </span>
     </Link>
   );
 };

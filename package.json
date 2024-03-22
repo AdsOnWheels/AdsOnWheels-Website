@@ -20,6 +20,7 @@
     "@prisma/client": "^5.10.2",
     "@reduxjs/toolkit": "^2.2.1",
     "@tanstack/react-query": "^5.25.0",
+    "@types/mapbox-gl": "^3.1.0",
     "@types/node": "20.11.19",
     "@types/react": "18.2.56",
     "@types/react-dom": "18.2.19",
@@ -31,6 +32,7 @@
     "chroma-js": "^2.4.2",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
+    "lodash": "^4.17.21",
     "next": "14.1.0",
     "next-auth": "^5.0.0-beta.13",
     "next-cloudinary": "^6.0.1",
@@ -58,6 +60,7 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/chroma-js": "^2.4.4",
+    "@types/lodash": "^4.17.0",
     "@types/qrcode": "^1.5.5",
     "@types/react-slick": "^0.23.13",
     "@types/react-table": "^7.7.19",

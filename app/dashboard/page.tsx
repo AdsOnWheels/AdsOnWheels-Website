@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faUser } from "@fortawesome/free-regular-svg-icons";
 import { faAdjust, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
+import Clock from "./components/Clock";
+import ControlPanel from "./components/map/ControlPanel";
+import MapVisualization from "./components/map/MapVisualization";
 import ReportsBarChart from "./components/charts/bar-charts/reports-bar-charts/ReportsBarChart";
 import reportsBarChartData from "./components/data/reportsBarChartData";
 import reportsLineChartData from "./components/data/reportsLineChartData";
@@ -182,7 +185,7 @@ const Dashboard = () => {
       <div className="flex flex-wrap mt-6 -mx-3">
         {/* Line Chart */}
         <div className="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
-          <div className="border-black/12.5 dark:bg-gray-950 dark:shadow-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+          <div className="border-black/12.5 dark:bg-gray-950 dark:shadow-xl shadow-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
             <div className="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
               <h6 className="capitalize dark:text-white">Sales overview</h6>
               <p className="mb-2 text-sm leading-normal dark:text-white dark:opacity-60">
@@ -263,9 +266,33 @@ const Dashboard = () => {
             key={index}
             className="w-full max-w-full px-3 shrink-0 md:flex-0 md:w-6/12"
           >
-            <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl z-2 dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
+            <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
               <div className="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
                 <h6 className="capitalize dark:text-white">Total Orders</h6>
+                <div className="flex items-center my-2">
+                  <span className="py-2.6 mr-6 rounded-1.8 text-sm inline-block whitespace-nowrap bg-transparent px-0 text-center align-baseline font-normal leading-none text-white">
+                    <i className="rounded-full mr-1.5 inline-block h-2 w-2 align-middle bg-yellow-300"></i>
+                    <span className="leading-tight dark:text-white text-slate-700">
+                      In Frame
+                    </span>
+                  </span>
+                  <span className="py-2.6 mr-6 rounded-1.8 text-sm inline-block whitespace-nowrap bg-transparent px-0 text-center align-baseline font-normal leading-none text-white">
+                    <i className="rounded-full mr-1.5 inline-block h-2 w-2 align-middle bg-blue-400"></i>
+                    <span className="dark:text-white text-slate-700">
+                      Frame
+                    </span>
+                  </span>
+                  <span className="py-2.6 mr-6 rounded-1.8 text-sm inline-block whitespace-nowrap bg-transparent px-0 text-center align-baseline font-normal leading-none text-white">
+                    <i className="rounded-full mr-1.5 inline-block h-2 w-2 align-middle bg-pink-500"></i>
+                    <span className="dark:text-white text-slate-700">
+                      Basket
+                    </span>
+                  </span>
+                  <span className="py-2.6 mr-6 rounded-1.8 text-sm inline-block whitespace-nowrap bg-transparent px-0 text-center align-baseline font-normal leading-none text-white">
+                    <i className="rounded-full mr-1.5 inline-block h-2 w-2 align-middle bg-cyan-400"></i>
+                    <span className="dark:text-white text-slate-700">Rim</span>
+                  </span>
+                </div>
                 <p className="mb-2 text-sm leading-normal dark:text-white dark:opacity-60">
                   <i
                     className="fa fa-arrow-up text-lime-500"
@@ -283,8 +310,44 @@ const Dashboard = () => {
       </div>
       <div className="flex flex-wrap mt-6 -mx-3">
         <div className="w-full max-w-full px-3 flex-0">
-          <div className="shadow-3xl dark:bg-gray-950 dark:shadow-xl border-black/12.5 bg-white relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-clip-border dark:bg-none">
-            <div className="flex-auto"></div>
+          <div className="shadow-2xl dark:bg-gray-950 dark:shadow-xl border-black/12.5 bg-white relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-clip-border dark:bg-none">
+            <div className="border-b-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-transparent p-6">
+              <div className="flex flex-wrap -mx-3">
+                <div className="w-full max-w-full px-3 flex-0 md:w-6/12 lg:w-4/12">
+                  <div className="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
+                    <span className="leading-5 z-[100] text-sm absolute -ml-px flex h-full items-center whitespace-nowrap rounded-l-lg border-0 bg-transparent p-3 text-center font-normal text-slate-500">
+                      <i className="text-lg leading-none fa-solid fa-magnifying-glass-plus"></i>
+                    </span>
+                    <input
+                      type="text"
+                      placeholder="Search city..."
+                      className="leading-5 ease-in text-sm pl-9 focus:border-blue-500 border-transparent border border-solid focus:shadow-blue-500 dark:bg-slate-950 dark:placeholder:text-white/80 dark:text-white/80 relative block min-w-0 flex-auto appearance-none rounded-full bg-transparent bg-clip-padding p-3 font-normal text-slate-500 focus:transition-shadow placeholder:text-gray-500 focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="w-full max-w-full px-3 my-auto ml-auto flex-0 md:w-6/12 lg:w-6/12">
+                  <div className="flex items-center">
+                    <p className="mb-1 ml-auto mr-4 text-slate-500 opacity-80 dark:text-white">
+                      Current time:
+                    </p>
+                    <Clock />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-auto">
+              <MapVisualization />
+            </div>
+            <div className="border-t-black/12.5 mt-0 rounded-b-2xl border-t-0 border-solid bg-transparent p-6">
+              <div className="flex flex-wrap -mx-3">
+                <div className="w-full max-w-full px-3 flex-0 md:w-6/12 lg:w-4/12">
+                  <div className="flex items-center">
+                    <ControlPanel />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

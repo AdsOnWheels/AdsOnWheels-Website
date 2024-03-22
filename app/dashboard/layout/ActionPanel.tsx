@@ -117,13 +117,13 @@ const ActionPanel = ({
                   </li>
                 ))}
                 <div
-                  className={`z-10 absolute text-slate-700 rounded-lg bg-inherit flex-auto text-center bg-none border-0 block p-0 transition-all duration-500 ease transform translate-x-0 translate-y-0 ${calculateMovingTabWidth()}`}
+                  className={`z-10 absolute text-slate-700 rounded-lg bg-inherit flex-auto text-center bg-none border-0 block p-0 transition-all duration-500 ease-in transform translate-x-0 translate-y-0 ${calculateMovingTabWidth()}`}
                   moving-tab=""
                   nav-link=""
                   style={movingTabStyle}
                 >
                   <a
-                    className="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg dark:text-gray-950 text-white dark:bg-gray-950 bg-white shadow-sm animate-none duration-200"
+                    className="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg dark:text-gray-950 text-white dark:bg-gray-950 bg-white dark:shadow-white shadow-sm animate-none duration-200"
                     nav-link=""
                     role="tab"
                     aria-selected="true"
