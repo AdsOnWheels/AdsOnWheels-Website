@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import Heading2 from "../layout/Heading2";
 import Button from "../components/Button";
-import TeamImage from "../../assets/Bikes-Amsterdam-center.png";
+import TeamImage from "../../public/Bikes-Amsterdam-center.png";
 
 const WhoAreWe = () => {
   return (

@@ -2,15 +2,15 @@ import React from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 
-import BicycleFrame from "../../assets/images/rider/advertising-on-bicycle-frames.png";
-import WheelRim from "../../assets/images/rider/advertising-on-bicycle-wheel-rim-cover.png";
-import WheelRim2 from "../../assets/images/rider/advertising-on-bicycle-wheel-rim-cover-II.png";
-import BicycleBasket from "../../assets/images/rider/advertising-on-bicycle-baskets-II.png";
-import BicycleBasket2 from "../../assets/images/rider/advertising-on-bicycle-baskets.png";
-import BicycleFrame2 from "../../assets/images/rider/advertising-on bicycle-frame-II.png";
-import BicycleFrame3 from "../../assets/images/rider/advertising-on bicycle-frame.png";
-import WheelRim3 from "../../assets/images/rider/advertising-on-bicycle-wheel-rim-cover-III.png";
-import CargoBicycle from "../../assets/images/rider/advertising-on-cargo-bicycle.png";
+import BicycleFrame from "../../public/images/rider/advertising-on-bicycle-frames.png";
+import WheelRim from "../../public/images/rider/advertising-on-bicycle-wheel-rim-cover.png";
+import WheelRim2 from "../../public/images/rider/advertising-on-bicycle-wheel-rim-cover-II.png";
+import BicycleBasket from "../../public/images/rider/advertising-on-bicycle-baskets-II.png";
+import BicycleBasket2 from "../../public/images/rider/advertising-on-bicycle-baskets.png";
+import BicycleFrame2 from "../../public/images/rider/advertising-on bicycle-frame-II.png";
+import BicycleFrame3 from "../../public/images/rider/advertising-on bicycle-frame.png";
+import WheelRim3 from "../../public/images/rider/advertising-on-bicycle-wheel-rim-cover-III.png";
+import CargoBicycle from "../../public/images/rider/advertising-on-cargo-bicycle.png";
 import Heading2 from "../layout/Heading2";
 
 interface Props {

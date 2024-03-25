@@ -3,10 +3,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import AdFormat from "./AdFormat";
 
-import BicycleFrameAdImage from "../../../assets/images/brand/ad-placement-options/bicycle-frame-ads.png";
-import BicycleInFramesAdImage from "../../../assets/images/brand/ad-placement-options/bicycle-in-frame-ads-II.png";
-import BicycleBasketAdImage from "../../../assets/images/brand/ad-placement-options/basket-ad-placement.png";
-import BicycleWheelRimAdImage from "../../../assets/images/brand/ad-placement-options/ads-on-wheel-rim-covers.png";
+import BicycleFrameAdImage from "../../../public/images/brand/ad-placement-options/bicycle-frame-ads.png";
+import BicycleInFramesAdImage from "../../../public/images/brand/ad-placement-options/bicycle-in-frame-ads-II.png";
+import BicycleBasketAdImage from "../../../public/images/brand/ad-placement-options/basket-ad-placement.png";
+import BicycleWheelRimAdImage from "../../../public/images/brand/ad-placement-options/ads-on-wheel-rim-covers.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
