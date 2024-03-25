@@ -45,8 +45,12 @@ const Sidebar = () => {
             width={100}
             height={100}
           />
-          <span className="ml-1 text-xl font-bold transition-all duration-200 ease-in-out opacity-100">
-            {isOpen ? "OUTFRONT" : ""}
+          <span
+            className={`ml-1 text-xl font-semibold transition-all duration-200 ease-in-out ${
+              isOpen ? "opacity-100" : "opacity-0 max-w-0"
+            } `}
+          >
+            {isOpen && "OUTFRONT"}
           </span>
         </Link>
       </div>

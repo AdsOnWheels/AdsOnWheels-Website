@@ -310,7 +310,7 @@ const Dashboard = () => {
       </div>
       <div className="flex flex-wrap mt-6 -mx-3">
         <div className="w-full max-w-full px-3 flex-0">
-          <div className="shadow-2xl dark:bg-gray-950 dark:shadow-xl border-black/12.5 bg-white relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-clip-border dark:bg-none">
+          <div className="border-black/12.5 dark:bg-gray-950 bg-white relative flex min-w-0 flex-col break-words shadow-xl dark:shadow-xl rounded-2xl border-0 border-solid bg-clip-border dark:bg-none">
             <div className="border-b-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-transparent p-6">
               <div className="flex flex-wrap -mx-3">
                 <div className="w-full max-w-full px-3 flex-0 md:w-6/12 lg:w-4/12">

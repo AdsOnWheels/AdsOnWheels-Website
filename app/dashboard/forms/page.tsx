@@ -172,30 +172,41 @@ const Forms = () => {
           </div>,
         ]}
       />
-      <div className="dark:bg-gray-950 bg-white shadow-md rounded-2xl p-6">
-        <h2 className="text-xl font-bold dark:text-white text-gray-800 mb-6">
-          Contact Form Inquiries
-        </h2>
-        <div className="overflow-x-auto">
-          <BasicTable
-            headers={tableHeaders}
-            rows={contactFormInquiries}
-            searchQuery={searchQuery}
-            button={true}
-          />
-          {/* Pagination */}
-          <div className="flex justify-center mt-4">
-            {Array.from({ length: pageCount }, (_, index) => (
-              <button
-                key={index}
-                className={`px-3 py-1 mx-1 bg-blue-500 text-white rounded hover:bg-blue-600 ${
-                  pageIndex === index ? "bg-blue-600" : ""
-                }`}
-                onClick={() => paginate(index)}
-              >
-                {index + 1}
-              </button>
-            ))}
+      <div className="flex flex-wrap mt-6 -mx-3">
+        <div className="w-full max-w-full px-3 flex-0">
+          <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-gray-950 dark:shadow-xl rounded-2xl bg-clip-border">
+            <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6">
+              <h5 className="mb-0 text-xl text-gray-700 font-semibold dark:text-white">
+                Contact Form Inquiries
+              </h5>
+              <p className="mb-0 text-sm leading-normal">
+                Manage messages and customer inquiries submitted through the
+                contact form.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <BasicTable
+                headers={tableHeaders}
+                rows={contactFormInquiries}
+                searchQuery={searchQuery}
+                button={true}
+              />
+              {/* Pagination */}
+              <div className="flex justify-center mt-4">
+                {Array.from({ length: pageCount }, (_, index) => (
+                  <button
+                    key={index}
+                    className={`px-3 py-1 mx-1 bg-blue-500 text-white rounded hover:bg-blue-600 ${
+                      pageIndex === index ? "bg-blue-600" : ""
+                    }`}
+                    onClick={() => paginate(index)}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

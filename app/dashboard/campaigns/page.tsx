@@ -288,7 +288,7 @@ const AdCampaignManagement = () => {
             <button
               type="button"
               data-modal-toggle="create-campaign"
-              className="inline-flex items-center py-2 px-3 text-sm font-bold text-center leading-normal text-white rounded-lg bg-gradient-to-tl from-blue-500 to-violet-500 sm:ml-auto shadow-md hover:scale-[1.02] transition-transform"
+              className="inline-flex items-center py-2 px-3 text-sm font-bold text-center leading-normal text-white rounded-lg dark:bg-gradient-to-tl dark:from-slate-800 dark:to-gray-800 bg-gradient-to-tl from-gray-900 to-slate-800 sm:ml-auto shadow-md hover:scale-[1.02] transition-transform"
             >
               <svg
                 className="mr-2 -ml-1 w-6 h-6"

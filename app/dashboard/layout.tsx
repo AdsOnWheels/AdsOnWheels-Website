@@ -4,14 +4,11 @@ import React from "react";
 import Provider from "@/redux/provider";
 
 import Sidebar from "./layout/Sidebar";
-import FloatButton from "./components/FloatButton";
-import DashboardNavbar from "./layout/DashboardNavbar";
-import useIsSidebarOpen from "../hooks/dashboard/useIsSidebarOpen";
 import Breadcrumb from "../components/Breadcrumbs";
+import DashboardNavbar from "./layout/DashboardNavbar";
 import DashboardFooter from "./layout/DashboardFooter";
-import ToggleTheme from "@/assets/theme/ToggleTheme";
-import ToggleFixedNavbar from "./layout/components/ToggleFixedNavbar";
-import TransparentSidebar from "./layout/components/TransparentSidebar";
+import useIsSidebarOpen from "../hooks/dashboard/useIsSidebarOpen";
+import ConfigurationButton from "./components/ConfigurationButton";
 
 interface Props {
   children: React.ReactNode;
@@ -34,22 +31,13 @@ const DashboardLayout = ({ children }: Props) => {
           <DashboardNavbar />
           {/* Breadcrumbs */}
           <Breadcrumb />
-          {/* Main content goes here */}
+          {/* Main content */}
           <div
             className={`w-full mx-auto mb sm:px-6 lg:px-6 lg:py-6 dark:bg-[#141728] bg-gray-50 text-slate-500 dark:text-white/80 font-sans min-h-screen`}
           >
             {children}
           </div>
-          <FloatButton margin="mb-32">
-            <TransparentSidebar />
-          </FloatButton>
-          <FloatButton margin="mb-16">
-            <ToggleFixedNavbar />
-          </FloatButton>
-          <FloatButton>
-            <ToggleTheme />
-          </FloatButton>
-
+          <ConfigurationButton />
           <DashboardFooter />
         </div>
       </div>

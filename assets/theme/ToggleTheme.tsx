@@ -32,8 +32,9 @@ function ToggleTheme() {
   return (
     <button
       id="theme-toggle"
-      onClick={handleToggleMode}
       aria-label={`Toggle ${darkMode ? "Dark" : "Light"} Mode`}
+      className="fixed px-3 py-2 mb-16 text-xl bg-white dark:bg-slate-950 drop-shadow-2xl shadow-lg cursor-pointer bottom-8 right-8 z-[990] rounded-full"
+      onClick={handleToggleMode}
     >
       <span className="toggle-icon">
         <FontAwesomeIcon
