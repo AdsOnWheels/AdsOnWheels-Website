@@ -6,7 +6,7 @@ import { faCog } from "@fortawesome/free-solid-svg-icons";
 
 import TransparentSidebar from "../layout/components/TransparentSidebar";
 import ToggleFixedNavbar from "../layout/components/ToggleFixedNavbar";
-import ToggleTheme from "@/assets/theme/ToggleTheme";
+import ToggleTheme from "@/public/theme/ToggleTheme";
 
 const ConfigurationButton = () => {
   const [isOpen, setIsOpen] = useState(false);
